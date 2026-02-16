@@ -14,8 +14,7 @@
     "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
     "migrate:ethnographic": "tsx scripts/migrate-ethnographic.ts",
-    "link:ethnographic": "tsx scripts/link-ethnographic.ts",
-    "recover:orphaned": "tsx scripts/recover-orphaned-files.ts"
+    "link:ethnographic": "tsx scripts/link-ethnographic.ts"
   },
   "dependencies": {
     "@algolia/autocomplete-js": "^1.17.4",
