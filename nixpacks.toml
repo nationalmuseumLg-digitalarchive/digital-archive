@@ -1,0 +1,15 @@
+[phases.install]
+cmd = "npm install --force" 
+
+[packages]
+nodejs = "20.12.2"
+
+[phases.build]
+cmd = 'npm run build'
+
+[start]
+cmd = 'npm run start'
+
+# install = { cmd = "npm install --force" }
+# build = { cmd = "npm run build" }
+# start = { cmd = "npm run start" }
