@@ -10,10 +10,10 @@ const nextConfig = {
 
   // Enable frequent revalidation
   experimental: {
-    // Enable streaming
-    serverActions: true,
+    // Enable serverActions in Next.js 15+ (object form)
+    serverActions: {}
   },
-   turbopack: {
+  turbopack: {
     root: '.'
   }
 
