@@ -76,7 +76,6 @@
     "react-instantsearch": "^7.15.4",
     "react-instantsearch-nextjs": "^0.4.5",
     "react-pdf": "^9.1.1",
-    "sharp": "0.32.6",
     "zustand": "^5.0.0-rc.2"
   },
   "devDependencies": {

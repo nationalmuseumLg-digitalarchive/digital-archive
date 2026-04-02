@@ -6,7 +6,6 @@ import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import path from 'path'
 import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
-import sharp from 'sharp'
 import { nestedDocsPlugin } from '@payloadcms/plugin-nested-docs'
 import { searchPlugin } from '@payloadcms/plugin-search'
 import { extractPlainText } from './utils/extractPlainText'
@@ -72,7 +71,6 @@ export default buildConfig({
       connectionString: process.env.DATABASE_URI || '',
     },
   }),
-  sharp,
   plugins: [
     searchPlugin({
       collections: ['pages', 'alternativePages'],
