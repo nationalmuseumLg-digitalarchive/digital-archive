@@ -7,6 +7,8 @@
   "scripts": {
     "build": "payload generate:importmap && cross-env NODE_OPTIONS=--no-deprecation next build ",
     "dev": "payload generate:importmap && cross-env NODE_OPTIONS=--no-deprecation next --turbo",
+    "install:cloudflare": "npm ci --legacy-peer-deps",
+    "install:local": "npm install --legacy-peer-deps",
     "devsafe": "rm -rf .next && cross-env NODE_OPTIONS=--no-deprecation next dev",
     "generate:importmap": "cross-env NODE_OPTIONS=--no-deprecation payload generate:importmap",
     "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
@@ -16,6 +18,7 @@
     "migrate:ethnographic": "tsx scripts/migrate-ethnographic.ts",
     "link:ethnographic": "tsx scripts/link-ethnographic.ts"
   },
+  "packageManager": "npm@10.9.2",
   "engines": {
     "node": ">=20.12.2 <23",
     "npm": ">=10 <11"
