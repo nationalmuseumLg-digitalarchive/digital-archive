@@ -51,7 +51,8 @@
         "typescript": "5.6.2"
       },
       "engines": {
-        "node": "^20.12.2"
+        "node": ">=20.12.2 <23",
+        "npm": ">=10 <11"
       }
     },
     "node_modules/@algolia/abtesting": {
