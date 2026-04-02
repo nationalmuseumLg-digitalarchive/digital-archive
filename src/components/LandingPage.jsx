@@ -86,7 +86,7 @@ const LandingPage = () => {
 
               <motion.div 
                  whileHover={{
-                  backgroundColor:'#003300',
+                  backgroundColor:'#081D07',
                   color:'#FFFCF0',
                   // scaleX: 1.5,
                   x: -4
@@ -135,7 +135,7 @@ const LandingPage = () => {
          <Link href='/intelligence_reports'className=" w-[30%] h-[100%]" >
               <motion.div 
                        whileHover={{
-                        backgroundColor:'#003300',
+                        backgroundColor:'#081D07',
                         color:'#FFFCF0',
                         // scaleX: 1.5,
                         x: -4
@@ -182,7 +182,7 @@ const LandingPage = () => {
           
               <motion.div
                        whileHover={{
-                        backgroundColor:'#003300',
+                        backgroundColor:'#081D07',
                         color:'#FFFCF0',
                         // scaleX: 1.5,
                         x: -4

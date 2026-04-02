@@ -20,8 +20,8 @@ export const theme = {
       'background': '#FFFCF0',
       'backgroundDark': '#faf6e2',
       'footer': '#C9BEA6',
-      'primary': '#003300',
-      'primary-light': '#DBFFDB',
+      'primary': '#081D07',
+      'primary-light': '#081D07',
     },
     fontFamily: {
       mono: ['var(--font-monoMajor)', 'var(--font-inter)'],
