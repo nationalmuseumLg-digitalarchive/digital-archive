@@ -5,7 +5,9 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "build": "npx opennextjs-cloudflare build",
+    "build:cloudflare": "npx opennextjs-cloudflare build",
+    "deploy:cloudflare": "npx opennextjs-cloudflare deploy",
+    "build": "payload generate:importmap && cross-env NODE_OPTIONS=--no-deprecation next build",
     "dev": "payload generate:importmap && cross-env NODE_OPTIONS=--no-deprecation next --turbo",
     "install:cloudflare": "npm install --legacy-peer-deps --no-package-lock",
     "install:local": "npm install --legacy-peer-deps",
