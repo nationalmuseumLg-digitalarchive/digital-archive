@@ -6,8 +6,19 @@ export const Media: CollectionConfig = {
     read: () => true,
   },
   admin: {
-    pagination: {defaultLimit: 20, limits: [20, 50, 100]},
+    pagination: { defaultLimit: 20, limits: [20, 50, 100] },
     useAsTitle: 'alt',
+  },
+  upload: {
+    imageSizes: [
+      {
+        name: 'thumb',
+        width: 300,
+        height: 300,
+        crop: 'center',
+      },
+    ],
+    mimeTypes: ['image/*'],
   },
   fields: [
     {
@@ -16,6 +27,5 @@ export const Media: CollectionConfig = {
       required: true,
       index: true,
     },
-  ]
-  
+  ],
 }
