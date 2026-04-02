@@ -17,8 +17,8 @@
     "link:ethnographic": "tsx scripts/link-ethnographic.ts"
   },
   "engines": {
-    "node": "^20.12.2",
-    "npm": "^10.0.0"
+    "node": ">=20.12.2 <23",
+    "npm": ">=10 <11"
   },
   "dependencies": {
     "@algolia/autocomplete-js": "^1.17.4",
