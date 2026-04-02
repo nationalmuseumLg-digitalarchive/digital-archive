@@ -9,6 +9,7 @@
     "dev": "payload generate:importmap && cross-env NODE_OPTIONS=--no-deprecation next --turbo",
     "install:cloudflare": "npm ci --legacy-peer-deps",
     "install:local": "npm install --legacy-peer-deps",
+    "postinstall": "echo 'Installation complete - ensure --legacy-peer-deps was used'",
     "devsafe": "rm -rf .next && cross-env NODE_OPTIONS=--no-deprecation next dev",
     "generate:importmap": "cross-env NODE_OPTIONS=--no-deprecation payload generate:importmap",
     "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
