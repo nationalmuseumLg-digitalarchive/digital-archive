@@ -72,7 +72,7 @@ export default buildConfig({
       connectionString: process.env.DATABASE_URI || '',
     },
   }),
-  // sharp, // Disabled for Cloudflare deployment
+  sharp,
   plugins: [
     searchPlugin({
       collections: ['pages', 'alternativePages'],
