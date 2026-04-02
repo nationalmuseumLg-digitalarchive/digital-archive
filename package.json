@@ -7,7 +7,7 @@
   "scripts": {
     "build": "payload generate:importmap && cross-env NODE_OPTIONS=--no-deprecation next build ",
     "dev": "payload generate:importmap && cross-env NODE_OPTIONS=--no-deprecation next --turbo",
-    "install:cloudflare": "npm ci --legacy-peer-deps",
+    "install:cloudflare": "npm install --legacy-peer-deps --no-package-lock",
     "install:local": "npm install --legacy-peer-deps",
     "postinstall": "echo 'Installation complete - ensure --legacy-peer-deps was used'",
     "devsafe": "rm -rf .next && cross-env NODE_OPTIONS=--no-deprecation next dev",
@@ -23,6 +23,32 @@
   "engines": {
     "node": ">=20.12.2 <23",
     "npm": ">=10 <11"
+  },
+  "overrides": {
+    "@payloadcms/next": "3.72.0",
+    "@payloadcms/plugin-search": "3.72.0",
+    "@payloadcms/richtext-lexical": "3.72.0",
+    "@payloadcms/db-postgres": "3.72.0",
+    "@payloadcms/plugin-nested-docs": "3.72.0",
+    "@payloadcms/storage-s3": "3.72.0",
+    "@payloadcms/ui": "3.72.0",
+    "@payloadcms/graphql": "3.72.0",
+    "@payloadcms/drizzle": "3.72.0",
+    "payload": "3.72.0",
+    "yjs": "13.6.30",
+    "monaco-editor": "0.55.1",
+    "dompurify": "3.2.7",
+    "marked": "14.0.0",
+    "@types/trusted-types": "2.0.7",
+    "ajv": "8.17.1",
+    "jose": "5.9.6",
+    "scmp": "2.1.0",
+    "tsx": "4.20.3",
+    "undici": "7.18.2",
+    "picomatch": "4.0.4",
+    "lib0": "0.2.117",
+    "isomorphic.js": "0.2.5",
+    "zod": "3.25.76"
   },
   "dependencies": {
     "@algolia/autocomplete-js": "^1.17.4",
