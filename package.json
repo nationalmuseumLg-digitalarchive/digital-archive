@@ -16,14 +16,18 @@
     "migrate:ethnographic": "tsx scripts/migrate-ethnographic.ts",
     "link:ethnographic": "tsx scripts/link-ethnographic.ts"
   },
+  "engines": {
+    "node": "^20.12.2",
+    "npm": "^10.0.0"
+  },
   "dependencies": {
     "@algolia/autocomplete-js": "^1.17.4",
-    "@payloadcms/db-postgres": "^3.72.0",
-    "@payloadcms/next": "^3.72.0",
-    "@payloadcms/plugin-nested-docs": "^3.72.0",
-    "@payloadcms/plugin-search": "^3.72.0",
-    "@payloadcms/richtext-lexical": "^3.72.0",
-    "@payloadcms/storage-s3": "^3.72.0",
+    "@payloadcms/db-postgres": "3.72.0",
+    "@payloadcms/next": "3.72.0",
+    "@payloadcms/plugin-nested-docs": "3.72.0",
+    "@payloadcms/plugin-search": "3.72.0",
+    "@payloadcms/richtext-lexical": "3.72.0",
+    "@payloadcms/storage-s3": "3.72.0",
     "algoliasearch": "^5.5.3",
     "axios": "^1.7.7",
     "cross-env": "^7.0.3",
