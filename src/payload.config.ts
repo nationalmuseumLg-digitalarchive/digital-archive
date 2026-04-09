@@ -9,7 +9,7 @@ import { fileURLToPath } from 'url'
 import { nestedDocsPlugin } from '@payloadcms/plugin-nested-docs'
 import { searchPlugin } from '@payloadcms/plugin-search'
 import { extractPlainText } from './utils/extractPlainText'
-import { getDbConnectionString } from './utils/getDbConfig'
+import { getCloudflareContext } from '@opennextjs/cloudflare'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
@@ -26,7 +26,7 @@ import { GovernmentReports } from './collections/GovernmentReports'
 import { Photos } from './collections/Photos'
 import { AlternativeHeritage } from './collections/AlternativeHeritage'
 import { AlternativeArchivalHeritage } from './collections/AlternativeArchivalHeritage'
-
+import { pages } from 'next/dist/build/templates/app-page'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -66,14 +66,61 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
-  db: typeof window === 'undefined' 
-    ? postgresAdapter({
-        pool: {
-          connectionString: getDbConnectionString(),
-          max: process.env.CI ? 10 : (typeof caches !== 'undefined' ? 1 : undefined),
-        },
-      })
-    : ({} as any),
+  db: postgresAdapter({
+    pool: (() => {
+      let uri = '';
+      let envSource = 'Local/Build (Node.js)';
+      
+      // 1. Detect environment
+      const isWorker = typeof caches !== 'undefined';
+      
+      try {
+        if (isWorker) {
+          const { env } = getCloudflareContext()
+          // Check for Hyperdrive binding first
+          if ((env as any)?.DATABASE_URI?.connectionString) {
+            uri = (env as any).DATABASE_URI.connectionString
+            envSource = 'Cloudflare Hyperdrive';
+          } else if (typeof (env as any)?.DATABASE_URI === 'string') {
+            uri = (env as any).DATABASE_URI
+            envSource = 'Cloudflare Env Var';
+          }
+        }
+      } catch (err) {
+        console.error('[Payload DB] Error getting Cloudflare context:', err);
+      }
+
+      // 2. Fallback to process.env if no URI found yet (Local/Build)
+      if (!uri) {
+        uri = process.env.DATABASE_URI || process.env.BUILD_DATABASE_URI || '';
+      }
+
+      // 3. Neon SNI workaround: ONLY apply if in Worker environment
+      // Standard Node.js (Local/Build) handles SNI correctly and will fail with this patch.
+      if (isWorker && uri && uri.includes('neon.tech')) {
+        const match = uri.match(/@(ep-[a-z0-9\-]+)[.-]/);
+        if (match && match[1]) {
+          const endpointId = match[1].replace('-pooler', '');
+          if (!uri.includes(`${endpointId}$`)) {
+            uri = uri.replace('://', `://${endpointId}$`);
+            envSource += ' (Neon SNI Patch Applied)';
+          }
+        }
+      }
+
+      // Add sslmode=require if missing and not in local dev
+      if (uri && !uri.includes('sslmode=') && isWorker) {
+          uri += (uri.includes('?') ? '&' : '?') + 'sslmode=require';
+      }
+
+      console.log(`[Payload DB] Environment: ${isWorker ? 'Worker' : 'Node.js'} | Source: ${envSource}`);
+      
+      return {
+        connectionString: uri,
+        max: process.env.CI ? 10 : undefined,
+      }
+    })(),
+  }),
   plugins: [
     searchPlugin({
       collections: ['pages', 'alternativePages'],
@@ -123,7 +170,7 @@ export default buildConfig({
         return searchDoc
       },
     }),
-    ...(typeof window === 'undefined' ? [s3Storage({
+    s3Storage({
       clientUploads: true,
       collections: {
         media: {
@@ -151,7 +198,7 @@ export default buildConfig({
         endpoint: process.env.S3_ENDPOINT,
         region: 'auto',
       },
-    })] : []),
+    }),
     nestedDocsPlugin({
       collections: ['pages'],
       generateLabel: (_, doc) => doc.title,
