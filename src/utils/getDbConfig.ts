@@ -1,5 +1,3 @@
-import { getCloudflareContext } from '@opennextjs/cloudflare'
-
 export const getDbConnectionString = () => {
   let uri = '';
   let envSource = 'Local/Build (Node.js)';
@@ -9,7 +7,10 @@ export const getDbConnectionString = () => {
   
   try {
     if (isWorker) {
+      // Dynamic import to prevent client-side bundle crashes
+      const { getCloudflareContext } = require('@opennextjs/cloudflare');
       const { env } = getCloudflareContext()
+      
       // Check for Hyperdrive binding first
       if ((env as any)?.DATABASE_URI?.connectionString) {
         uri = (env as any).DATABASE_URI.connectionString
@@ -20,7 +21,7 @@ export const getDbConnectionString = () => {
       }
     }
   } catch (err) {
-    console.error('[Payload DB] Error getting Cloudflare context:', err);
+    // console.error('[Payload DB] Error getting Cloudflare context:', err);
   }
 
   // Fallback to process.env if no URI found yet (Local/Build)
@@ -45,7 +46,5 @@ export const getDbConnectionString = () => {
     uri += (uri.includes('?') ? '&' : '?') + 'sslmode=require';
   }
 
-  console.log(`[Payload DB] Environment: ${isWorker ? 'Worker' : 'Node.js'} | Source: ${envSource}`);
-  
   return uri;
 }

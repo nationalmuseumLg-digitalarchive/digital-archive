@@ -26,7 +26,7 @@ import { GovernmentReports } from './collections/GovernmentReports'
 import { Photos } from './collections/Photos'
 import { AlternativeHeritage } from './collections/AlternativeHeritage'
 import { AlternativeArchivalHeritage } from './collections/AlternativeArchivalHeritage'
-import { pages } from 'next/dist/build/templates/app-page'
+
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
