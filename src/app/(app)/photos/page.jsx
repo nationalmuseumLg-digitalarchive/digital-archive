@@ -38,7 +38,7 @@ const Photos = async() => {
 
 return (
  <>
-   <div className='w-[100%] min-h-[100vh] h-[100%] font-inter flex justify-start bg-background border-black border-t-[1px] p-8 overflow-hidden'>
+   <div className='w-[100%] min-h-[100vh] h-[100%] font-montserrat flex justify-start bg-background border-black border-t-[1px] p-8 overflow-hidden'>
 
      {/* <div className='flex justify-between flex-col'> */}
 

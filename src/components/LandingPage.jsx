@@ -243,7 +243,7 @@ const LandingPage = () => {
         className="h-[100%] w-[100%] items-center text-[0.75rem] sm:text-[1rem] flex lg:flex-row flex-col gap-4 border-b-black border-b-[1px]"
       >
         <div className="h-[100%]  px-10 p-[1.5rem]  lg:w-1/2 flex flex-col gap-6 font-light w-full border-r-[1px]  pt-10 pb-10  border-black">
-          <h2 className="font-inter font-bold text-[4vw]"> THE MUSEUM </h2>
+          <h2 className="font-montserrat font-bold text-[4vw]"> THE MUSEUM </h2>
 
           <p className="w-fit font-old text-[0.75rem] sm:text-[16px]">
             NATIONAL MUSEUM ONIKAN, LAGOS NIGERIA <br />
@@ -270,7 +270,7 @@ const LandingPage = () => {
 
             <Link
               href="/about"
-              className="flex items-end text-[0.75rem] md:text-[1rem] gap-1 font-semibold hover:text-[#006600] font-inter pr-4"
+              className="flex items-end text-[0.75rem] md:text-[1rem] gap-1 font-semibold hover:text-[#006600] font-montserrat pr-4"
             >
               READ MORE
               <motion.svg
@@ -290,13 +290,13 @@ const LandingPage = () => {
 
         <div className="h-[100%] lg:w-1/2 gap-6 font-light w-full flex flex-col items-between  px-10 md:border-0 border-r-[1px] pt-10 pb-10  border-black bg-backgroundDark">
           <div>
-            <h2 className="font-inter font-bold text-[4vw]"> PHOTO GALLERY </h2>
+            <h2 className="font-montserrat font-bold text-[4vw]"> PHOTO GALLERY </h2>
             <Images />
           </div>
 
           <Link
             href="./photos"
-            className="flex flex-row font-semibold left-0  pb-10 w-full h-[10%] items-end text-[0.75rem] md:text-[1rem] gap-1 hover:text-[#006600] font-inter pr-4"
+            className="flex flex-row font-semibold left-0  pb-10 w-full h-[10%] items-end text-[0.75rem] md:text-[1rem] gap-1 hover:text-[#006600] font-montserrat pr-4"
           >
             VIEW MORE
             <motion.svg

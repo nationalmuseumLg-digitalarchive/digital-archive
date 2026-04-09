@@ -236,9 +236,9 @@ const Nav = ({
   }
 
   return (
-    <div className=" h-[5vh] w-[100%] py-10 font-inter font-normal flex justify-center items-center text-primary   sm:text-[0.75rem] text-0.5 border-primary uppercase ">
-      <nav className="p-4 invisible sm:visible">
-        <ul className="flex gap-8 ">
+    <div className=" h-[5vh] w-[100%] py-10  font-montserrat font-normal flex justify-center items-center text-primary   sm:text-[0.75rem] text-0.5 border-primary uppercase ">
+      <nav className="px-8 py-3 invisible sm:visible bg-primary text-background rounded-full shadow-md">
+        <ul className="flex gap-8 items-center">
           <li>
             {' '}
             <FlyoutLink href="/">HOME</FlyoutLink>

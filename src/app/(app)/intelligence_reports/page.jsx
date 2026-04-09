@@ -59,7 +59,7 @@ const IntelligenceReports = () => {
 
   return (
     <>
-      <div className='w-[100vw] min-h-[100vh] h-[100%] font-inter flex justify-between bg-background border-black border-t-[1px] flex-row p-8 '>
+      <div className='w-[100vw] min-h-[100vh] h-[100%] font-montserrat flex justify-between bg-background border-black border-t-[1px] flex-row p-8 '>
 
         <div className='flex justify-between flex-col'>
 

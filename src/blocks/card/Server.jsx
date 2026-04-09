@@ -47,7 +47,7 @@ const open = openCard && cardID === id
            <AnimatePresence>
 
 
-            <div id={id} className="flex sm:flex-row flex-col justify-between border-black border-[1px]  font-inter transition-all font-light  p-2 gap-4 cursor-pointer bg-background"
+            <div id={id} className="flex sm:flex-row flex-col justify-between border-black border-[1px]  font-montserrat transition-all font-light  p-2 gap-4 cursor-pointer bg-background"
    
                     onClick={()=> handleOpen(id)}
                      style={{ 

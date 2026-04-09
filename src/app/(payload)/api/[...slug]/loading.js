@@ -2,7 +2,7 @@ export default function Loading() {
     // You can add any UI inside Loading, including a Skeleton.
     return( <>
     <div>
-         <div className="w-[100vw] h-[100vh] flex flex-col justify-center items-center font-inter bg-background gap-10 p-20">
+         <div className="w-[100vw] h-[100vh] flex flex-col justify-center items-center font-montserrat bg-background gap-10 p-20">
 
         <div className="w-full h-full flex flex-col items-center justify-center gap-10">
         <svg aria-hidden="true" className="w-10 h-10 text-primary  fill-blue-600 animate-ping" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">

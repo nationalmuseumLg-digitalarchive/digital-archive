@@ -21,7 +21,7 @@ const FooterServer = async() => {
 
   return (
     <>
-      <div className='w-[100vw] font-inter h-fit grid grid-cols-1 sm:grid-cols-3 bg-primary border-black border-t-[1px] pt-8 gap-4 p-8'>
+      <div className='w-[100vw] font-montserrat h-fit grid grid-cols-1 sm:grid-cols-3 bg-primary border-black border-t-[1px] pt-8 gap-4 p-8'>
  
         <div className='flex justify-between flex-col gap-4 w-fit h-fit'>
 

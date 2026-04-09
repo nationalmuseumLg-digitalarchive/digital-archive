@@ -7,7 +7,7 @@ import FooterServer from '../../blocks/global/Footer/server'
 import Image from 'next/legacy/image'
 
 const inter = Inter({
-  variable: '--font-inter',
+  variable: '--font-montserrat',
   subsets: ['latin'],
   display: 'swap',
 })

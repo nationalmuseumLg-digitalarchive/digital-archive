@@ -40,12 +40,12 @@ return (
  <>
  <div className='flex flex-col w-100% min-h-[100vh] h-fit px-10 overflow-hidden '>
 
-   <div className='w-100% h-fit font-inter flex bg-background border-primary flex-col sm:flex-row columns-2 overflow-hidden'>
+   <div className='w-100% h-fit font-montserrat flex bg-background border-primary flex-col sm:flex-row columns-2 overflow-hidden'>
 
         <div className="h-fit sm:w-1/2 flex flex-col gap-6 font-light w-full  p-8">
        
 
-            <h1 className="font-inter font-bold sm:text-[5rem]"> THE MUSEUM </h1>
+            <h1 className="font-montserrat font-bold sm:text-[5rem]"> THE MUSEUM </h1>
 
               <p className="w-fit font-old text-[0.75rem] sm:text-[16px]">
               NATIONAL MUSEUM LAGOS
@@ -86,17 +86,17 @@ return (
 
     </div>
 
-    <div className='w-[100%] h-[100%] font-inter flex justify-between bg-background border-primary border-x-[1px] border-t-[1px]  flex-col sm:flex-row columns-2 overflow-hidden'>
+    <div className='w-[100%] h-[100%] font-montserrat flex justify-between bg-background border-primary border-x-[1px] border-t-[1px]  flex-col sm:flex-row columns-2 overflow-hidden'>
       <div className="h-[100%] sm:w-1/2 flex flex-col gap-6 font-light w-full p-8">
 
-            <h2 className="font-inter font-bold sm:text-[3rem] uppercase "> Activities </h2>
+            <h2 className="font-montserrat font-bold sm:text-[3rem] uppercase "> Activities </h2>
 
-            <h3 className="font-inter sm:w-[80%] font-bold sm:text-[1rem] uppercase text-primary"> National Museum Lagos features three galleries: </h3>
+            <h3 className="font-montserrat sm:w-[80%] font-bold sm:text-[1rem] uppercase text-primary"> National Museum Lagos features three galleries: </h3>
 
               <p className="w-fit font-old text-[0.75rem] sm:text-[16px]">
                   For social, cultural, and educational knowledge, National Museum Lagos features three galleries:
                   <br />
-                  <span className='font-semibold font-inter'>
+                  <span className='font-semibold font-montserrat'>
                   - Unfading Asset of our Cultural Patrimony Gallery
                   <br />
                   - Nigerian Arts in the Cycle of Life Gallery
@@ -105,13 +105,13 @@ return (
                   </span>
                 </p>
 
-              <h2 className="font-inter uppercase sm:first-line:w-[80%] font-bold sm:text-[1rem] text-primary">   Other services of the National Museum Lagos include: </h2>
+              <h2 className="font-montserrat uppercase sm:first-line:w-[80%] font-bold sm:text-[1rem] text-primary">   Other services of the National Museum Lagos include: </h2>
 
 
               <div className="w-fit flex flex-col gap-4 font-old text-[0.75rem] sm:text-[16px]">
 
                 <p>
-                    <span className='font-bold text-primary font-inter'>
+                    <span className='font-bold text-primary font-montserrat'>
                       Conservation and Restoration Services:
                       <br />
                       </span>
@@ -121,7 +121,7 @@ return (
 
                 <p>
                     
-                      <span className='font-bold text-primary font-inter'>
+                      <span className='font-bold text-primary font-montserrat'>
                       Retail Services:
                       <br />
                       </span>
@@ -132,7 +132,7 @@ return (
 
 
                 <p>
-                    <span className='font-bold text-primary font-inter'>
+                    <span className='font-bold text-primary font-montserrat'>
                     Educational Programs:
                     <br />
                     </span>
@@ -141,7 +141,7 @@ return (
                 </p>
 
                   <p>
-                      <span className='font-bold text-primary font-inter'>
+                      <span className='font-bold text-primary font-montserrat'>
                       Organized/Guided Tours:
                       <br />
                       </span>
@@ -149,7 +149,7 @@ return (
                   </p>
 
                   <p>
-                <span className='font-bold text-primary font-inter'>
+                <span className='font-bold text-primary font-montserrat'>
                 Children&rsquo;s Day Program:
                   <br />
                   </span>
@@ -158,7 +158,7 @@ return (
                 </p>
 
                 <p>
-            <span className='font-bold text-primary font-inter'>
+            <span className='font-bold text-primary font-montserrat'>
             Independence Day Celebration:
             <br />
             </span>
@@ -167,7 +167,7 @@ return (
             </p>
 
             <p>
-            <span className='font-bold text-primary font-inter'>
+            <span className='font-bold text-primary font-montserrat'>
             Digital Resources: 
             <br />
             </span>
@@ -183,7 +183,7 @@ return (
         <div className="h-[100%] font-old  text-[0.75rem] sm:text-[16px] sm:w-1/2 flex flex-col gap-6 font-light w-full  border-black p-8">
 
             <p>
-                <span className='font-bold text-primary font-inter'>
+                <span className='font-bold text-primary font-montserrat'>
                 Digital Resources: 
                 <br />
                 </span>
@@ -193,7 +193,7 @@ return (
 
 
             <p>
-                <span className='font-bold text-primary font-inter'>
+                <span className='font-bold text-primary font-montserrat'>
                 Cultural/Religious Festivals: 
                 <br />
                 </span>
@@ -209,7 +209,7 @@ return (
 
 
             <p>
-                      <span className='font-bold text-primary font-inter'>
+                      <span className='font-bold text-primary font-montserrat'>
                       Special Children Program: 
                         <br />
                         </span>
@@ -221,7 +221,7 @@ return (
 
                   <p>
                       
-                        <span className='font-bold text-primary font-inter'>
+                        <span className='font-bold text-primary font-montserrat'>
                         Prison (Correctional Service) Outreach: 
                         <br />
                         </span>
@@ -230,7 +230,7 @@ return (
                   </p>
 
                   <p>
-              <span className='font-bold text-primary font-inter'>
+              <span className='font-bold text-primary font-montserrat'>
               Art Classes and Workshops:
               <br />
               </span>
@@ -250,7 +250,7 @@ return (
 
     </div>
 
-<div className='w-[100%] h-[100%] font-inter flex justify-between bg-background border-primary border-x-[1px] flex-col sm:flex-row columns-2 overflow-hidden'>
+<div className='w-[100%] h-[100%] font-montserrat flex justify-between bg-background border-primary border-x-[1px] flex-col sm:flex-row columns-2 overflow-hidden'>
   
 
     <div className="h-[100%] font-old  text-[0.75rem] sm:text-[16px] sm:w-1/2 flex flex-col gap-6 font-light w-full  border-black p-8">
@@ -258,7 +258,7 @@ return (
         
 
             <p>
-                <span className='font-bold text-primary font-inter'>
+                <span className='font-bold text-primary font-montserrat'>
                 Public Events: 
                 <br />
                 </span>
@@ -268,7 +268,7 @@ return (
 
 
             <p>
-                <span className='font-bold text-primary font-inter'>
+                <span className='font-bold text-primary font-montserrat'>
                 Children's Digest Magazine Publication:
                 <br />
                 </span>
@@ -276,7 +276,7 @@ return (
             </p>
 
             <p>
-                <span className='font-bold text-primary font-inter'>
+                <span className='font-bold text-primary font-montserrat'>
                 Exportation of Art Works/Cultural Items:
                 <br />
                 </span>
@@ -284,7 +284,7 @@ return (
             </p>
 
             <p>
-           <span className='font-bold text-primary font-inter'>
+           <span className='font-bold text-primary font-montserrat'>
            Research Facilities: 
             <br />
             </span>
@@ -302,7 +302,7 @@ return (
 
       <p>
           
-            <span className='font-bold text-primary font-inter'>
+            <span className='font-bold text-primary font-montserrat'>
             Temporary Exhibitions:
             <br />
             </span>
@@ -313,7 +313,7 @@ return (
 
 
       <p>
-          <span className='font-bold text-primary font-inter'>
+          <span className='font-bold text-primary font-montserrat'>
           Venue Rental for Events: 
           <br />
           </span>
@@ -321,7 +321,7 @@ return (
       </p>
 
         <p>
-            <span className='font-bold text-primary font-inter'>
+            <span className='font-bold text-primary font-montserrat'>
             Children's Play Park:
             <br />
             </span>
@@ -330,7 +330,7 @@ return (
 
 
         <p>
-            <span className='font-bold text-primary font-inter'>
+            <span className='font-bold text-primary font-montserrat'>
             In sum, the National Museum Lagos is a place of cultural significance, showcasing the richness of Nigeria's cultural heritage and values.
             <br />
             </span>

@@ -38,7 +38,7 @@ const Maps = async() => {
 
 return (
  <>
-   <div className='w-[100%] min-h-[100vh] h-[100%] font-inter flex justify-between  border-black border-t-[1px] flex-row py-8 px-10  overflow-hidden'>
+   <div className='w-[100%] min-h-[100vh] h-[100%] font-montserrat flex justify-between  border-black border-t-[1px] flex-row py-8 px-10  overflow-hidden'>
 
      <div className='flex justify-between items-start flex-col'>
 
@@ -76,7 +76,7 @@ return (
                         
                      
         
-                        <p className='font-inter font-light'>{page.description}</p>
+                        <p className='font-montserrat font-light'>{page.description}</p>
         
                  </div>
                  :
@@ -100,7 +100,7 @@ return (
                     
                  
     
-                    <p className='font-inter text-sm opacity-10 font-light text-center w-full'>{page.description}</p>
+                    <p className='font-montserrat text-sm opacity-10 font-light text-center w-full'>{page.description}</p>
     
              </div>
              :
