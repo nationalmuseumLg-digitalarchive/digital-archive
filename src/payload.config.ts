@@ -94,6 +94,12 @@ export default buildConfig({
           if (!uri.includes(`${endpointId}$`)) {
              uri = uri.replace('://', `://${endpointId}$`);
           }
+          // Force sslmode=require for better compatibility in serverless
+          if (uri.includes('sslmode=verify-full')) {
+            uri = uri.replace('sslmode=verify-full', 'sslmode=require');
+          } else if (!uri.includes('sslmode=')) {
+            uri += (uri.includes('?') ? '&' : '?') + 'sslmode=require';
+          }
         }
       }
 
