@@ -1,32 +1,22 @@
 export const getDbConnectionString = () => {
   let uri = '';
-  let envSource = 'Local/Build (Node.js)';
   
   // Detect environment
   const isWorker = typeof caches !== 'undefined';
+  const isServer = typeof window === 'undefined';
   
-  try {
-    if (isWorker) {
-      // Dynamic import to prevent client-side bundle crashes
-      const { getCloudflareContext } = require('@opennextjs/cloudflare');
-      const { env } = getCloudflareContext()
-      
-      // Check for Hyperdrive binding first
-      if ((env as any)?.DATABASE_URI?.connectionString) {
-        uri = (env as any).DATABASE_URI.connectionString
-        envSource = 'Cloudflare Hyperdrive';
-      } else if (typeof (env as any)?.DATABASE_URI === 'string') {
-        uri = (env as any).DATABASE_URI
-        envSource = 'Cloudflare Env Var';
-      }
-    }
-  } catch (err) {
-    // console.error('[Payload DB] Error getting Cloudflare context:', err);
-  }
+  if (!isServer) return ''; // Safely return empty string in browser
 
-  // Fallback to process.env if no URI found yet (Local/Build)
-  if (!uri) {
+  try {
+    // In Node.js or during build, use process.env directly
     uri = process.env.DATABASE_URI || process.env.BUILD_DATABASE_URI || '';
+    
+    // In Worker runtime, we can try to get the context
+    // We avoid 'require' because it breaks ESM Workers
+    // We rely on the fact that OpenNext usually shims process.env with bindings
+    // or we'd ideally use a Hyperdrive connection string if available.
+  } catch (err) {
+    // console.error('[Payload DB] Error getting database connection string:', err);
   }
 
   // Neon SNI workaround: ONLY apply if in Worker environment
@@ -36,12 +26,11 @@ export const getDbConnectionString = () => {
       const endpointId = match[1].replace('-pooler', '');
       if (!uri.includes(`${endpointId}$`)) {
         uri = uri.replace('://', `://${endpointId}$`);
-        envSource += ' (Neon SNI Patch Applied)';
       }
     }
   }
 
-  // Add sslmode=require if missing and not in local dev
+  // Add sslmode=require if missing and in Worker
   if (uri && !uri.includes('sslmode=') && isWorker) {
     uri += (uri.includes('?') ? '&' : '?') + 'sslmode=require';
   }

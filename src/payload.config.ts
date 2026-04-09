@@ -66,12 +66,14 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
-  db: postgresAdapter({
-    pool: {
-      connectionString: getDbConnectionString(),
-      max: process.env.CI ? 10 : (typeof caches !== 'undefined' ? 1 : undefined),
-    },
-  }),
+  db: typeof window === 'undefined' 
+    ? postgresAdapter({
+        pool: {
+          connectionString: getDbConnectionString(),
+          max: process.env.CI ? 10 : (typeof caches !== 'undefined' ? 1 : undefined),
+        },
+      })
+    : ({} as any),
   plugins: [
     searchPlugin({
       collections: ['pages', 'alternativePages'],
@@ -121,7 +123,7 @@ export default buildConfig({
         return searchDoc
       },
     }),
-    s3Storage({
+    ...(typeof window === 'undefined' ? [s3Storage({
       clientUploads: true,
       collections: {
         media: {
@@ -149,7 +151,7 @@ export default buildConfig({
         endpoint: process.env.S3_ENDPOINT,
         region: 'auto',
       },
-    }),
+    })] : []),
     nestedDocsPlugin({
       collections: ['pages'],
       generateLabel: (_, doc) => doc.title,
