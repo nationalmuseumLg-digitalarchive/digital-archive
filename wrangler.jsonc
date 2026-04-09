@@ -38,8 +38,8 @@
 	"hyperdrive": [
 		{
 			"binding": "DATABASE_URI",
-			"id": "94e95a5c762142ec9748133ad01c7f2a",
-			"localConnectionString": "postgresql://neondb_owner:npg_ZYCDFQuK3q7R@ep-fancy-night-adxm2v2n-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require"
+			"id": "a16f744bc9624f4f8518300b23110288",
+			"localConnectionString": "postgresql://neondb_owner:npg_ZYCDFQuK3q7R@ep-frosty-fire-adjjeiwm-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require"
 		}
 	]
 }
