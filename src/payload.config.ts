@@ -67,20 +67,41 @@ export default buildConfig({
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
   db: postgresAdapter({
-    pool: {
-      connectionString: (() => {
-        try {
-          const { env } = getCloudflareContext()
-          if ((env as any)?.DATABASE_URI?.connectionString) {
-            return (env as any).DATABASE_URI.connectionString
-          }
-        } catch {
-          // Not in Cloudflare context — build phase or local dev
+    pool: (() => {
+      let uri = '';
+      
+      try {
+        const { env } = getCloudflareContext()
+        // Prioritize the Hyperdrive binding if it exists
+        if ((env as any)?.DATABASE_URI?.connectionString) {
+          uri = (env as any).DATABASE_URI.connectionString
         }
-        return process.env.DATABASE_URI || ''
-      })(),
-      max: process.env.CI ? 10 : 1,
-    },
+      } catch {
+        // Fallback for build phase / local dev
+      }
+
+      if (!uri) {
+        uri = process.env.DATABASE_URI || process.env.BUILD_DATABASE_URI || '';
+      }
+
+      // Neon SNI workaround: Prepend endpoint ID to username
+      // Officially supported for environments like Cloudflare Workers where SNI negotiation can fail
+      if (uri && typeof uri === 'string' && uri.includes('neon.tech')) {
+        const match = uri.match(/@(ep-[a-z0-9\-]+)[.-]/);
+        if (match && match[1]) {
+          const endpointId = match[1].replace('-pooler', '');
+          // Only patch if not already patched
+          if (!uri.includes(`${endpointId}$`)) {
+             uri = uri.replace('://', `://${endpointId}$`);
+          }
+        }
+      }
+
+      return {
+        connectionString: uri,
+        max: process.env.CI ? 10 : undefined,
+      }
+    })(),
   }),
   plugins: [
     searchPlugin({
