@@ -6,11 +6,7 @@ import HeaderServer from '../../blocks/global/Header/server'
 import FooterServer from '../../blocks/global/Footer/server'
 import Image from 'next/legacy/image'
 
-const inter = Inter({
-  variable: '--font-montserrat',
-  subsets: ['latin'],
-  display: 'swap',
-})
+
 
 const montserrat = Montserrat({
   weight: '400',
@@ -49,7 +45,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${monoMajor.variable} ${inter.variable} ${playfair.variable} ${old.variable} ${montserrat.variable}`}
+        className={`${monoMajor.variable} ${playfair.variable} ${old.variable} ${montserrat.variable}`}
       >
         <HeaderServer />
         {/* <Nav/> */}

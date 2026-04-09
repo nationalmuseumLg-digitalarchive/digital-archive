@@ -68,7 +68,9 @@ export default buildConfig({
   },
   db: postgresAdapter({
     pool: {
-      connectionString: process.env.DATABASE_URI || '',
+      connectionString: typeof process.env.DATABASE_URI === 'object' && process.env.DATABASE_URI !== null
+        ? (process.env.DATABASE_URI as any).connectionString 
+        : (process.env.DATABASE_URI || process.env.BUILD_DATABASE_URI || process.env.DATABASE_URL || ''),
       max: process.env.CI ? 10 : 1,
     },
   }),
