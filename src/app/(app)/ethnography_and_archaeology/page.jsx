@@ -4,8 +4,7 @@ import { getPayload } from 'payload'
 import React, {cache} from 'react'
 import { RenderBlocks } from '@/utils/RenderBlocks'
 import * as motion from "framer-motion/client"
-import { algoliasearch } from 'algoliasearch';
-import Search from '@/components/Search'
+
 import Link from 'next/link'
 
 

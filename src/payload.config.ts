@@ -9,7 +9,7 @@ import { fileURLToPath } from 'url'
 import { nestedDocsPlugin } from '@payloadcms/plugin-nested-docs'
 import { searchPlugin } from '@payloadcms/plugin-search'
 import { extractPlainText } from './utils/extractPlainText'
-// import { AlgoliaSearchPlugin } from 'payload-plugin-algolia'
+
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
@@ -125,8 +125,17 @@ export default buildConfig({
       collections: {
         media: {
           prefix: 'media',
-           acl: 'public-read',
-        cacheControl: 'public, max-age=31536000, immutable',
+          acl: 'public-read',
+          cacheControl: 'public, max-age=31536000, immutable',
+          ...(process.env.NEXT_PUBLIC_R2_URL
+            ? {
+                disablePayloadAccessControl: true,
+                generateFileURL: ({ filename, prefix }) => {
+                  const path = prefix ? `${prefix}/${filename}` : filename;
+                  return `${process.env.NEXT_PUBLIC_R2_URL}/${path}`;
+                },
+              }
+            : {}),
         },
       },
       bucket: process.env.S3_BUCKET,
@@ -145,14 +154,7 @@ export default buildConfig({
       generateLabel: (_, doc) => doc.title,
       generateURL: (docs) => docs.reduce((url, doc) => `${url}/${doc.slug}`, ''),
     }),
-    // AlgoliaSearchPlugin({
-    //   algolia: {
-    //     appId: process.env.NEXT_PUBLIC_ALGOLIA_APP_ID,
-    //     apiKey: process.env.NEXT_PUBLIC_ALGOLIA_ADMIN_API_KEY,
-    //     index: process.env.NEXT_PUBLIC_ALGOLIA_INDEX
-    //   },
-    //   collections: ['pages']
-    // })
+
 
     // storage-adapter-placeholder
   ],

@@ -15,6 +15,14 @@ const nextConfig = {
   },
   turbopack: {
     root: '.'
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
   }
 
   // Your Next.js config here

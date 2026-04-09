@@ -3,7 +3,7 @@ import { getPayload } from 'payload'
 import config from '@payload-config'
 import Link from 'next/link'
 import * as motion from "framer-motion/client"
-import { algoliasearch } from 'algoliasearch';
+
 
 
 
@@ -39,14 +39,6 @@ const AlternativeHeritage = () => {
      limit: 1000,
  })
 
-    const client = algoliasearch(process.env.NEXT_PUBLIC_ALGOLIA_APP_ID, process.env.NEXT_PUBLIC_ALGOLIA_WRITE_API_KEY);
-
-    // console.log(pages)
-
-    // const response = await client.saveObject({
-    //   indexName:`intelligence_reports${pages.slug}`,
-    //   body:pages
-    // })
 
  
    return (
