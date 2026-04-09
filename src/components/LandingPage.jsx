@@ -22,7 +22,7 @@ const LandingPage = () => {
   return (
     <div className="px-16 ">
       <section className="w-[100%] h-[80vh] justify-center items-center relative border-[1px] border-t-0 border-black flex flex-col lg:flex-row  bg-background">
-        <div className="lg:w-1/2 w-[100%] h-[100%] relative font-inter p-[2rem] flex flex-col  truncate text-[9vw] md:text-[7vw] bg-no-repeat bg-landing bg-opacity-50 bg-center  z-0">
+        <div className="lg:w-1/2 w-[100%] h-[100%] relative font-montserrat p-[2rem] flex flex-col  truncate text-[9vw] md:text-[7vw] bg-no-repeat bg-landing bg-opacity-50 bg-center  z-0">
           <motion.div
             // initial={{opacity: 0}}
             // animate={{opacity:1}}
