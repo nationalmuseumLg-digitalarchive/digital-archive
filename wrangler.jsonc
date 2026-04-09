@@ -40,7 +40,6 @@
 			"binding": "DATABASE_URI",
 			"id": "ef8118cc6e9e44ec9888d46b527dd428",
 			"localConnectionString": "postgres://default:PaCRJeQrZ40I@ep-raspy-math-a43ynrbc.us-east-1.aws.neon.tech:5432/verceldb?sslmode=verify-full"
-"
 		}
 	]
 }
