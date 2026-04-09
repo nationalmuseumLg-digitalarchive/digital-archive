@@ -10,7 +10,6 @@ import { nestedDocsPlugin } from '@payloadcms/plugin-nested-docs'
 import { searchPlugin } from '@payloadcms/plugin-search'
 import { extractPlainText } from './utils/extractPlainText'
 
-
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { Pages } from './collections/Pages'
@@ -68,9 +67,13 @@ export default buildConfig({
   },
   db: postgresAdapter({
     pool: {
-      connectionString: typeof process.env.DATABASE_URI === 'object' && process.env.DATABASE_URI !== null
-        ? (process.env.DATABASE_URI as any).connectionString 
-        : (process.env.DATABASE_URI || process.env.BUILD_DATABASE_URI || process.env.DATABASE_URL || ''),
+      connectionString:
+        typeof process.env.DATABASE_URI === 'object' && process.env.DATABASE_URI !== null
+          ? (process.env.DATABASE_URI as any).connectionString
+          : process.env.DATABASE_URI ||
+            process.env.BUILD_DATABASE_URI ||
+            process.env.DATABASE_URL ||
+            '',
       max: process.env.CI ? 10 : 1,
     },
   }),
@@ -83,7 +86,7 @@ export default buildConfig({
       },
       fields: ({ defaultFields }) => [
         ...defaultFields,
-     
+
         {
           name: 'cardKeywords',
           type: 'text',
@@ -106,18 +109,18 @@ export default buildConfig({
 
         if (originalDoc.pageSection?.layout) {
           const cardBlocks = originalDoc.pageSection.layout.filter(
-            (block) => block.blockType === 'file' // Only focus on card blocks
-          );
-    
+            (block) => block.blockType === 'file', // Only focus on card blocks
+          )
+
           // Process each card block and ensure its fields are included in searchDoc
           cardBlocks.forEach((card, idx) => {
-            const cardIndex = `card_${idx}`; // Assign an index to avoid conflicts
-            
+            const cardIndex = `card_${idx}` // Assign an index to avoid conflicts
+
             // Index the card's title, description, and keyword for search
-            searchDoc.title = card.title || ''; // Searchable card title
-            searchDoc.description = card.description || ''; // Searchable card description
-            searchDoc.keyword = card.keyword || ''; // Searchable card keyword
-          });
+            searchDoc.title = card.title || '' // Searchable card title
+            searchDoc.description = card.description || '' // Searchable card description
+            searchDoc.keyword = card.keyword || '' // Searchable card keyword
+          })
         }
 
         return searchDoc
@@ -134,8 +137,8 @@ export default buildConfig({
             ? {
                 disablePayloadAccessControl: true,
                 generateFileURL: ({ filename, prefix }) => {
-                  const path = prefix ? `${prefix}/${filename}` : filename;
-                  return `${process.env.NEXT_PUBLIC_R2_URL}/${path}`;
+                  const path = prefix ? `${prefix}/${filename}` : filename
+                  return `${process.env.NEXT_PUBLIC_R2_URL}/${path}`
                 },
               }
             : {}),
@@ -157,7 +160,6 @@ export default buildConfig({
       generateLabel: (_, doc) => doc.title,
       generateURL: (docs) => docs.reduce((url, doc) => `${url}/${doc.slug}`, ''),
     }),
-
 
     // storage-adapter-placeholder
   ],

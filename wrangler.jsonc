@@ -34,5 +34,12 @@
 		// Enable image optimization
 		// see https://opennext.js.org/cloudflare/howtos/image
 		"binding": "IMAGES"
-	}
+	},
+	"hyperdrive": [
+		{
+			"binding": "DATABASE_URI",
+			"id": "1fcd77c85d7c4d18bd55bc6e546f6a31",
+			"localConnectionString": "postgres://default:PaCRJeQrZ40I@ep-raspy-math-a43ynrbc.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require"
+		}
+	]
 }
