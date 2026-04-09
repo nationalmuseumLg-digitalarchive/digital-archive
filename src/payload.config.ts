@@ -117,7 +117,9 @@ export default buildConfig({
       
       return {
         connectionString: uri,
-        max: process.env.CI ? 10 : undefined,
+        max: isWorker ? 2 : (process.env.CI ? 10 : undefined),
+        connectionTimeoutMillis: 30000,
+        idleTimeoutMillis: 30000,
       }
     })(),
   }),
