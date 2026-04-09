@@ -9,6 +9,7 @@ import { fileURLToPath } from 'url'
 import { nestedDocsPlugin } from '@payloadcms/plugin-nested-docs'
 import { searchPlugin } from '@payloadcms/plugin-search'
 import { extractPlainText } from './utils/extractPlainText'
+import { getCloudflareContext } from '@opennextjs/cloudflare'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
@@ -67,13 +68,17 @@ export default buildConfig({
   },
   db: postgresAdapter({
     pool: {
-      connectionString:
-        typeof process.env.DATABASE_URI === 'object' && process.env.DATABASE_URI !== null
-          ? (process.env.DATABASE_URI as any).connectionString
-          : process.env.DATABASE_URI ||
-            process.env.BUILD_DATABASE_URI ||
-            process.env.DATABASE_URL ||
-            '',
+      connectionString: (() => {
+        try {
+          const { env } = getCloudflareContext()
+          if ((env as any)?.DATABASE_URI?.connectionString) {
+            return (env as any).DATABASE_URI.connectionString
+          }
+        } catch {
+          // Not in Cloudflare context — build phase or local dev
+        }
+        return process.env.DATABASE_URI || ''
+      })(),
       max: process.env.CI ? 10 : 1,
     },
   }),

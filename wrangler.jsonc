@@ -38,8 +38,8 @@
 	"hyperdrive": [
 		{
 			"binding": "DATABASE_URI",
-			"id": "1fcd77c85d7c4d18bd55bc6e546f6a31",
-			"localConnectionString": "postgres://default:PaCRJeQrZ40I@ep-raspy-math-a43ynrbc.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require"
+			"id": "94e95a5c762142ec9748133ad01c7f2a",
+			"localConnectionString": "postgresql://neondb_owner:npg_ZYCDFQuK3q7R@ep-fancy-night-adxm2v2n-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require"
 		}
 	]
 }
