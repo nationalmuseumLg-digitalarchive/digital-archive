@@ -69,40 +69,52 @@ export default buildConfig({
   db: postgresAdapter({
     pool: (() => {
       let uri = '';
+      let envSource = 'Local/Build (Node.js)';
+      
+      // 1. Detect environment
+      const isWorker = typeof caches !== 'undefined';
       
       try {
-        const { env } = getCloudflareContext()
-        // Prioritize the Hyperdrive binding if it exists
-        if ((env as any)?.DATABASE_URI?.connectionString) {
-          uri = (env as any).DATABASE_URI.connectionString
+        if (isWorker) {
+          const { env } = getCloudflareContext()
+          // Check for Hyperdrive binding first
+          if ((env as any)?.DATABASE_URI?.connectionString) {
+            uri = (env as any).DATABASE_URI.connectionString
+            envSource = 'Cloudflare Hyperdrive';
+          } else if (typeof (env as any)?.DATABASE_URI === 'string') {
+            uri = (env as any).DATABASE_URI
+            envSource = 'Cloudflare Env Var';
+          }
         }
-      } catch {
-        // Fallback for build phase / local dev
+      } catch (err) {
+        console.error('[Payload DB] Error getting Cloudflare context:', err);
       }
 
+      // 2. Fallback to process.env if no URI found yet (Local/Build)
       if (!uri) {
         uri = process.env.DATABASE_URI || process.env.BUILD_DATABASE_URI || '';
       }
 
-      // Neon SNI workaround: Prepend endpoint ID to username
-      // Officially supported for environments like Cloudflare Workers where SNI negotiation can fail
-      if (uri && typeof uri === 'string' && uri.includes('neon.tech')) {
+      // 3. Neon SNI workaround: ONLY apply if in Worker environment
+      // Standard Node.js (Local/Build) handles SNI correctly and will fail with this patch.
+      if (isWorker && uri && uri.includes('neon.tech')) {
         const match = uri.match(/@(ep-[a-z0-9\-]+)[.-]/);
         if (match && match[1]) {
           const endpointId = match[1].replace('-pooler', '');
-          // Only patch if not already patched
           if (!uri.includes(`${endpointId}$`)) {
-             uri = uri.replace('://', `://${endpointId}$`);
-          }
-          // Force sslmode=require for better compatibility in serverless
-          if (uri.includes('sslmode=verify-full')) {
-            uri = uri.replace('sslmode=verify-full', 'sslmode=require');
-          } else if (!uri.includes('sslmode=')) {
-            uri += (uri.includes('?') ? '&' : '?') + 'sslmode=require';
+            uri = uri.replace('://', `://${endpointId}$`);
+            envSource += ' (Neon SNI Patch Applied)';
           }
         }
       }
 
+      // Add sslmode=require if missing and not in local dev
+      if (uri && !uri.includes('sslmode=') && isWorker) {
+          uri += (uri.includes('?') ? '&' : '?') + 'sslmode=require';
+      }
+
+      console.log(`[Payload DB] Environment: ${isWorker ? 'Worker' : 'Node.js'} | Source: ${envSource}`);
+      
       return {
         connectionString: uri,
         max: process.env.CI ? 10 : undefined,
