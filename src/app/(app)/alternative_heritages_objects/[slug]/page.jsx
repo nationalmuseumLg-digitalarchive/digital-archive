@@ -7,8 +7,8 @@ import PaginatedBlocks from '@/components/PaginatedBlocks'
 import * as motion from "framer-motion/client"
 
 
-// Set revalidation period to 0 for immediate updates
-export const revalidate = 0
+// Set revalidation period to 60 seconds to balance speed and freshness
+export const revalidate = 60
 
 const Page =  async({params}) => {
 
@@ -40,7 +40,6 @@ const Page =  async({params}) => {
           accessionNumber: true,
           location: true,
         },
-        cache: 'no-store',
       })
       itemsToRender = ethnographicResult.docs
     }
@@ -108,7 +107,6 @@ const Page =  async({params}) => {
         slug: true,
       },
       depth: 2,
-      cache: 'no-store',
     })
 
     return result.docs?.[0] || null

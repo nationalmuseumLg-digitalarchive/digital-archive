@@ -7,8 +7,8 @@ import PaginatedBlocks from '@/components/PaginatedBlocks'
 import * as motion from "framer-motion/client"
 
 
-// Set revalidation period to 0 for immediate updates
-export const revalidate = 0
+// Set revalidation period to 60 seconds to balance speed and freshness
+export const revalidate = 60
 
 const Page =  async({params}) => {
 
@@ -94,7 +94,6 @@ const queryPageBySlug = cache(async ({ slug }) => {
       internalName: true,
       pageSection: true,
     },
-    cache: 'no-store',
   })
 
   return result.docs?.[0] || null

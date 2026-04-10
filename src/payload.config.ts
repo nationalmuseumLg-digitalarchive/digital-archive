@@ -26,7 +26,6 @@ import { GovernmentReports } from './collections/GovernmentReports'
 import { Photos } from './collections/Photos'
 import { AlternativeHeritage } from './collections/AlternativeHeritage'
 import { AlternativeArchivalHeritage } from './collections/AlternativeArchivalHeritage'
-import { pages } from 'next/dist/build/templates/app-page'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -117,9 +116,9 @@ export default buildConfig({
       
       return {
         connectionString: uri,
-        max: isWorker ? 10 : (process.env.CI ? 10 : undefined),
-        connectionTimeoutMillis: 30000,
-        idleTimeoutMillis: 30000,
+        max: isWorker ? 10 : (process.env.CI ? 10 : 20),
+        connectionTimeoutMillis: 10000, // Reduced to 10s to avoid hanging
+        idleTimeoutMillis: 10000,
       }
     })(),
   }),

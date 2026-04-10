@@ -7,15 +7,94 @@ import { section } from 'framer-motion/client'
 
 import { getPayload } from 'payload'
 
+import { getPayload } from 'payload'
+import { unstable_cache } from 'next/cache'
+
+const getCachedHeaderData = unstable_cache(
+  async () => {
+    const payload = await getPayload({ config })
+    const [
+      header,
+      intelligence_reports,
+      manuscripts,
+      maps,
+      government_reports,
+      alternative_archival_heritages,
+      alternative_heritages,
+    ] = await Promise.all([
+      payload.findGlobal({
+        slug: 'header',
+        select: {
+          nav: true,
+          logo: true,
+        },
+      }),
+      payload.find({
+        collection: 'intelligence_reports',
+        draft: false,
+        limit: 100,
+        select: {
+          nav: true,
+        },
+      }),
+      payload.find({
+        collection: 'manuscripts',
+        draft: false,
+        limit: 100,
+        select: {
+          nav: true,
+        },
+      }),
+      payload.find({
+        collection: 'maps',
+        draft: false,
+        limit: 100,
+        select: {
+          nav: true,
+        },
+      }),
+      payload.find({
+        collection: 'government_reports',
+        draft: false,
+        limit: 100,
+        select: {
+          nav: true,
+        },
+      }),
+      payload.find({
+        collection: 'alternative_archival_heritages',
+        draft: false,
+        limit: 100,
+        select: {
+          nav: true,
+        },
+      }),
+      payload.find({
+        collection: 'alternative_heritages',
+        draft: false,
+        limit: 100,
+        select: {
+          nav: true,
+        },
+      }),
+    ])
+
+    return {
+      header,
+      intelligence_reports,
+      manuscripts,
+      maps,
+      government_reports,
+      alternative_archival_heritages,
+      alternative_heritages,
+    }
+  },
+  ['header-navigation-data'],
+  { revalidate: 300, tags: ['header', 'navigation'] },
+)
+
 const HeaderServer = async () => {
-  // params.map((d oc) => {
-  //   sections.push(doc.internalName)
-  // })
-
-  const payload = await getPayload({ config })
-
-  // Parallelize all queries to reduce cumulative latency and prevent timeouts
-  const [
+  const {
     header,
     intelligence_reports,
     manuscripts,
@@ -23,75 +102,12 @@ const HeaderServer = async () => {
     government_reports,
     alternative_archival_heritages,
     alternative_heritages,
-  ] = await Promise.all([
-    payload.findGlobal({
-      slug: 'header',
-    }),
-    payload.find({
-      collection: 'intelligence_reports',
-      draft: false,
-      limit: 100,
-      select: {
-        nav: true,
-      },
-    }),
-    payload.find({
-      collection: 'manuscripts',
-      draft: false,
-      limit: 100,
-      select: {
-        nav: true,
-      },
-    }),
-    payload.find({
-      collection: 'maps',
-      draft: false,
-      limit: 100,
-      select: {
-        nav: true,
-      },
-    }),
-    payload.find({
-      collection: 'government_reports',
-      draft: false,
-      limit: 100,
-      select: {
-        nav: true,
-      },
-    }),
-    payload.find({
-      collection: 'alternative_archival_heritages',
-      draft: false,
-      limit: 100,
-      select: {
-        nav: true,
-      },
-    }),
-    payload.find({
-      collection: 'alternative_heritages',
-      draft: false,
-      limit: 100,
-      select: {
-        nav: true,
-      },
-    }),
-  ])
+  } = await getCachedHeaderData()
 
   const navItems = header?.nav || []
 
-  //   const pages = await payload.find({
-  //     collection:'pages',
-  //     draft: false,
-  //     limit: 1000,
-  // })
-
-  // console.log(government_reports)
-
   return (
-    // <div>
-    // </div>
     <div className="flex relative items-center justify-center w-[100%]  h-fit py-4 border-b-[1px] border-primary px-8 z-20">
-      {/* <div className='w-[100%] h-[100%] pl-4'> */}
       <div className="w-fit h-fit ">
         <Link
           href={'/'}
@@ -102,10 +118,8 @@ const HeaderServer = async () => {
           }}
         >
           <Image
-            // layout='fill'
             width={35}
             height={40}
-            // sizes="(max-width: 768px) 500px, (max-width: 1200px) 1000px, 33vw"
             src={header.logo.url}
             alt="logo"
             className="aspect-square"
@@ -113,7 +127,6 @@ const HeaderServer = async () => {
         </Link>
       </div>
 
-      {/* </div> */}
       <Nav
         className=""
         pages={navItems}
@@ -124,9 +137,6 @@ const HeaderServer = async () => {
         maps={maps}
         government_reports={government_reports}
       />
-      {/* <div className='w-fit flex justify-center items-center right-4 p-4 top-4 h-fit invisible lg:visible'>
-         <Search/>
-      </div> */}
     </div>
   )
 }

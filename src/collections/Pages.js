@@ -18,7 +18,8 @@ export const Pages ={
             admin:{
                 position: 'sidebar'
             },
-            required: true
+            required: true,
+            index: true
           
         },
         {

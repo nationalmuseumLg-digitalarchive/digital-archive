@@ -23,6 +23,7 @@ export const AlternativePages = {
         position: 'sidebar',
       },
       required: true,
+      index: true,
     },
     {
       name: 'pageSection',
