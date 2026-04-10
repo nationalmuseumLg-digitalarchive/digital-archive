@@ -3,10 +3,6 @@ import config from '@payload-config'
 import Image from 'next/legacy/image'
 import Nav from '@/components/Nav'
 import Link from 'next/link'
-import { section } from 'framer-motion/client'
-
-import { getPayload } from 'payload'
-
 import { getPayload } from 'payload'
 import { unstable_cache } from 'next/cache'
 
