@@ -33,101 +33,98 @@ const Page =  async({params}) => {
         collection: 'ethnographicItems',
         limit: 1000,
         depth: 2,
-        cache: 'no-store'
+        select: {
+          objectName: true,
+          image: true,
+          description: true,
+          accessionNumber: true,
+          location: true,
+        },
+        cache: 'no-store',
       })
       itemsToRender = ethnographicResult.docs
     }
 
+    const anim = {
+      initial: {
+        width: '100vw',
+        // x: '100vw'
+      },
+      open: {
+        width: '0',
+        // x: 0
+      },
+      closed: {
+        width: '100vw',
+      },
+    }
 
-    const anim ={
-        initial: {
-          width:'100vw',
-          // x: '100vw'
-        },
-        open: {
-          width:'0',
-          // x: 0
-        },
-        closed :{
-          width:'100vw',
-        }
-      }
+    return (
+      <article>
+        <div className="w-[100%]  min-h-[100vh]  overflow-hidden h-[100%] font-montserrat flex flex-col gap-4 p-8">
+          <h1 className="sm:text-[3rem] text-[2rem] font-bold pb-8 uppercase">
+            {page.internalName}
+          </h1>
 
-      
-  return (
-    <article>
-
-
-    <div className='w-[100%]  min-h-[100vh]  overflow-hidden h-[100%] font-montserrat flex flex-col gap-4 p-8'>
-         <h1 className='sm:text-[3rem] text-[2rem] font-bold pb-8 uppercase' >{page.internalName}</h1>
-       
-       <div className='w-[100%] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-8 gap-2 h-[100%]'>
-        {/* <RenderBlocks blocks={page.pageSection.layout}/> */}
-       <PaginatedBlocks blocks={itemsToRender} itemsPerPage={20} isCollection={isEthnographic} />
-       </div>
-
-          
+          <div className="w-[100%] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-8 gap-2 h-[100%]">
+            {/* <RenderBlocks blocks={page.pageSection.layout}/> */}
+            <PaginatedBlocks blocks={itemsToRender} itemsPerPage={20} isCollection={isEthnographic} />
+          </div>
         </div>
 
-      <motion.div 
+        <motion.div
           variants={anim}
-          initial='initial'
-          animate='open'
-          exit='closed'
+          initial="initial"
+          animate="open"
+          exit="closed"
           transition={{
             duration: 0.4,
-            ease: 'easeOut'
+            ease: 'easeOut',
           }}
+          className="w-[100vw] bg-black h-[100vh] top-0 absolute"
+        ></motion.div>
+      </article>
+    )
+  }
 
-          className='w-[100vw] bg-black h-[100vh] top-0 absolute'>
+  export default Page
 
+  const queryPageBySlug = cache(async ({ slug }) => {
+    const parsedSlug = decodeURIComponent(slug)
 
-      </motion.div>
+    const payload = await getPayload({ config })
 
-
-
-
-
-    </article>
-  )
-}
-
-export default Page
-
-  
-const queryPageBySlug = cache(async({slug}) => {
-
-  const parsedSlug = decodeURIComponent(slug)
-
-  const payload = await getPayload({ config })
-
-  const result = await payload.find({
-      collection:'alternativePages',
-      limit:1,
-      where:{
-          slug:{
-              equals: parsedSlug,
-          }
+    const result = await payload.find({
+      collection: 'alternativePages',
+      limit: 1,
+      where: {
+        slug: {
+          equals: parsedSlug,
+        },
+      },
+      select: {
+        internalName: true,
+        pageSection: true,
+        slug: true,
       },
       depth: 2,
-      cache: 'no-store'
+      cache: 'no-store',
+    })
+
+    return result.docs?.[0] || null
   })
 
-  return result.docs?.[0] || null
-})
+  export const generateStaticParams = async () => {
+    const payload = await getPayload({ config })
 
-export const generateStaticParams = async() => {
-
-  const payload = await getPayload({ config })
-
-  const pages = await payload.find({
-      collection:'alternativePages',
+    const pages = await payload.find({
+      collection: 'alternativePages',
       draft: false,
       limit: 1000,
-  })
+      select: {
+        slug: true,
+      },
+    })
 
-
-  return pages.docs
-      ?.map((doc) => ({slug: doc.slug}))
-      
+    return pages.docs?.map((doc) => ({ slug: doc.slug }))
   }

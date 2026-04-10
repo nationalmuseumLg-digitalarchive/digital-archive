@@ -80,36 +80,39 @@ const Page =  async({params}) => {
 export default Page
 
   
-const queryPageBySlug = cache(async({slug}) => {
+const queryPageBySlug = cache(async ({ slug }) => {
   const parsedSlug = decodeURIComponent(slug)
   const payload = await getPayload({ config })
 
   const result = await payload.find({
-    collection:'pages',
-    limit:1,
-    where:{
-      slug:{
+    collection: 'pages',
+    limit: 1,
+    where: {
+      slug: {
         equals: parsedSlug,
-      }
+      },
     },
-    cache: 'no-store'
+    select: {
+      internalName: true,
+      pageSection: true,
+    },
+    cache: 'no-store',
   })
 
   return result.docs?.[0] || null
 })
 
-export const generateStaticParams = async() => {
-
+export const generateStaticParams = async () => {
   const payload = await getPayload({ config })
 
   const pages = await payload.find({
-      collection:'pages',
-      draft: false,
-      limit: 1000,
+    collection: 'pages',
+    draft: false,
+    limit: 1000,
+    select: {
+      slug: true,
+    },
   })
 
-
-  return pages.docs
-      ?.map((doc) => ({slug: doc.slug}))
-      
-  }
+  return pages.docs?.map((doc) => ({ slug: doc.slug }))
+}

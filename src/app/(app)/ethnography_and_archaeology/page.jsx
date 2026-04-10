@@ -99,7 +99,11 @@ const queryPageBySlug = cache(async(slug) => {
           slug:{
               equals:slug,
           }
-      }
+      },
+      select: {
+        internalName: true,
+        pageSection: true,
+      },
   })
 
   return result.docs?.[0] || null

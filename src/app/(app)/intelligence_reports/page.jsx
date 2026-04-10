@@ -21,6 +21,9 @@ const IntelligenceReports = async ({ searchParams }) => {
     draft: false,
     limit,
     page: currentPage,
+    select: {
+      nav: true,
+    },
   })
 
   const anim = {

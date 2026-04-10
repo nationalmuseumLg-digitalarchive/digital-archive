@@ -30,32 +30,50 @@ const HeaderServer = async () => {
     payload.find({
       collection: 'intelligence_reports',
       draft: false,
-      limit: 1000,
+      limit: 100,
+      select: {
+        nav: true,
+      },
     }),
     payload.find({
       collection: 'manuscripts',
       draft: false,
-      limit: 1000,
+      limit: 100,
+      select: {
+        nav: true,
+      },
     }),
     payload.find({
       collection: 'maps',
       draft: false,
-      limit: 1000,
+      limit: 100,
+      select: {
+        nav: true,
+      },
     }),
     payload.find({
       collection: 'government_reports',
       draft: false,
-      limit: 1000,
+      limit: 100,
+      select: {
+        nav: true,
+      },
     }),
     payload.find({
       collection: 'alternative_archival_heritages',
       draft: false,
-      limit: 1000,
+      limit: 100,
+      select: {
+        nav: true,
+      },
     }),
     payload.find({
       collection: 'alternative_heritages',
       draft: false,
-      limit: 1000,
+      limit: 100,
+      select: {
+        nav: true,
+      },
     }),
   ])
 

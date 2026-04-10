@@ -33,6 +33,11 @@ const Maps = async ({ searchParams }) => {
     draft: false,
     limit,
     page: currentPage,
+    select: {
+      image: true,
+      description: true,
+      file: true,
+    },
   })
 
   return (
