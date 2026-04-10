@@ -94,9 +94,10 @@ export default buildConfig({
         uri = process.env.DATABASE_URI || process.env.BUILD_DATABASE_URI || '';
       }
 
-      // 3. Neon SNI workaround: ONLY apply if in Worker environment
+      // 3. Neon SNI workaround: ONLY apply if in Worker environment AND NOT using Hyperdrive
       // Standard Node.js (Local/Build) handles SNI correctly and will fail with this patch.
-      if (isWorker && uri && uri.includes('neon.tech')) {
+      // Hyperdrive handles this correctly internally and will fail if we patch its proxy string.
+      if (isWorker && uri && uri.includes('neon.tech') && envSource !== 'Cloudflare Hyperdrive') {
         const match = uri.match(/@(ep-[a-z0-9\-]+)[.-]/);
         if (match && match[1]) {
           const endpointId = match[1].replace('-pooler', '');

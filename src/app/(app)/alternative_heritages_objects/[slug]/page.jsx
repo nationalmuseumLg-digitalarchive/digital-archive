@@ -118,7 +118,7 @@ const Page =  async({params}) => {
     const pages = await payload.find({
       collection: 'alternativePages',
       draft: false,
-      limit: 1000,
+      limit: 5,
       select: {
         slug: true,
       },
