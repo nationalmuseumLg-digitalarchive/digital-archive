@@ -6,15 +6,16 @@ import Image from "next/legacy/image"
 
 const FooterServer = async() => {
 
-  const payload = await getPayload({config})
+  const payload = await getPayload({ config })
 
-  const footer = await payload.findGlobal({
-      slug: 'footer'
-  })
-
-  const header = await payload.findGlobal({
-    slug: 'header'
-})
+  const [footer, header] = await Promise.all([
+    payload.findGlobal({
+      slug: 'footer',
+    }),
+    payload.findGlobal({
+      slug: 'header',
+    }),
+  ])
 
 
   

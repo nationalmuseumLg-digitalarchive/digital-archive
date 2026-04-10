@@ -6,16 +6,8 @@ import React, {cache} from 'react'
 import LandingPage from "@/components/LandingPage";
 // export const runtime = 'edge'
 
-const Home = async() => {
-
-
-const payload = await getPayload({config})
- 
-const pages = await payload.find({
-  collection:'pages',
-  draft: false,
-  limit: 1000,
-})
+const Home = async () => {
+  // Unused expensive query removed to optimize performance and prevent timeouts on Cloudflare.
 
 
 

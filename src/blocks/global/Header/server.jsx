@@ -14,52 +14,52 @@ const HeaderServer = async () => {
 
   const payload = await getPayload({ config })
 
-  const header = await payload.findGlobal({
-    slug: 'header',
-    // draft: true,
-  })
+  // Parallelize all queries to reduce cumulative latency and prevent timeouts
+  const [
+    header,
+    intelligence_reports,
+    manuscripts,
+    maps,
+    government_reports,
+    alternative_archival_heritages,
+    alternative_heritages,
+  ] = await Promise.all([
+    payload.findGlobal({
+      slug: 'header',
+    }),
+    payload.find({
+      collection: 'intelligence_reports',
+      draft: false,
+      limit: 1000,
+    }),
+    payload.find({
+      collection: 'manuscripts',
+      draft: false,
+      limit: 1000,
+    }),
+    payload.find({
+      collection: 'maps',
+      draft: false,
+      limit: 1000,
+    }),
+    payload.find({
+      collection: 'government_reports',
+      draft: false,
+      limit: 1000,
+    }),
+    payload.find({
+      collection: 'alternative_archival_heritages',
+      draft: false,
+      limit: 1000,
+    }),
+    payload.find({
+      collection: 'alternative_heritages',
+      draft: false,
+      limit: 1000,
+    }),
+  ])
 
   const navItems = header?.nav || []
-
-  //   const footer = await payload.findGlobal({
-  //     slug: 'footer'
-  // })
-
-  const intelligence_reports = await payload.find({
-    collection: 'intelligence_reports',
-    draft: false,
-    limit: 1000,
-  })
-
-  const manuscripts = await payload.find({
-    collection: 'manuscripts',
-    draft: false,
-    limit: 1000,
-  })
-
-  const maps = await payload.find({
-    collection: 'maps',
-    draft: false,
-    limit: 1000,
-  })
-
-  const government_reports = await payload.find({
-    collection: 'government_reports',
-    draft: false,
-    limit: 1000,
-  })
-
-  const alternative_archival_heritages = await payload.find({
-    collection: 'alternative_archival_heritages',
-    draft: false,
-    limit: 1000,
-  })
-
-  const alternative_heritages = await payload.find({
-    collection: 'alternative_heritages',
-    draft: false,
-    limit: 1000,
-  })
 
   //   const pages = await payload.find({
   //     collection:'pages',

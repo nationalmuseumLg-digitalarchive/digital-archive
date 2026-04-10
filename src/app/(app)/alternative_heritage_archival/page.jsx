@@ -9,117 +9,88 @@ import * as motion from "framer-motion/client"
 
 
 import Image from "next/legacy/image"
+import Pagination from '@/components/Pagination'
 
-const AlternativeHeritage = () => {
+const AlternativeHeritage = async ({ searchParams }) => {
+  const { page: pageParam } = await searchParams
+  const currentPage = parseInt(pageParam) || 1
+  const limit = 20
 
+  const payload = await getPayload({ config })
 
-  const anim ={
+  const pages = await payload.find({
+    collection: 'alternative_archival_heritages',
+    draft: false,
+    limit,
+    page: currentPage,
+  })
+
+  const anim = {
     initial: {
-      width:'100vw',
-      // x: '100vw'
+      width: '100vw',
     },
     open: {
-      width:'0',
-      // x: 0
+      width: '0',
     },
-    closed :{
-      width:'100vw',
-    }
+    closed: {
+      width: '100vw',
+    },
   }
-
-
-  const Pages = async() => {
-
-  
-
-    const payload = await getPayload({config})
- 
-   const pages = await payload.find({
-     collection:'alternative_archival_heritages',
-     draft: false,
-     limit: 1000,
- })
-
-
-
-
- 
-   return (
-       <>
-           {
-               pages.docs.map((page,i) => { 
-                 return <Link key={i} className='border-background uppercase font-semibold text-sm  hover:text-[#006600]' href={`/${page.nav[0].link}`}> {page.nav[0].label}</Link>
- 
-               })
-             }
-       
-       
-       </>
-   )
- }
-    
-
-
 
   return (
     <>
-      <div className='w-[100vw] min-h-[100vh] h-[100%] font-montserrat flex justify-between bg-background border-black border-t-[1px] flex-row p-8 '>
+      <div className="w-[100vw] min-h-[100vh] h-[100%] font-montserrat flex justify-between bg-background border-black border-t-[1px] flex-row p-8 ">
+        <div className="flex justify-between flex-col">
+          <div className="h-fit w-fit flex flex-col gap-4 text-[0.75rem] sm:text-[1rem]">
+            <h2 className="text-[2rem] sm:text-[3rem] font-bold pb-2 text-primary">
+              NIERIAN ALTERNATIVE ARCHIVAL HERITAGES
+            </h2>
 
-        <div className='flex justify-between flex-col'>
+            <div className="w-fit h-fit">
+              <Image
+                style={{ objectFit: 'contain' }}
+                className="object-contain"
+                width={300}
+                height={200}
+                src="/assets/alternative2.webp"
+                alt="maps"
+              />
+            </div>
 
-          <div className='h-fit w-fit  flex flex-col gap-4 text-[0.75rem] sm:text-[1rem]'>
-            <h2 className='text-[2rem] sm:text-[3rem] font-bold pb-2 text-primary'>NIERIAN ALTERNATIVE ARCHIVAL HERITAGES</h2>
+            <div className="pb-8 flex flex-col gap-4">
+              <h2 className="font-bold text-[2rem] ">SECTIONS</h2>
+              <div className="flex flex-col gap-4">
+                {pages.docs.map((page, i) => {
+                  return (
+                    <Link
+                      key={i}
+                      className="border-background uppercase font-semibold text-sm hover:text-[#006600]"
+                      href={`/${page.nav[0].link}`}
+                    >
+                      {' '}
+                      {page.nav[0].label}
+                    </Link>
+                  )
+                })}
+              </div>
 
-            <div className='w-fit h-fit'> 
-                <Image
-                    style={{objectFit: "contain"}}
-                    className="object-contain"
-                    width={300} height={200}  src="/assets/alternative2.webp" alt="maps" />
-            </div>  
-                {/* <p>Page description will be written here</p>                 */}
-                    
-          <div className='pb-8 flex flex-col gap-4'>
-
-            <h2 className='font-bold text-[2rem] '>SECTIONS</h2>
-            <Pages/>
-
+              <Pagination totalPages={pages.totalPages} currentPage={pages.page} />
+            </div>
           </div>
-      
-            </div> 
-
-
-        
-            
-         
-
         </div>
 
-
-      <motion.div 
+        <motion.div
           variants={anim}
-          initial='initial'
-          animate='open'
-          exit='closed'
+          initial="initial"
+          animate="open"
+          exit="closed"
           transition={{
             duration: 0.4,
-            ease: 'easeOut'
+            ease: 'easeOut',
           }}
-
-          className='w-[100vw] bg-black h-[100vh] left-0 top-0 absolute'>
-
-
-      </motion.div>
-
-   
-
-
-          {/* <Image src={footer.logo.url} alt='logo' width={64} height={20} className=' p-4 object-contain'/> */}
-
-
-        
-
-        </div>
-
+          className="w-[100vw] bg-black h-[100vh] left-0 top-0 absolute"
+        ></motion.div>
+      </div>
     </>
   )
 }
