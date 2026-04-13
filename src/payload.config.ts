@@ -74,13 +74,11 @@ export default buildConfig({
       let uri = '';
       let envSource = 'Local/Build (Node.js)';
       
-      // 1. Detect environment
       const isWorker = typeof caches !== 'undefined';
       
       try {
         if (isWorker) {
           const { env } = getCloudflareContext()
-          // Check for Hyperdrive binding first
           if ((env as any)?.DATABASE_URI?.connectionString) {
             uri = (env as any).DATABASE_URI.connectionString
             envSource = 'Cloudflare Hyperdrive';
@@ -93,46 +91,27 @@ export default buildConfig({
         console.error('[Payload DB] Error getting Cloudflare context:', err);
       }
 
-      // 2. Fallback to process.env if no URI found yet (Local/Build)
       if (!uri) {
         uri = process.env.DATABASE_URI || process.env.BUILD_DATABASE_URI || '';
       }
 
-      // 3. Neon SNI workaround: ONLY apply if in Worker environment AND NOT using Hyperdrive
-      // Standard Node.js (Local/Build) handles SNI correctly and will fail with this patch.
-      // Hyperdrive handles this correctly internally and will fail if we patch its proxy string.
-      if (isWorker && uri && uri.includes('neon.tech') && envSource !== 'Cloudflare Hyperdrive') {
-        const match = uri.match(/@(ep-[a-z0-9\-]+)[.-]/);
-        if (match && match[1]) {
-          const endpointId = match[1].replace('-pooler', '');
-          if (!uri.includes(`${endpointId}$`)) {
-            uri = uri.replace('://', `://${endpointId}$`);
-            envSource += ' (Neon SNI Patch Applied)';
-          }
-        }
-      }
-
-      // Add sslmode=require if missing and not in local dev AND ONLY IF not Hyperdrive!
-      // DO NOT encrypt the local segment to Hyperdrive inside the worker, it causes CPU hangs.
+      // Handle sslmode natively without SNI hack injection which breaks native ALPN on CF
       if (uri && !uri.includes('sslmode=') && isWorker && envSource !== 'Cloudflare Hyperdrive') {
           uri += (uri.includes('?') ? '&' : '?') + 'sslmode=require';
       }
-
-      console.log(`[Payload DB] Environment: ${isWorker ? 'Worker' : 'Node.js'} | Source: ${envSource}`);
       
       return {
         connectionString: uri,
-        // Max 10 allows Next.js to run parallel queries gracefully.
-        // We removed the TLS overhead earlier, so 10 parallel TCP connects to Hyperdrive is safe.
-        max: isWorker ? 10 : (process.env.CI ? 10 : 20),
-        connectionTimeoutMillis: 25000, 
+        // Limit max parallel TLS sockets to 3 to prevent Neon TLS handshake throttling at the edge
+        max: isWorker ? 3 : (process.env.CI ? 10 : 20),
         
-        // CRITICAL FOR SERVERLESS: Setting to 1 millisecond forces the connection to be 
-        // DESTROYED immediately after query completion. This completely solves Cloudflare 
-        // Isolate Freeze/Thaw zombie socket deadlocks.
+        // Fast fail to prevent 25s silent hangs exactly like the one seen in logs
+        connectionTimeoutMillis: 5000, 
+        
+        // Ensure immediate cleanup of sockets to prevent Cloudflare Isolate Freeze zombie deadlocks
         idleTimeoutMillis: isWorker ? 1 : 10000, 
         
-        query_timeout: 25000 
+        query_timeout: 10000 
       }
     })(),
   }),
