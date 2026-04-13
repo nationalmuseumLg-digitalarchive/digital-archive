@@ -95,7 +95,22 @@ export default buildConfig({
         uri = process.env.DATABASE_URI || process.env.BUILD_DATABASE_URI || '';
       }
 
-      // Handle sslmode natively without SNI hack injection which breaks native ALPN on CF
+      // Neon SNI workaround: Required because Payload initializes the DB pool at module scope, 
+      // meaning dynamic bindings like Hyperdrive cannot be resolved before requests. 
+      // Direct TCP connections to Neon from Cloudflare require the Endpoint ID in the username 
+      // to route properly since standard `pg` driver polyfills lack SNI.
+      if (isWorker && uri && uri.includes('neon.tech') && envSource !== 'Cloudflare Hyperdrive') {
+        const match = uri.match(/@(ep-[a-z0-9\-]+)[.-]/);
+        if (match && match[1]) {
+          const endpointId = match[1].replace('-pooler', '');
+          if (!uri.includes(`${endpointId}$`)) {
+            uri = uri.replace('://', `://${endpointId}$`);
+            envSource += ' (Neon SNI Patch Applied)';
+          }
+        }
+      }
+
+      // Handle sslmode natively
       if (uri && !uri.includes('sslmode=') && isWorker && envSource !== 'Cloudflare Hyperdrive') {
           uri += (uri.includes('?') ? '&' : '?') + 'sslmode=require';
       }
@@ -105,10 +120,12 @@ export default buildConfig({
         // Limit max parallel TLS sockets to 3 to prevent Neon TLS handshake throttling at the edge
         max: isWorker ? 3 : (process.env.CI ? 10 : 20),
         
-        // Fast fail to prevent 25s silent hangs exactly like the one seen in logs
+        // Fast fail to prevent silent hangs
         connectionTimeoutMillis: 5000, 
         
-        // Ensure immediate cleanup of sockets to prevent Cloudflare Isolate Freeze zombie deadlocks
+        // CRITICAL FOR SERVERLESS: Setting to 1 millisecond forces the connection to be 
+        // DESTROYED immediately after query completion. This completely solves Cloudflare 
+        // Isolate Freeze zombie socket deadlocks while max: 3 limits handshake storms.
         idleTimeoutMillis: isWorker ? 1 : 10000, 
         
         query_timeout: 10000 
