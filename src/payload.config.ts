@@ -114,11 +114,6 @@ export default buildConfig({
           uri += (uri.includes('?') ? '&' : '?') + 'sslmode=require';
       }
 
-      // Append aggressive statement timeout so no query can freeze the pool / Worker
-      if (uri && isWorker) {
-          uri += (uri.includes('?') ? '&' : '?') + 'options=-c%20statement_timeout=25000';
-      }
-
       console.log(`[Payload DB] Environment: ${isWorker ? 'Worker' : 'Node.js'} | Source: ${envSource}`);
       
       return {
@@ -128,7 +123,7 @@ export default buildConfig({
         max: isWorker ? 3 : (process.env.CI ? 10 : 20),
         connectionTimeoutMillis: 25000, 
         idleTimeoutMillis: 5000, // Reduced to aggressively close connections and avoid memory leaks
-        allowExitOnIdle: true, // Let Node/Cloudflare exit cleanly
+        query_timeout: 25000 // Safer native alternative to URI options
       }
     })(),
   }),
