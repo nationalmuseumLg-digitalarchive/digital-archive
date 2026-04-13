@@ -116,7 +116,7 @@ export default buildConfig({
 
       // Append aggressive statement timeout so no query can freeze the pool / Worker
       if (uri && isWorker) {
-          uri += (uri.includes('?') ? '&' : '?') + 'options=-c%20statement_timeout=10000';
+          uri += (uri.includes('?') ? '&' : '?') + 'options=-c%20statement_timeout=25000';
       }
 
       console.log(`[Payload DB] Environment: ${isWorker ? 'Worker' : 'Node.js'} | Source: ${envSource}`);
@@ -126,7 +126,7 @@ export default buildConfig({
         // Max 3 is a sweet spot. Allows concurrency but prevents V8 sandbox from 
         // CPU-hanging when creating multiple TCP sockets.
         max: isWorker ? 3 : (process.env.CI ? 10 : 20),
-        connectionTimeoutMillis: 10000, 
+        connectionTimeoutMillis: 25000, 
         idleTimeoutMillis: 5000, // Reduced to aggressively close connections and avoid memory leaks
         allowExitOnIdle: true, // Let Node/Cloudflare exit cleanly
       }
