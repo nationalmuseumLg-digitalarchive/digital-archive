@@ -108,27 +108,18 @@ export default buildConfig({
         }
       }
 
-      // Add sslmode=require if missing and not in local dev AND ONLY IF not Hyperdrive!
-      // DO NOT encrypt the local segment to Hyperdrive inside the worker, it causes CPU hangs.
-      if (uri && !uri.includes('sslmode=') && isWorker && envSource !== 'Cloudflare Hyperdrive') {
+      // Add sslmode=require if missing and not in local dev
+      if (uri && !uri.includes('sslmode=') && isWorker) {
           uri += (uri.includes('?') ? '&' : '?') + 'sslmode=require';
-      }
-
-      // Append aggressive statement timeout so no query can freeze the pool / Worker
-      if (uri && isWorker) {
-          uri += (uri.includes('?') ? '&' : '?') + 'options=-c%20statement_timeout=10000';
       }
 
       console.log(`[Payload DB] Environment: ${isWorker ? 'Worker' : 'Node.js'} | Source: ${envSource}`);
       
       return {
         connectionString: uri,
-        // Max 3 is a sweet spot. Allows concurrency but prevents V8 sandbox from 
-        // CPU-hanging when creating multiple TCP sockets.
-        max: isWorker ? 3 : (process.env.CI ? 10 : 20),
-        connectionTimeoutMillis: 10000, 
-        idleTimeoutMillis: 5000, // Reduced to aggressively close connections and avoid memory leaks
-        allowExitOnIdle: true, // Let Node/Cloudflare exit cleanly
+        max: isWorker ? 10 : (process.env.CI ? 10 : 20),
+        connectionTimeoutMillis: 10000, // Reduced to 10s to avoid hanging
+        idleTimeoutMillis: 10000,
       }
     })(),
   }),
