@@ -11,7 +11,15 @@ const nextConfig = {
   // Enable frequent revalidation
   experimental: {
     // Enable serverActions in Next.js 15+ (object form)
-    serverActions: {}
+    serverActions: {
+      allowedOrigins: [
+        'localhost:3000',
+        '*.pages.dev',
+        '*.workers.dev',
+        'nationalmuseumlagos.org',
+        '*.nationalmuseumlagos.org'
+      ]
+    }
   },
   turbopack: {
     root: '.'
