@@ -118,12 +118,17 @@ export default buildConfig({
       
       return {
         connectionString: uri,
-        // Max 3 is a sweet spot. Allows concurrency but prevents V8 sandbox from 
-        // CPU-hanging when creating multiple TCP sockets.
-        max: isWorker ? 3 : (process.env.CI ? 10 : 20),
+        // Max 10 allows Next.js to run parallel queries gracefully.
+        // We removed the TLS overhead earlier, so 10 parallel TCP connects to Hyperdrive is safe.
+        max: isWorker ? 10 : (process.env.CI ? 10 : 20),
         connectionTimeoutMillis: 25000, 
-        idleTimeoutMillis: 5000, // Reduced to aggressively close connections and avoid memory leaks
-        query_timeout: 25000 // Safer native alternative to URI options
+        
+        // CRITICAL FOR SERVERLESS: Setting to 1 millisecond forces the connection to be 
+        // DESTROYED immediately after query completion. This completely solves Cloudflare 
+        // Isolate Freeze/Thaw zombie socket deadlocks.
+        idleTimeoutMillis: isWorker ? 1 : 10000, 
+        
+        query_timeout: 25000 
       }
     })(),
   }),
