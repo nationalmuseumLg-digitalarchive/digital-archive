@@ -17,7 +17,9 @@ const nextConfig = {
         '*.pages.dev',
         '*.workers.dev',
         'nationalmuseumlagos.org',
-        '*.nationalmuseumlagos.org'
+        '*.nationalmuseumlagos.org',
+        'lagosmuseumarchives.ng',
+        '*.lagosmuseumarchives.ng'
       ]
     }
   },
