@@ -16,8 +16,6 @@ const nextConfig = {
         'localhost:3000',
         '*.pages.dev',
         '*.workers.dev',
-        'nationalmuseumlagos.org',
-        '*.nationalmuseumlagos.org',
         'lagosmuseumarchives.ng',
         '*.lagosmuseumarchives.ng'
       ]

@@ -57,8 +57,11 @@ export default buildConfig({
   globals: [Header, Footer],
   // Fix for proxy auth drops and CORS mismatch in Cloudflare
   cors: '*', // Allow origin matching bypass for proxy host changes
-  csrf: process.env.NEXT_PUBLIC_SERVER_URL ? [process.env.NEXT_PUBLIC_SERVER_URL] : [],
-  serverURL: process.env.NEXT_PUBLIC_SERVER_URL || process.env.PAYLOAD_PUBLIC_SERVER_URL || undefined,
+  csrf: [
+    'https://lagosmuseumarchives.ng',
+    process.env.NEXT_PUBLIC_SERVER_URL,
+  ].filter(Boolean) as string[],
+  serverURL: process.env.NEXT_PUBLIC_SERVER_URL || process.env.PAYLOAD_PUBLIC_SERVER_URL || 'https://lagosmuseumarchives.ng',
   upload: {
     limits: {
       fileSize: 100000000, // 100MB, written in bytes
