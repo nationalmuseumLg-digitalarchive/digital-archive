@@ -98,24 +98,16 @@ export default buildConfig({
         uri = process.env.DATABASE_URI || process.env.BUILD_DATABASE_URI || '';
       }
 
-      // Neon SNI workaround: Required because Payload initializes the DB pool at module scope, 
-      // meaning dynamic bindings like Hyperdrive cannot be resolved before requests. 
-      // Direct TCP connections to Neon from Cloudflare require the Endpoint ID in the username 
-      // to route properly since standard `pg` driver polyfills lack SNI.
-      if (isWorker && uri && uri.includes('neon.tech') && envSource !== 'Cloudflare Hyperdrive') {
-        const match = uri.match(/@(ep-[a-z0-9\-]+)[.-]/);
-        if (match && match[1]) {
-          const endpointId = match[1].replace('-pooler', '');
-          if (!uri.includes(`${endpointId}$`)) {
-            uri = uri.replace('://', `://${endpointId}$`);
-            envSource += ' (Neon SNI Patch Applied)';
-          }
-        }
-      }
+      // Neon SNI workaround: Removed because Cloudflare Workers now natively support SNI.
+      // Modifying the username can cause authentication failures with newer Neon setups.
 
-      // Handle sslmode natively
-      if (uri && !uri.includes('sslmode=') && isWorker && envSource !== 'Cloudflare Hyperdrive') {
+      // Force sslmode=require to avoid root CA verification issues in Cloudflare Workers
+      if (uri && isWorker && envSource !== 'Cloudflare Hyperdrive') {
+        if (uri.includes('sslmode=')) {
+          uri = uri.replace(/sslmode=[^&]+/, 'sslmode=require');
+        } else {
           uri += (uri.includes('?') ? '&' : '?') + 'sslmode=require';
+        }
       }
       
       return {
