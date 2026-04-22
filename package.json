@@ -23,8 +23,8 @@
   },
   "packageManager": "npm@10.9.2",
   "engines": {
-    "node": ">=20.12.2 <23",
-    "npm": ">=10 <11"
+    "node": "20.12.2",
+    "npm": "10.9.2"
   },
   "overrides": {
     "@payloadcms/next": "3.72.0",
