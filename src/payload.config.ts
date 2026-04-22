@@ -57,6 +57,13 @@ export default buildConfig({
   globals: [Header, Footer],
   // Fix for proxy auth drops and CORS mismatch in Cloudflare
   cors: '*', // Allow origin matching bypass for proxy host changes
+  // Explicit cookie config to prevent Cloudflare/browser from dropping the payload-token
+  cookiePrefix: 'payload',
+  cookie: {
+    domain: 'lagosmuseumarchives.ng',
+    secure: true,
+    sameSite: 'Lax',
+  },
   csrf: [
     'https://lagosmuseumarchives.ng',
     process.env.NEXT_PUBLIC_SERVER_URL,
@@ -97,9 +104,6 @@ export default buildConfig({
       if (!uri) {
         uri = process.env.DATABASE_URI || process.env.BUILD_DATABASE_URI || '';
       }
-
-      // Neon SNI workaround: Removed because Cloudflare Workers now natively support SNI.
-      // Modifying the username can cause authentication failures with newer Neon setups.
 
       // Force sslmode=require to avoid root CA verification issues in Cloudflare Workers
       if (uri && isWorker && envSource !== 'Cloudflare Hyperdrive') {
