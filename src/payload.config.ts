@@ -114,20 +114,21 @@ export default buildConfig({
         }
       }
       
+      const isHyperdrive = envSource === 'Cloudflare Hyperdrive'
+
       return {
         connectionString: uri,
-        // Limit max parallel TLS sockets to 3 to prevent Neon TLS handshake throttling at the edge
-        max: isWorker ? 3 : (process.env.CI ? 10 : 20),
+        // Give Hyperdrive more connections; increase worker fallback to 5 to avoid deadlocks
+        max: isHyperdrive ? 15 : isWorker ? 5 : 20,
         
-        // Fast fail to prevent silent hangs
-        connectionTimeoutMillis: 5000, 
+        // Increase connection timeout to allow Neon cold starts to resolve safely
+        connectionTimeoutMillis: 15000, 
         
-        // CRITICAL FOR SERVERLESS: Setting to 1 millisecond forces the connection to be 
-        // DESTROYED immediately after query completion. This completely solves Cloudflare 
-        // Isolate Freeze zombie socket deadlocks while max: 3 limits handshake storms.
-        idleTimeoutMillis: isWorker ? 1 : 10000, 
+        // Let Hyperdrive manage its own connection pooling; only enforce 1ms kill for direct worker connections
+        idleTimeoutMillis: isHyperdrive ? 30000 : isWorker ? 1 : 10000, 
         
-        query_timeout: 10000 
+        // Increase query timeout to 30s to prevent the 10s cutoff during heavy login joins
+        query_timeout: 30000 
       }
     })(),
   }),
