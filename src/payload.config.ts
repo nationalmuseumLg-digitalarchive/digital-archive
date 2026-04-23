@@ -10,6 +10,7 @@ import { nestedDocsPlugin } from '@payloadcms/plugin-nested-docs'
 import { searchPlugin } from '@payloadcms/plugin-search'
 import { extractPlainText } from './utils/extractPlainText'
 import { getCloudflareContext } from '@opennextjs/cloudflare'
+import { getEnv } from './utils/getEnv'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
@@ -66,68 +67,41 @@ export default buildConfig({
   },
   csrf: [
     'https://lagosmuseumarchives.ng',
-    process.env.NEXT_PUBLIC_SERVER_URL,
+    getEnv('NEXT_PUBLIC_SERVER_URL'),
   ].filter(Boolean) as string[],
-  serverURL: process.env.NEXT_PUBLIC_SERVER_URL || process.env.PAYLOAD_PUBLIC_SERVER_URL || 'https://lagosmuseumarchives.ng',
+  serverURL: getEnv('NEXT_PUBLIC_SERVER_URL') || getEnv('PAYLOAD_PUBLIC_SERVER_URL') || 'https://lagosmuseumarchives.ng',
   upload: {
     limits: {
       fileSize: 100000000, // 100MB, written in bytes
     },
   },
   editor: lexicalEditor(),
-  secret: process.env.PAYLOAD_SECRET || '',
+  secret: getEnv('PAYLOAD_SECRET'),
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
   db: postgresAdapter({
     pool: (() => {
-      let uri = '';
-      let envSource = 'Local/Build (Node.js)';
+      const uri = getEnv('DATABASE_URI')
+      const isWorker = typeof caches !== 'undefined'
+      const isHyperdrive = uri.includes('hyperdrive') || (isWorker && getEnv('DATABASE_URI_SOURCE') === 'Hyperdrive') // Fallback check or explicit flag
       
-      const isWorker = typeof caches !== 'undefined';
-      
-      try {
-        if (isWorker) {
-          const { env } = getCloudflareContext()
-          if ((env as any)?.DATABASE_URI?.connectionString) {
-            uri = (env as any).DATABASE_URI.connectionString
-            envSource = 'Cloudflare Hyperdrive';
-          } else if (typeof (env as any)?.DATABASE_URI === 'string') {
-            uri = (env as any).DATABASE_URI
-            envSource = 'Cloudflare Env Var';
-          }
-        }
-      } catch (err) {
-        console.error('[Payload DB] Error getting Cloudflare context:', err);
-      }
-
-      if (!uri) {
-        uri = process.env.DATABASE_URI || process.env.BUILD_DATABASE_URI || '';
-      }
-
-      // Force sslmode=require to avoid root CA verification issues in Cloudflare Workers
-      if (uri && isWorker && envSource !== 'Cloudflare Hyperdrive') {
-        if (uri.includes('sslmode=')) {
-          uri = uri.replace(/sslmode=[^&]+/, 'sslmode=require');
+      // Force sslmode=require for direct connections in Workers to avoid CA issues
+      let connectionString = uri
+      if (connectionString && isWorker && !isHyperdrive) {
+        if (connectionString.includes('sslmode=')) {
+          connectionString = connectionString.replace(/sslmode=[^&]+/, 'sslmode=require')
         } else {
-          uri += (uri.includes('?') ? '&' : '?') + 'sslmode=require';
+          connectionString += (connectionString.includes('?') ? '&' : '?') + 'sslmode=require'
         }
       }
       
-      const isHyperdrive = envSource === 'Cloudflare Hyperdrive'
-
       return {
-        connectionString: uri,
-        // Give Hyperdrive more connections; increase worker fallback to 5 to avoid deadlocks
-        max: isHyperdrive ? 15 : isWorker ? 5 : 20,
-        
-        // Increase connection timeout to allow Neon cold starts to resolve safely
+        connectionString,
+        // Hyperdrive manages pooling; for direct worker connections we must be strict
+        max: isHyperdrive ? 20 : (isWorker ? 5 : 20),
         connectionTimeoutMillis: 15000, 
-        
-        // Let Hyperdrive manage its own connection pooling; only enforce 1ms kill for direct worker connections
-        idleTimeoutMillis: isHyperdrive ? 30000 : isWorker ? 1 : 10000, 
-        
-        // Increase query timeout to 30s to prevent the 10s cutoff during heavy login joins
+        idleTimeoutMillis: isHyperdrive ? 30000 : (isWorker ? 1 : 10000), 
         query_timeout: 30000 
       }
     })(),
@@ -188,25 +162,25 @@ export default buildConfig({
           prefix: 'media',
           acl: 'public-read',
           cacheControl: 'public, max-age=31536000, immutable',
-          ...(process.env.NEXT_PUBLIC_R2_URL
+          ...(getEnv('NEXT_PUBLIC_R2_URL')
             ? {
                 disablePayloadAccessControl: true,
                 generateFileURL: ({ filename, prefix }) => {
                   const path = prefix ? `${prefix}/${filename}` : filename
-                  return `${process.env.NEXT_PUBLIC_R2_URL}/${path}`
+                  return `${getEnv('NEXT_PUBLIC_R2_URL')}/${path}`
                 },
               }
             : {}),
         },
       },
-      bucket: process.env.S3_BUCKET,
+      bucket: getEnv('S3_BUCKET'),
       config: {
         credentials: {
           forcePathStyle: true,
-          accessKeyId: process.env.S3_ACCESS_KEY_ID,
-          secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
+          accessKeyId: getEnv('S3_ACCESS_KEY_ID'),
+          secretAccessKey: getEnv('S3_SECRET_ACCESS_KEY'),
         },
-        endpoint: process.env.S3_ENDPOINT,
+        endpoint: getEnv('S3_ENDPOINT'),
         region: 'auto',
       },
     }),

@@ -1,5 +1,8 @@
 import type { CollectionConfig } from 'payload'
 
+// Detect Cloudflare Worker environment
+const isWorker = typeof caches !== 'undefined'
+
 export const Media: CollectionConfig = {
   slug: 'media',
   access: {
@@ -10,7 +13,8 @@ export const Media: CollectionConfig = {
     useAsTitle: 'alt',
   },
   upload: {
-    imageSizes: [
+    // Disable server-side resizing in Cloudflare Workers because 'sharp' is not available
+    imageSizes: isWorker ? [] : [
       {
         name: 'thumb',
         width: 300,
