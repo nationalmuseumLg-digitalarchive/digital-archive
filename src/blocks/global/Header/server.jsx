@@ -101,6 +101,7 @@ const HeaderServer = async () => {
   } = await getCachedHeaderData()
 
   const navItems = header?.nav || []
+  const logoUrl = header?.logo?.url
 
   return (
     <div className="flex relative items-center justify-center w-[100%]  h-fit py-4 border-b-[1px] border-primary px-8 z-20">
@@ -113,13 +114,15 @@ const HeaderServer = async () => {
             bottom: '4px',
           }}
         >
-          <Image
-            width={35}
-            height={40}
-            src={header.logo.url}
-            alt="logo"
-            className="aspect-square"
-          />
+          {logoUrl && (
+            <Image
+              width={35}
+              height={40}
+              src={logoUrl}
+              alt="logo"
+              className="aspect-square"
+            />
+          )}
         </Link>
       </div>
 

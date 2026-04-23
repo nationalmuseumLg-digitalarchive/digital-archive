@@ -1,4 +1,8 @@
 /* THIS FILE WAS GENERATED AUTOMATICALLY BY PAYLOAD. */
+// force-dynamic prevents the admin layout from being statically cached,
+// which would break cookie-based authentication on Cloudflare Workers.
+export const dynamic = 'force-dynamic'
+
 import configPromise from '@payload-config'
 import '@payloadcms/next/css'
 import { RootLayout, handleServerFunctions } from '@payloadcms/next/layouts'

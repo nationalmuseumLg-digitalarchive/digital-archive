@@ -1,10 +1,8 @@
-import { Inter, Major_Mono_Display, Old_Standard_TT, Playfair, Montserrat } from 'next/font/google'
+import { Major_Mono_Display, Old_Standard_TT, Playfair_Display, Montserrat } from 'next/font/google'
 import './globals.css'
-import Nav from '@/components/Nav'
-import { motion, AnimatePresence } from 'framer-motion'
+import PageTransition from '@/components/PageTransition'
 import HeaderServer from '../../blocks/global/Header/server'
 import FooterServer from '../../blocks/global/Footer/server'
-import Image from 'next/legacy/image'
 
 
 
@@ -22,8 +20,7 @@ const monoMajor = Major_Mono_Display({
   display: 'swap',
 })
 
-const playfair = Playfair({
-  // weight : '400',
+const playfair = Playfair_Display({
   variable: '--font-playfair',
   subsets: ['latin'],
   display: 'swap',
@@ -48,8 +45,7 @@ export default function RootLayout({ children }) {
         className={`${monoMajor.variable} ${playfair.variable} ${old.variable} ${montserrat.variable}`}
       >
         <HeaderServer />
-        {/* <Nav/> */}
-        <AnimatePresence>{children}</AnimatePresence>
+        <PageTransition>{children}</PageTransition>
         <FooterServer />
       </body>
     </html>

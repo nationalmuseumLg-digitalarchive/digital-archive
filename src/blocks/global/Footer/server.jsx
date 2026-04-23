@@ -28,6 +28,7 @@ const getCachedFooterData = unstable_cache(
 
 const FooterServer = async () => {
   const { footer, header } = await getCachedFooterData()
+  const footerLogoUrl = footer?.logo?.url
 
   return (
     <>
@@ -97,13 +98,15 @@ const FooterServer = async () => {
 
         <div className="flex h-[100%] justify-start sm:h-[100%] w-fit gap-4 flex-col text-background">
           <div className="items-center  h-fit flex">
-            <Image
-              src={footer.logo.url}
-              alt="logo"
-              width={50}
-              height={50}
-              className=" sm:p-4 object-contain h-fit"
-            />
+            {footerLogoUrl && (
+              <Image
+                src={footerLogoUrl}
+                alt="logo"
+                width={50}
+                height={50}
+                className=" sm:p-4 object-contain h-fit"
+              />
+            )}
 
             <Link href="/" className="text-background  h-fit font-bold">
               NATIONAL MUSEUM LAGOS

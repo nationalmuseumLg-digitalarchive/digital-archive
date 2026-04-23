@@ -1,5 +1,9 @@
 /* THIS FILE WAS GENERATED AUTOMATICALLY BY PAYLOAD. */
 /* DO NOT MODIFY it because it could be re-written at any time. */
+// Cloudflare Workers: API routes must always be dynamic so requests are never
+// served from a stale static cache. Required for auth (login/logout) to work.
+export const dynamic = 'force-dynamic'
+
 import config from '@payload-config'
 import { REST_DELETE, REST_GET, REST_OPTIONS, REST_PATCH, REST_POST } from '@payloadcms/next/routes'
 

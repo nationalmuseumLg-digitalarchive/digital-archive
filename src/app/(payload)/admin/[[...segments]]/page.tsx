@@ -1,4 +1,8 @@
 /* THIS FILE WAS GENERATED AUTOMATICALLY BY PAYLOAD. */
+// force-dynamic ensures Cloudflare Workers never statically caches this route.
+// Auth-protected pages MUST be dynamic so the JWT cookie is read on every request.
+export const dynamic = 'force-dynamic'
+
 import type { Metadata } from 'next'
 
 

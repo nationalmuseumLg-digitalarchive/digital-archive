@@ -82,28 +82,49 @@ export default buildConfig({
   },
   db: postgresAdapter({
     pool: (() => {
-      const uri = getEnv('DATABASE_URI')
+      // Use a getter so connectionString is resolved at request time, not at module
+      // evaluation time. This is critical for Cloudflare Workers where Hyperdrive
+      // bindings are only accessible inside the request context (AsyncLocalStorage).
       const isWorker = typeof caches !== 'undefined'
-      const isHyperdrive = uri.includes('hyperdrive') || (isWorker && getEnv('DATABASE_URI_SOURCE') === 'Hyperdrive') // Fallback check or explicit flag
-      
-      // Force sslmode=require for direct connections in Workers to avoid CA issues
-      let connectionString = uri
-      if (connectionString && isWorker && !isHyperdrive) {
-        if (connectionString.includes('sslmode=')) {
-          connectionString = connectionString.replace(/sslmode=[^&]+/, 'sslmode=require')
-        } else {
-          connectionString += (connectionString.includes('?') ? '&' : '?') + 'sslmode=require'
-        }
+
+      const poolConfig: Record<string, unknown> = {
+        // With Hyperdrive, 5 connections per isolate is sufficient.
+        // Hyperdrive manages the actual pool to Neon externally.
+        max: isWorker ? 5 : 20,
+        connectionTimeoutMillis: 10000,
+        // Keep connections alive within the isolate so they can be reused
+        // across requests. Hyperdrive handles the upstream pooling to Neon.
+        idleTimeoutMillis: isWorker ? 0 : 10000,
+        allowExitOnIdle: false,
+        statement_timeout: 30000,
       }
-      
-      return {
-        connectionString,
-        // Hyperdrive manages pooling; for direct worker connections we must be strict
-        max: isHyperdrive ? 20 : (isWorker ? 5 : 20),
-        connectionTimeoutMillis: 15000, 
-        idleTimeoutMillis: isHyperdrive ? 30000 : (isWorker ? 1 : 10000), 
-        query_timeout: 30000 
-      }
+
+      // Define connectionString as a getter so it is evaluated lazily —
+      // specifically when pg.Pool is constructed inside postgresAdapter.connect(),
+      // which is called by getPayload() on the first incoming request when the
+      // Cloudflare request context (and therefore the Hyperdrive binding) is live.
+      Object.defineProperty(poolConfig, 'connectionString', {
+        get() {
+          const uri = getEnv('DATABASE_URI')
+          const isHyperdrive =
+            uri.includes('hyperdrive') ||
+            (isWorker && process.env.DATABASE_URI_SOURCE === 'Hyperdrive')
+
+          // Force sslmode=require for direct Worker → Neon connections;
+          // not needed for Hyperdrive (its proxy handles TLS internally).
+          if (uri && isWorker && !isHyperdrive) {
+            if (uri.includes('sslmode=')) {
+              return uri.replace(/sslmode=[^&]+/, 'sslmode=require')
+            }
+            return uri + (uri.includes('?') ? '&' : '?') + 'sslmode=require'
+          }
+          return uri
+        },
+        enumerable: true,
+        configurable: true,
+      })
+
+      return poolConfig as any
     })(),
   }),
   plugins: [
@@ -176,11 +197,13 @@ export default buildConfig({
       bucket: getEnv('S3_BUCKET'),
       config: {
         credentials: {
-          forcePathStyle: true,
           accessKeyId: getEnv('S3_ACCESS_KEY_ID'),
           secretAccessKey: getEnv('S3_SECRET_ACCESS_KEY'),
         },
-        endpoint: getEnv('S3_ENDPOINT'),
+        // R2 requires path-style URLs; this must be at the top level of the
+        // S3Client config, NOT inside the credentials object.
+        forcePathStyle: true,
+        endpoint: getEnv('S3_ENDPOINT').replace(/\/$/, ''), // strip trailing slash
         region: 'auto',
       },
     }),
