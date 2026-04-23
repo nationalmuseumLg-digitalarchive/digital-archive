@@ -3232,127 +3232,127 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/my-route/route_client-reference-manifest.js": {
-      "bytes": 90410,
+      "bytes": 87038,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/_not-found/page_client-reference-manifest.js": {
-      "bytes": 90412,
+      "bytes": 87040,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/page_client-reference-manifest.js": {
-      "bytes": 90321,
+      "bytes": 86949,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/photos/page_client-reference-manifest.js": {
-      "bytes": 89731,
+      "bytes": 87047,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/maps/page_client-reference-manifest.js": {
-      "bytes": 89717,
+      "bytes": 87031,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/manuscripts/page_client-reference-manifest.js": {
-      "bytes": 89766,
-      "imports": [],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/government_reports/page_client-reference-manifest.js": {
-      "bytes": 89815,
-      "imports": [],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/ethnography_and_archaeology/page_client-reference-manifest.js": {
-      "bytes": 91007,
+      "bytes": 86874,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/intelligence_reports/page_client-reference-manifest.js": {
-      "bytes": 89829,
+      "bytes": 87159,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/government_reports/page_client-reference-manifest.js": {
+      "bytes": 87143,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/ethnography_and_archaeology/page_client-reference-manifest.js": {
+      "bytes": 87559,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/alternative_heritage_archival/page_client-reference-manifest.js": {
-      "bytes": 89892,
+      "bytes": 87231,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/alternative_heritages_objects/page_client-reference-manifest.js": {
-      "bytes": 89892,
+      "bytes": 87231,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/about/page_client-reference-manifest.js": {
-      "bytes": 89724,
+      "bytes": 86832,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(payload)/api/graphql-playground/route_client-reference-manifest.js": {
-      "bytes": 90558,
+      "bytes": 87186,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(payload)/api/graphql/route_client-reference-manifest.js": {
-      "bytes": 90536,
+      "bytes": 87164,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(payload)/api/[...slug]/route_client-reference-manifest.js": {
-      "bytes": 90440,
+      "bytes": 87068,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(payload)/admin/[[...segments]]/page_client-reference-manifest.js": {
-      "bytes": 103460,
+      "bytes": 100088,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/manuscripts/k.c_murray/page_client-reference-manifest.js": {
-      "bytes": 89936,
+      "bytes": 87044,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/manuscripts/benin_expeditions/page_client-reference-manifest.js": {
-      "bytes": 89980,
-      "imports": [],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/government_reports/[slug]/page_client-reference-manifest.js": {
-      "bytes": 90704,
+      "bytes": 87088,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/intelligence_reports/[slug]/page_client-reference-manifest.js": {
-      "bytes": 90726,
+      "bytes": 88008,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/government_reports/[slug]/page_client-reference-manifest.js": {
+      "bytes": 87984,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/alternative_heritage_archival/[slug]/page_client-reference-manifest.js": {
-      "bytes": 90822,
+      "bytes": 88113,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/alternative_heritages_objects/[slug]/page_client-reference-manifest.js": {
-      "bytes": 90825,
+      "bytes": 88116,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/manuscripts/k.c_murray/[slug]/page_client-reference-manifest.js": {
-      "bytes": 91329,
+      "bytes": 88019,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/manuscripts/benin_expeditions/[slug]/page_client-reference-manifest.js": {
-      "bytes": 91411,
+      "bytes": 88094,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/server/load-manifest.external.js": {
-      "bytes": 69395,
+      "bytes": 92635,
       "imports": [
         {
           "path": "path",
@@ -3405,6 +3405,11 @@
           "original": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/manuscripts/page_client-reference-manifest.js"
         },
         {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/intelligence_reports/page_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/intelligence_reports/page_client-reference-manifest.js"
+        },
+        {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/government_reports/page_client-reference-manifest.js",
           "kind": "require-call",
           "original": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/government_reports/page_client-reference-manifest.js"
@@ -3413,11 +3418,6 @@
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/ethnography_and_archaeology/page_client-reference-manifest.js",
           "kind": "require-call",
           "original": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/ethnography_and_archaeology/page_client-reference-manifest.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/intelligence_reports/page_client-reference-manifest.js",
-          "kind": "require-call",
-          "original": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/intelligence_reports/page_client-reference-manifest.js"
         },
         {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/alternative_heritage_archival/page_client-reference-manifest.js",
@@ -3465,14 +3465,14 @@
           "original": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/manuscripts/benin_expeditions/page_client-reference-manifest.js"
         },
         {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/government_reports/[slug]/page_client-reference-manifest.js",
-          "kind": "require-call",
-          "original": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/government_reports/[slug]/page_client-reference-manifest.js"
-        },
-        {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/intelligence_reports/[slug]/page_client-reference-manifest.js",
           "kind": "require-call",
           "original": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/intelligence_reports/[slug]/page_client-reference-manifest.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/government_reports/[slug]/page_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/government_reports/[slug]/page_client-reference-manifest.js"
         },
         {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/alternative_heritage_archival/[slug]/page_client-reference-manifest.js",
@@ -3630,11 +3630,6 @@
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/3704.js": {
       "bytes": 9222,
-      "imports": [],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/3716.js": {
-      "bytes": 22679,
       "imports": [],
       "format": "cjs"
     },
@@ -3825,57 +3820,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/6232.js": {
-      "bytes": 24864,
-      "imports": [],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/6338.js": {
-      "bytes": 7256,
-      "imports": [],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/6382.js": {
-      "bytes": 11248,
-      "imports": [],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/6892.js": {
-      "bytes": 6624,
-      "imports": [],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/7086.js": {
-      "bytes": 7084,
-      "imports": [],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/7105.js": {
-      "bytes": 7281,
-      "imports": [],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/7115.js": {
-      "bytes": 107336,
-      "imports": [],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/7193.js": {
-      "bytes": 42486,
-      "imports": [],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/7378.js": {
-      "bytes": 7775,
-      "imports": [],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/7388.js": {
-      "bytes": 8117,
-      "imports": [],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/7471.js": {
-      "bytes": 12867,
+      "bytes": 25045,
       "imports": [],
       "format": "cjs"
     },
@@ -3917,8 +3862,8 @@
       ],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/7538.js": {
-      "bytes": 570339,
+    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/6237.js": {
+      "bytes": 250721,
       "imports": [
         {
           "path": "../../../node_modules/@emotion/is-prop-valid/dist/emotion-is-prop-valid.cjs.js",
@@ -3926,6 +3871,56 @@
           "original": "@emotion/is-prop-valid"
         }
       ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/6338.js": {
+      "bytes": 7256,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/6382.js": {
+      "bytes": 11248,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/6892.js": {
+      "bytes": 6624,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/7086.js": {
+      "bytes": 7084,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/7105.js": {
+      "bytes": 7281,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/7193.js": {
+      "bytes": 42486,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/7378.js": {
+      "bytes": 7775,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/7388.js": {
+      "bytes": 8117,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/7471.js": {
+      "bytes": 12867,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/7492.js": {
+      "bytes": 17349,
+      "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/7742.js": {
@@ -4003,13 +3998,13 @@
       "imports": [],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/9174.js": {
-      "bytes": 10904,
+    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/8989.js": {
+      "bytes": 1971202,
       "imports": [],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/9198.js": {
-      "bytes": 1969721,
+    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/9174.js": {
+      "bytes": 10904,
       "imports": [],
       "format": "cjs"
     },
@@ -4029,7 +4024,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/9596.js": {
-      "bytes": 11403,
+      "bytes": 12687,
       "imports": [],
       "format": "cjs"
     },
@@ -4044,7 +4039,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/webpack-runtime.js": {
-      "bytes": 8020,
+      "bytes": 7963,
       "imports": [
         {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/1137.js",
@@ -4165,11 +4160,6 @@
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/3704.js",
           "kind": "require-call",
           "original": "./chunks/3704.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/3716.js",
-          "kind": "require-call",
-          "original": "./chunks/3716.js"
         },
         {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/3728.js",
@@ -4357,6 +4347,11 @@
           "original": "./chunks/6232.js"
         },
         {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/6237.js",
+          "kind": "require-call",
+          "original": "./chunks/6237.js"
+        },
+        {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/6338.js",
           "kind": "require-call",
           "original": "./chunks/6338.js"
@@ -4382,11 +4377,6 @@
           "original": "./chunks/7105.js"
         },
         {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/7115.js",
-          "kind": "require-call",
-          "original": "./chunks/7115.js"
-        },
-        {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/7193.js",
           "kind": "require-call",
           "original": "./chunks/7193.js"
@@ -4407,9 +4397,9 @@
           "original": "./chunks/7471.js"
         },
         {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/7538.js",
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/7492.js",
           "kind": "require-call",
-          "original": "./chunks/7538.js"
+          "original": "./chunks/7492.js"
         },
         {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/7742.js",
@@ -4487,14 +4477,14 @@
           "original": "./chunks/8925.js"
         },
         {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/8989.js",
+          "kind": "require-call",
+          "original": "./chunks/8989.js"
+        },
+        {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/9174.js",
           "kind": "require-call",
           "original": "./chunks/9174.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/9198.js",
-          "kind": "require-call",
-          "original": "./chunks/9198.js"
         },
         {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/9283.js",
@@ -6112,27 +6102,6 @@
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/pg/lib/index.js",
           "kind": "import-statement",
           "original": "../lib/index.js"
-        }
-      ],
-      "format": "esm"
-    },
-    ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/compiled/@vercel/og/index.edge.js": {
-      "bytes": 721044,
-      "imports": [
-        {
-          "path": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/compiled/@vercel/og/resvg.wasm?module",
-          "kind": "import-statement",
-          "external": true
-        },
-        {
-          "path": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/compiled/@vercel/og/yoga.wasm?module",
-          "kind": "import-statement",
-          "external": true
-        },
-        {
-          "path": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/compiled/@vercel/og/noto-sans-v27-latin-regular.ttf.bin",
-          "kind": "dynamic-import",
-          "external": true
         }
       ],
       "format": "esm"
@@ -10266,8 +10235,340 @@
       ],
       "format": "cjs"
     },
+    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(payload)/api/graphql-playground/route.js": {
+      "bytes": 48234,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/shared/lib/router/utils/app-paths.js",
+          "kind": "require-call",
+          "original": "next/dist/shared/lib/router/utils/app-paths"
+        },
+        {
+          "path": "node:perf_hooks",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:process",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:buffer",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "readline",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "module",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
+        },
+        {
+          "path": "assert",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "dns",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:async_hooks",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "os",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "stream",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "util",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "fs",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/server/app-render/work-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-async-storage.external.js"
+        },
+        {
+          "path": "node:http2",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "path",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:assert",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "tls",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:http",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:console",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:stream/web",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:zlib",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:dns",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "string_decoder",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:tls",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:querystring",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-route.runtime.prod.js"
+        },
+        {
+          "path": "node:os",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:fs/promises",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:diagnostics_channel",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "crypto",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "https",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:stream",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:util",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/pg/esm/index.mjs",
+          "kind": "dynamic-import",
+          "original": "pg"
+        },
+        {
+          "path": "node:fs",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:url",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "worker_threads",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "zlib",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:worker_threads",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:path",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:net",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:crypto",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:events",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "buffer",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "url",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "child_process",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "fs/promises",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:sqlite",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "http",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "tty",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/shared/lib/no-fallback-error.external.js",
+          "kind": "require-call",
+          "original": "next/dist/shared/lib/no-fallback-error.external"
+        },
+        {
+          "path": "node:timers",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/@aws-sdk/client-s3/dist-cjs/index.js",
+          "kind": "require-call",
+          "original": "@aws-sdk/client-s3"
+        },
+        {
+          "path": "net",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "events",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:util/types",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:module",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/webpack-runtime.js",
+          "kind": "require-call",
+          "original": "../../../../webpack-runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/compiled/@vercel/og/index.edge.js": {
+      "bytes": 721044,
+      "imports": [
+        {
+          "path": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/compiled/@vercel/og/resvg.wasm?module",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/compiled/@vercel/og/yoga.wasm?module",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/compiled/@vercel/og/noto-sans-v27-latin-regular.ttf.bin",
+          "kind": "dynamic-import",
+          "external": true
+        }
+      ],
+      "format": "esm"
+    },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(payload)/api/[...slug]/route.js": {
-      "bytes": 16835,
+      "bytes": 16867,
       "imports": [
         {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/shared/lib/router/utils/app-paths.js",
@@ -10533,317 +10834,6 @@
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/compiled/@vercel/og/index.edge.js",
           "kind": "dynamic-import",
           "original": "next/dist/compiled/@vercel/og/index.edge.js"
-        },
-        {
-          "path": "tty",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/shared/lib/no-fallback-error.external.js",
-          "kind": "require-call",
-          "original": "next/dist/shared/lib/no-fallback-error.external"
-        },
-        {
-          "path": "node:timers",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/@aws-sdk/client-s3/dist-cjs/index.js",
-          "kind": "require-call",
-          "original": "@aws-sdk/client-s3"
-        },
-        {
-          "path": "net",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "events",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:util/types",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:module",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/webpack-runtime.js",
-          "kind": "require-call",
-          "original": "../../../../webpack-runtime.js"
-        }
-      ],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(payload)/api/graphql-playground/route.js": {
-      "bytes": 48202,
-      "imports": [
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/shared/lib/router/utils/app-paths.js",
-          "kind": "require-call",
-          "original": "next/dist/shared/lib/router/utils/app-paths"
-        },
-        {
-          "path": "node:perf_hooks",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:process",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:buffer",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "readline",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "module",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
-          "kind": "require-call",
-          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
-        },
-        {
-          "path": "assert",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "dns",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:async_hooks",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "os",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "stream",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "util",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "fs",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/server/app-render/work-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/work-async-storage.external.js"
-        },
-        {
-          "path": "node:http2",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "path",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:assert",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "tls",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:http",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:console",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:stream/web",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:zlib",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:dns",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "string_decoder",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:tls",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:querystring",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js",
-          "kind": "require-call",
-          "original": "next/dist/compiled/next-server/app-route.runtime.prod.js"
-        },
-        {
-          "path": "node:os",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:fs/promises",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:diagnostics_channel",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "crypto",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "https",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:stream",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:util",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/pg/esm/index.mjs",
-          "kind": "dynamic-import",
-          "original": "pg"
-        },
-        {
-          "path": "node:fs",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:url",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "worker_threads",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "zlib",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:worker_threads",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:path",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:net",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:crypto",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:events",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "buffer",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "url",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "child_process",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "fs/promises",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:sqlite",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "http",
-          "kind": "require-call",
-          "external": true
         },
         {
           "path": "tty",
@@ -14247,7 +14237,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(payload)/api/graphql/route.js": {
-      "bytes": 74635,
+      "bytes": 74667,
       "imports": [
         {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/shared/lib/router/utils/app-paths.js",
@@ -14884,7 +14874,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/about/page.js": {
-      "bytes": 31648,
+      "bytes": 31788,
       "imports": [
         {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/shared/lib/router/utils/app-paths.js",
@@ -15210,7 +15200,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/alternative_heritage_archival/page.js": {
-      "bytes": 21262,
+      "bytes": 23914,
       "imports": [
         {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/shared/lib/router/utils/app-paths.js",
@@ -15536,7 +15526,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/alternative_heritages_objects/page.js": {
-      "bytes": 21217,
+      "bytes": 23870,
       "imports": [
         {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/shared/lib/router/utils/app-paths.js",
@@ -15862,7 +15852,333 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/government_reports/page.js": {
-      "bytes": 21049,
+      "bytes": 23770,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/shared/lib/router/utils/app-paths.js",
+          "kind": "require-call",
+          "original": "next/dist/shared/lib/router/utils/app-paths"
+        },
+        {
+          "path": "node:perf_hooks",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:process",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
+        },
+        {
+          "path": "node:buffer",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "readline",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "module",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
+        },
+        {
+          "path": "assert",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "dns",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:async_hooks",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/server/app-render/action-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/action-async-storage.external.js"
+        },
+        {
+          "path": "os",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/shared/lib/router/utils/is-bot.js",
+          "kind": "require-call",
+          "original": "next/dist/shared/lib/router/utils/is-bot"
+        },
+        {
+          "path": "stream",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "util",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "fs",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/server/app-render/work-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-async-storage.external.js"
+        },
+        {
+          "path": "node:http2",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "path",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:assert",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "tls",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:http",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:console",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:stream/web",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:zlib",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:dns",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/server/app-render/dynamic-access-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/dynamic-access-async-storage.external.js"
+        },
+        {
+          "path": "string_decoder",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:tls",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:querystring",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:os",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:fs/promises",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:diagnostics_channel",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "crypto",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "https",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:stream",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:util",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/pg/esm/index.mjs",
+          "kind": "dynamic-import",
+          "original": "pg"
+        },
+        {
+          "path": "node:fs",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:url",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "worker_threads",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "zlib",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:worker_threads",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:path",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:net",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:crypto",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:events",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "buffer",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "url",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "child_process",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "fs/promises",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:sqlite",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "http",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "tty",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/shared/lib/no-fallback-error.external.js",
+          "kind": "require-call",
+          "original": "next/dist/shared/lib/no-fallback-error.external"
+        },
+        {
+          "path": "node:timers",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/@aws-sdk/client-s3/dist-cjs/index.js",
+          "kind": "require-call",
+          "original": "@aws-sdk/client-s3"
+        },
+        {
+          "path": "net",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "events",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:util/types",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:module",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/webpack-runtime.js",
+          "kind": "require-call",
+          "original": "../../../webpack-runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/intelligence_reports/page.js": {
+      "bytes": 23965,
       "imports": [
         {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/shared/lib/router/utils/app-paths.js",
@@ -17166,333 +17482,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/maps/page.js": {
-      "bytes": 21673,
-      "imports": [
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/shared/lib/router/utils/app-paths.js",
-          "kind": "require-call",
-          "original": "next/dist/shared/lib/router/utils/app-paths"
-        },
-        {
-          "path": "node:perf_hooks",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:process",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
-        },
-        {
-          "path": "node:buffer",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "readline",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "module",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
-          "kind": "require-call",
-          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
-        },
-        {
-          "path": "assert",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "dns",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:async_hooks",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/server/app-render/action-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/action-async-storage.external.js"
-        },
-        {
-          "path": "os",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/shared/lib/router/utils/is-bot.js",
-          "kind": "require-call",
-          "original": "next/dist/shared/lib/router/utils/is-bot"
-        },
-        {
-          "path": "stream",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "util",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "fs",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/server/app-render/work-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/work-async-storage.external.js"
-        },
-        {
-          "path": "node:http2",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "path",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:assert",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "tls",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:http",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:console",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:stream/web",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:zlib",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:dns",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/server/app-render/dynamic-access-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/dynamic-access-async-storage.external.js"
-        },
-        {
-          "path": "string_decoder",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:tls",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:querystring",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:os",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:fs/promises",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:diagnostics_channel",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "crypto",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "https",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:stream",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:util",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/pg/esm/index.mjs",
-          "kind": "dynamic-import",
-          "original": "pg"
-        },
-        {
-          "path": "node:fs",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:url",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "worker_threads",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "zlib",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:worker_threads",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:path",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:net",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:crypto",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:events",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "buffer",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "url",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "child_process",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "fs/promises",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:sqlite",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "http",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "tty",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/shared/lib/no-fallback-error.external.js",
-          "kind": "require-call",
-          "original": "next/dist/shared/lib/no-fallback-error.external"
-        },
-        {
-          "path": "node:timers",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/@aws-sdk/client-s3/dist-cjs/index.js",
-          "kind": "require-call",
-          "original": "@aws-sdk/client-s3"
-        },
-        {
-          "path": "net",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "events",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:util/types",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:module",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/webpack-runtime.js",
-          "kind": "require-call",
-          "original": "../../../webpack-runtime.js"
-        }
-      ],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/intelligence_reports/page.js": {
-      "bytes": 21302,
+      "bytes": 24446,
       "imports": [
         {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/shared/lib/router/utils/app-paths.js",
@@ -17818,7 +17808,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/photos/page.js": {
-      "bytes": 21038,
+      "bytes": 23787,
       "imports": [
         {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/shared/lib/router/utils/app-paths.js",
@@ -18143,334 +18133,8 @@
       ],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/alternative_heritages_objects/[slug]/page.js": {
-      "bytes": 25118,
-      "imports": [
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/shared/lib/router/utils/app-paths.js",
-          "kind": "require-call",
-          "original": "next/dist/shared/lib/router/utils/app-paths"
-        },
-        {
-          "path": "node:perf_hooks",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:process",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
-        },
-        {
-          "path": "node:buffer",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "readline",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "module",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
-          "kind": "require-call",
-          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
-        },
-        {
-          "path": "assert",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "dns",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:async_hooks",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/server/app-render/action-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/action-async-storage.external.js"
-        },
-        {
-          "path": "os",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/shared/lib/router/utils/is-bot.js",
-          "kind": "require-call",
-          "original": "next/dist/shared/lib/router/utils/is-bot"
-        },
-        {
-          "path": "stream",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "util",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "fs",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/server/app-render/work-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/work-async-storage.external.js"
-        },
-        {
-          "path": "node:http2",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "path",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:assert",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "tls",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:http",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:console",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:stream/web",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:zlib",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:dns",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/server/app-render/dynamic-access-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/dynamic-access-async-storage.external.js"
-        },
-        {
-          "path": "string_decoder",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:tls",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:querystring",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:os",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:fs/promises",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:diagnostics_channel",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "crypto",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "https",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:stream",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:util",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/pg/esm/index.mjs",
-          "kind": "dynamic-import",
-          "original": "pg"
-        },
-        {
-          "path": "node:fs",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:url",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "worker_threads",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "zlib",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:worker_threads",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:path",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:net",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:crypto",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:events",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "buffer",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "url",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "child_process",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "fs/promises",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:sqlite",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "http",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "tty",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/shared/lib/no-fallback-error.external.js",
-          "kind": "require-call",
-          "original": "next/dist/shared/lib/no-fallback-error.external"
-        },
-        {
-          "path": "node:timers",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/@aws-sdk/client-s3/dist-cjs/index.js",
-          "kind": "require-call",
-          "original": "@aws-sdk/client-s3"
-        },
-        {
-          "path": "net",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "events",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:util/types",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:module",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/webpack-runtime.js",
-          "kind": "require-call",
-          "original": "../../../../webpack-runtime.js"
-        }
-      ],
-      "format": "cjs"
-    },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/alternative_heritage_archival/[slug]/page.js": {
-      "bytes": 24908,
+      "bytes": 24961,
       "imports": [
         {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/shared/lib/router/utils/app-paths.js",
@@ -18795,8 +18459,8 @@
       ],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/government_reports/[slug]/page.js": {
-      "bytes": 24809,
+    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/alternative_heritages_objects/[slug]/page.js": {
+      "bytes": 25240,
       "imports": [
         {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/shared/lib/router/utils/app-paths.js",
@@ -19122,7 +18786,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/ethnography_and_archaeology/page.js": {
-      "bytes": 22557,
+      "bytes": 22504,
       "imports": [
         {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/shared/lib/router/utils/app-paths.js",
@@ -19447,8 +19111,8 @@
       ],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/intelligence_reports/[slug]/page.js": {
-      "bytes": 24825,
+    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/government_reports/[slug]/page.js": {
+      "bytes": 24862,
       "imports": [
         {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/shared/lib/router/utils/app-paths.js",
@@ -19773,8 +19437,8 @@
       ],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/page.js": {
-      "bytes": 35689,
+    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/intelligence_reports/[slug]/page.js": {
+      "bytes": 24878,
       "imports": [
         {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/shared/lib/router/utils/app-paths.js",
@@ -20094,13 +19758,13 @@
         {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/webpack-runtime.js",
           "kind": "require-call",
-          "original": "../../webpack-runtime.js"
+          "original": "../../../../webpack-runtime.js"
         }
       ],
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/manuscripts/benin_expeditions/[slug]/page.js": {
-      "bytes": 25112,
+      "bytes": 25061,
       "imports": [
         {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/shared/lib/router/utils/app-paths.js",
@@ -20426,7 +20090,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/manuscripts/k.c_murray/[slug]/page.js": {
-      "bytes": 25065,
+      "bytes": 25014,
       "imports": [
         {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/shared/lib/router/utils/app-paths.js",
@@ -20751,8 +20415,334 @@
       ],
       "format": "cjs"
     },
+    ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/page.js": {
+      "bytes": 94907,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/shared/lib/router/utils/app-paths.js",
+          "kind": "require-call",
+          "original": "next/dist/shared/lib/router/utils/app-paths"
+        },
+        {
+          "path": "node:perf_hooks",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:process",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
+        },
+        {
+          "path": "node:buffer",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "readline",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "module",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
+        },
+        {
+          "path": "assert",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "dns",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:async_hooks",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/server/app-render/action-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/action-async-storage.external.js"
+        },
+        {
+          "path": "os",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/shared/lib/router/utils/is-bot.js",
+          "kind": "require-call",
+          "original": "next/dist/shared/lib/router/utils/is-bot"
+        },
+        {
+          "path": "stream",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "util",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "fs",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/server/app-render/work-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-async-storage.external.js"
+        },
+        {
+          "path": "node:http2",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "path",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:assert",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "tls",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:http",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:console",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:stream/web",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:zlib",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:dns",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/server/app-render/dynamic-access-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/dynamic-access-async-storage.external.js"
+        },
+        {
+          "path": "string_decoder",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:tls",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:querystring",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:os",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:fs/promises",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:diagnostics_channel",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "crypto",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "https",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:stream",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:util",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/pg/esm/index.mjs",
+          "kind": "dynamic-import",
+          "original": "pg"
+        },
+        {
+          "path": "node:fs",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:url",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "worker_threads",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "zlib",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:worker_threads",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:path",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:net",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:crypto",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:events",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "buffer",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "url",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "child_process",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "fs/promises",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:sqlite",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "http",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "tty",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/shared/lib/no-fallback-error.external.js",
+          "kind": "require-call",
+          "original": "next/dist/shared/lib/no-fallback-error.external"
+        },
+        {
+          "path": "node:timers",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/@aws-sdk/client-s3/dist-cjs/index.js",
+          "kind": "require-call",
+          "original": "@aws-sdk/client-s3"
+        },
+        {
+          "path": "net",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "events",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:util/types",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:module",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/webpack-runtime.js",
+          "kind": "require-call",
+          "original": "../../webpack-runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(payload)/admin/[[...segments]]/page.js": {
-      "bytes": 1959432,
+      "bytes": 1959496,
       "imports": [
         {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/shared/lib/router/utils/app-paths.js",
@@ -21156,14 +21146,14 @@
           "original": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/icon.ico/route.js"
         },
         {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(payload)/api/[...slug]/route.js",
-          "kind": "require-call",
-          "original": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(payload)/api/[...slug]/route.js"
-        },
-        {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(payload)/api/graphql-playground/route.js",
           "kind": "require-call",
           "original": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(payload)/api/graphql-playground/route.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(payload)/api/[...slug]/route.js",
+          "kind": "require-call",
+          "original": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(payload)/api/[...slug]/route.js"
         },
         {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(payload)/api/graphql/route.js",
@@ -21196,6 +21186,11 @@
           "original": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/government_reports/page.js"
         },
         {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/intelligence_reports/page.js",
+          "kind": "require-call",
+          "original": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/intelligence_reports/page.js"
+        },
+        {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/manuscripts/benin_expeditions/page.js",
           "kind": "require-call",
           "original": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/manuscripts/benin_expeditions/page.js"
@@ -21216,19 +21211,9 @@
           "original": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/maps/page.js"
         },
         {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/intelligence_reports/page.js",
-          "kind": "require-call",
-          "original": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/intelligence_reports/page.js"
-        },
-        {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/photos/page.js",
           "kind": "require-call",
           "original": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/photos/page.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/alternative_heritages_objects/[slug]/page.js",
-          "kind": "require-call",
-          "original": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/alternative_heritages_objects/[slug]/page.js"
         },
         {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/alternative_heritage_archival/[slug]/page.js",
@@ -21236,9 +21221,9 @@
           "original": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/alternative_heritage_archival/[slug]/page.js"
         },
         {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/government_reports/[slug]/page.js",
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/alternative_heritages_objects/[slug]/page.js",
           "kind": "require-call",
-          "original": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/government_reports/[slug]/page.js"
+          "original": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/alternative_heritages_objects/[slug]/page.js"
         },
         {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/ethnography_and_archaeology/page.js",
@@ -21246,14 +21231,14 @@
           "original": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/ethnography_and_archaeology/page.js"
         },
         {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/government_reports/[slug]/page.js",
+          "kind": "require-call",
+          "original": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/government_reports/[slug]/page.js"
+        },
+        {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/intelligence_reports/[slug]/page.js",
           "kind": "require-call",
           "original": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/intelligence_reports/[slug]/page.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/page.js",
-          "kind": "require-call",
-          "original": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/page.js"
         },
         {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/manuscripts/benin_expeditions/[slug]/page.js",
@@ -21264,6 +21249,11 @@
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/manuscripts/k.c_murray/[slug]/page.js",
           "kind": "require-call",
           "original": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/manuscripts/k.c_murray/[slug]/page.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/page.js",
+          "kind": "require-call",
+          "original": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/page.js"
         },
         {
           "path": ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(payload)/admin/[[...segments]]/page.js",
@@ -22192,7 +22182,7 @@
       "format": "esm"
     },
     ".open-next/server-functions/default/Developer/clientWork/digital-archive/index.mjs": {
-      "bytes": 91788,
+      "bytes": 108956,
       "imports": [
         {
           "path": "node:module",
@@ -22619,21 +22609,6 @@
         {
           "path": "util",
           "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/compiled/@vercel/og/resvg.wasm?module",
-          "kind": "import-statement",
-          "external": true
-        },
-        {
-          "path": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/compiled/@vercel/og/yoga.wasm?module",
-          "kind": "import-statement",
-          "external": true
-        },
-        {
-          "path": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/compiled/@vercel/og/noto-sans-v27-latin-regular.ttf.bin",
-          "kind": "dynamic-import",
           "external": true
         },
         {
@@ -23119,6 +23094,21 @@
         {
           "path": "node:module",
           "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/compiled/@vercel/og/resvg.wasm?module",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/compiled/@vercel/og/yoga.wasm?module",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "/Users/JosephChikak/Developer/clientWork/digital-archive/.open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/compiled/@vercel/og/noto-sans-v27-latin-regular.ttf.bin",
+          "kind": "dynamic-import",
           "external": true
         },
         {
@@ -29629,79 +29619,79 @@
           "bytesInOutput": 626
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/my-route/route_client-reference-manifest.js": {
-          "bytesInOutput": 85218
+          "bytesInOutput": 81805
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/_not-found/page_client-reference-manifest.js": {
-          "bytesInOutput": 85220
+          "bytesInOutput": 81807
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/page_client-reference-manifest.js": {
-          "bytesInOutput": 85125
+          "bytesInOutput": 81712
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/photos/page_client-reference-manifest.js": {
-          "bytesInOutput": 84542
+          "bytesInOutput": 81817
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/maps/page_client-reference-manifest.js": {
-          "bytesInOutput": 84526
+          "bytesInOutput": 81799
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/manuscripts/page_client-reference-manifest.js": {
-          "bytesInOutput": 84582
-        },
-        ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/government_reports/page_client-reference-manifest.js": {
-          "bytesInOutput": 84638
-        },
-        ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/ethnography_and_archaeology/page_client-reference-manifest.js": {
-          "bytesInOutput": 85839
+          "bytesInOutput": 81649
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/intelligence_reports/page_client-reference-manifest.js": {
-          "bytesInOutput": 84654
+          "bytesInOutput": 81943
+        },
+        ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/government_reports/page_client-reference-manifest.js": {
+          "bytesInOutput": 81925
+        },
+        ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/ethnography_and_archaeology/page_client-reference-manifest.js": {
+          "bytesInOutput": 82350
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/alternative_heritage_archival/page_client-reference-manifest.js": {
-          "bytesInOutput": 84726
+          "bytesInOutput": 82024
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/alternative_heritages_objects/page_client-reference-manifest.js": {
-          "bytesInOutput": 84727
+          "bytesInOutput": 82025
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/about/page_client-reference-manifest.js": {
-          "bytesInOutput": 84535
+          "bytesInOutput": 81602
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(payload)/api/graphql-playground/route_client-reference-manifest.js": {
-          "bytesInOutput": 85391
+          "bytesInOutput": 81978
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(payload)/api/graphql/route_client-reference-manifest.js": {
-          "bytesInOutput": 85358
+          "bytesInOutput": 81945
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(payload)/api/[...slug]/route_client-reference-manifest.js": {
-          "bytesInOutput": 85264
+          "bytesInOutput": 81851
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(payload)/admin/[[...segments]]/page_client-reference-manifest.js": {
-          "bytesInOutput": 98277
+          "bytesInOutput": 94864
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/manuscripts/k.c_murray/page_client-reference-manifest.js": {
-          "bytesInOutput": 84764
+          "bytesInOutput": 81831
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/manuscripts/benin_expeditions/page_client-reference-manifest.js": {
-          "bytesInOutput": 84815
-        },
-        ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/government_reports/[slug]/page_client-reference-manifest.js": {
-          "bytesInOutput": 85535
+          "bytesInOutput": 81882
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/intelligence_reports/[slug]/page_client-reference-manifest.js": {
-          "bytesInOutput": 85559
+          "bytesInOutput": 82800
+        },
+        ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/government_reports/[slug]/page_client-reference-manifest.js": {
+          "bytesInOutput": 82774
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/alternative_heritage_archival/[slug]/page_client-reference-manifest.js": {
-          "bytesInOutput": 85664
+          "bytesInOutput": 82914
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/alternative_heritages_objects/[slug]/page_client-reference-manifest.js": {
-          "bytesInOutput": 85667
+          "bytesInOutput": 82917
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/manuscripts/k.c_murray/[slug]/page_client-reference-manifest.js": {
-          "bytesInOutput": 86164
+          "bytesInOutput": 82813
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/manuscripts/benin_expeditions/[slug]/page_client-reference-manifest.js": {
-          "bytesInOutput": 86253
+          "bytesInOutput": 82895
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/server/load-manifest.external.js": {
-          "bytesInOutput": 50418
+          "bytesInOutput": 66028
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/react/cjs/react-jsx-runtime.production.js": {
           "bytesInOutput": 791
@@ -29780,9 +29770,6 @@
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/3704.js": {
           "bytesInOutput": 9948
-        },
-        ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/3716.js": {
-          "bytesInOutput": 23532
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/3728.js": {
           "bytesInOutput": 7721
@@ -29893,7 +29880,22 @@
           "bytesInOutput": 7936
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/6232.js": {
-          "bytesInOutput": 25564
+          "bytesInOutput": 25760
+        },
+        "../../../node_modules/@emotion/memoize/dist/emotion-memoize.cjs.prod.js": {
+          "bytesInOutput": 363
+        },
+        "../../../node_modules/@emotion/memoize/dist/emotion-memoize.cjs.js": {
+          "bytesInOutput": 198
+        },
+        "../../../node_modules/@emotion/is-prop-valid/dist/emotion-is-prop-valid.cjs.prod.js": {
+          "bytesInOutput": 4636
+        },
+        "../../../node_modules/@emotion/is-prop-valid/dist/emotion-is-prop-valid.cjs.js": {
+          "bytesInOutput": 222
+        },
+        ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/6237.js": {
+          "bytesInOutput": 262056
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/6338.js": {
           "bytesInOutput": 7568
@@ -29910,9 +29912,6 @@
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/7105.js": {
           "bytesInOutput": 8595
         },
-        ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/7115.js": {
-          "bytesInOutput": 111854
-        },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/7193.js": {
           "bytesInOutput": 45071
         },
@@ -29925,20 +29924,8 @@
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/7471.js": {
           "bytesInOutput": 20444
         },
-        "../../../node_modules/@emotion/memoize/dist/emotion-memoize.cjs.prod.js": {
-          "bytesInOutput": 363
-        },
-        "../../../node_modules/@emotion/memoize/dist/emotion-memoize.cjs.js": {
-          "bytesInOutput": 198
-        },
-        "../../../node_modules/@emotion/is-prop-valid/dist/emotion-is-prop-valid.cjs.prod.js": {
-          "bytesInOutput": 4636
-        },
-        "../../../node_modules/@emotion/is-prop-valid/dist/emotion-is-prop-valid.cjs.js": {
-          "bytesInOutput": 222
-        },
-        ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/7538.js": {
-          "bytesInOutput": 597719
+        ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/7492.js": {
+          "bytesInOutput": 17944
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/7742.js": {
           "bytesInOutput": 11333
@@ -29985,11 +29972,11 @@
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/8925.js": {
           "bytesInOutput": 7030
         },
+        ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/8989.js": {
+          "bytesInOutput": 2102001
+        },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/9174.js": {
           "bytesInOutput": 12346
-        },
-        ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/9198.js": {
-          "bytesInOutput": 2100504
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/9283.js": {
           "bytesInOutput": 12915
@@ -30001,7 +29988,7 @@
           "bytesInOutput": 8091
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/9596.js": {
-          "bytesInOutput": 11718
+          "bytesInOutput": 13032
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/chunks/9838.js": {
           "bytesInOutput": 10119
@@ -30010,7 +29997,7 @@
           "bytesInOutput": 9908
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/webpack-runtime.js": {
-          "bytesInOutput": 6218
+          "bytesInOutput": 6184
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/pages/_app.js": {
           "bytesInOutput": 3652
@@ -30245,9 +30232,6 @@
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/pg/esm/index.mjs": {
           "bytesInOutput": 1092
-        },
-        ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/compiled/@vercel/og/index.edge.js": {
-          "bytesInOutput": 535430
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/@smithy/types/dist-cjs/index.js": {
           "bytesInOutput": 2797
@@ -30792,11 +30776,14 @@
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/@aws-sdk/client-s3/dist-cjs/index.js": {
           "bytesInOutput": 93322
         },
-        ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(payload)/api/[...slug]/route.js": {
-          "bytesInOutput": 17734
-        },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(payload)/api/graphql-playground/route.js": {
-          "bytesInOutput": 49446
+          "bytesInOutput": 49480
+        },
+        ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/compiled/@vercel/og/index.edge.js": {
+          "bytesInOutput": 535430
+        },
+        ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(payload)/api/[...slug]/route.js": {
+          "bytesInOutput": 17768
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/graphql/version.js": {
           "bytesInOutput": 424
@@ -31177,22 +31164,25 @@
           "bytesInOutput": 25295
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(payload)/api/graphql/route.js": {
-          "bytesInOutput": 79711
+          "bytesInOutput": 79745
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/my-route/route.js": {
           "bytesInOutput": 10969
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/about/page.js": {
-          "bytesInOutput": 32251
+          "bytesInOutput": 32391
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/alternative_heritage_archival/page.js": {
-          "bytesInOutput": 21874
+          "bytesInOutput": 24615
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/alternative_heritages_objects/page.js": {
-          "bytesInOutput": 21829
+          "bytesInOutput": 24571
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/government_reports/page.js": {
-          "bytesInOutput": 21651
+          "bytesInOutput": 24460
+        },
+        ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/intelligence_reports/page.js": {
+          "bytesInOutput": 24657
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/manuscripts/benin_expeditions/page.js": {
           "bytesInOutput": 21270
@@ -31204,40 +31194,37 @@
           "bytesInOutput": 21735
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/maps/page.js": {
-          "bytesInOutput": 22263
-        },
-        ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/intelligence_reports/page.js": {
-          "bytesInOutput": 21906
+          "bytesInOutput": 25133
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/photos/page.js": {
-          "bytesInOutput": 21624
-        },
-        ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/alternative_heritages_objects/[slug]/page.js": {
-          "bytesInOutput": 25799
+          "bytesInOutput": 24469
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/alternative_heritage_archival/[slug]/page.js": {
-          "bytesInOutput": 25588
+          "bytesInOutput": 25641
         },
-        ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/government_reports/[slug]/page.js": {
-          "bytesInOutput": 25478
+        ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/alternative_heritages_objects/[slug]/page.js": {
+          "bytesInOutput": 25921
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/ethnography_and_archaeology/page.js": {
-          "bytesInOutput": 23173
+          "bytesInOutput": 23114
+        },
+        ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/government_reports/[slug]/page.js": {
+          "bytesInOutput": 25531
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/intelligence_reports/[slug]/page.js": {
-          "bytesInOutput": 25496
-        },
-        ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/page.js": {
-          "bytesInOutput": 36628
+          "bytesInOutput": 25549
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/manuscripts/benin_expeditions/[slug]/page.js": {
-          "bytesInOutput": 25800
+          "bytesInOutput": 25743
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/manuscripts/k.c_murray/[slug]/page.js": {
-          "bytesInOutput": 25746
+          "bytesInOutput": 25689
+        },
+        ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(app)/page.js": {
+          "bytesInOutput": 99205
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/.next/server/app/(payload)/admin/[[...segments]]/page.js": {
-          "bytesInOutput": 2161341
+          "bytesInOutput": 2161405
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/node_modules/next/dist/server/require.js": {
           "bytesInOutput": 11891
@@ -31351,10 +31338,10 @@
           "bytesInOutput": 8923
         },
         ".open-next/server-functions/default/Developer/clientWork/digital-archive/index.mjs": {
-          "bytesInOutput": 65423
+          "bytesInOutput": 80910
         }
       },
-      "bytes": 13550844
+      "bytes": 13138437
     }
   }
 }

@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002Falternative_heritage_archival\u002F[slug]","\u002Falternative_heritages_objects\u002F[slug]","\u002Fgovernment_reports\u002F[slug]","\u002Fintelligence_reports\u002F[slug]","\u002Fmanuscripts\u002Fbenin_expeditions\u002F[slug]","\u002Fmanuscripts\u002Fk.c_murray\u002F[slug]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()

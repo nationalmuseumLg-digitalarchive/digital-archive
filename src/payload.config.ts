@@ -95,7 +95,7 @@ export default buildConfig({
         // Keep connections alive within the isolate so they can be reused
         // across requests. Hyperdrive handles the upstream pooling to Neon.
         idleTimeoutMillis: isWorker ? 0 : 10000,
-        allowExitOnIdle: false,
+        allowExitOnIdle: true,
         statement_timeout: 30000,
       }
 
@@ -110,13 +110,23 @@ export default buildConfig({
             uri.includes('hyperdrive') ||
             (isWorker && process.env.DATABASE_URI_SOURCE === 'Hyperdrive')
 
-          // Force sslmode=require for direct Worker → Neon connections;
-          // not needed for Hyperdrive (its proxy handles TLS internally).
-          if (uri && isWorker && !isHyperdrive) {
-            if (uri.includes('sslmode=')) {
-              return uri.replace(/sslmode=[^&]+/, 'sslmode=require')
+          if (uri && isWorker) {
+            if (isHyperdrive) {
+              // Hyperdrive terminates TLS at Cloudflare's network layer — the
+              // local proxy speaks plain TCP. If pg sends an SSL negotiation
+              // request the proxy never responds to it and the Worker hangs.
+              // sslmode=disable tells pg to skip the SSL handshake entirely.
+              if (uri.includes('sslmode=')) {
+                return uri.replace(/sslmode=[^&]+/, 'sslmode=disable')
+              }
+              return uri + (uri.includes('?') ? '&' : '?') + 'sslmode=disable'
+            } else {
+              // Direct Worker → Neon connection: require TLS but don't verify CA.
+              if (uri.includes('sslmode=')) {
+                return uri.replace(/sslmode=[^&]+/, 'sslmode=require')
+              }
+              return uri + (uri.includes('?') ? '&' : '?') + 'sslmode=require'
             }
-            return uri + (uri.includes('?') ? '&' : '?') + 'sslmode=require'
           }
           return uri
         },
