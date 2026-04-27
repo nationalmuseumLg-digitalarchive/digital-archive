@@ -1,1 +1,0 @@
-export { handler } from "./Developer/clientWork/digital-archive/index.mjs";

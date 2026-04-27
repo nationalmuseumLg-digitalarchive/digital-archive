@@ -1,33 +1,20 @@
 import { getCloudflareContext } from '@opennextjs/cloudflare'
 
 /**
- * Safely retrieves environment variables in both Node.js and Cloudflare Worker runtimes.
- * In Workers, it prioritizes bindings from the Cloudflare Context.
+ * Reads an environment variable in both Node.js (build / local dev) and
+ * Cloudflare Worker runtimes.
+ *
+ * In a Worker, Cloudflare bindings live on the per-request `env` object
+ * exposed by `getCloudflareContext()`. Outside a request, or in Node, we fall
+ * back to `process.env`.
  */
 export const getEnv = (key: string): string => {
-  let value = ''
-
-  // 1. Try to get from Cloudflare Context (Production Worker)
   try {
-    const context = getCloudflareContext()
-    if (context?.env && typeof context.env === 'object') {
-      const env = context.env as Record<string, any>
-      
-      // Handle Hyperdrive objects specifically if the key is DATABASE_URI
-      if (key === 'DATABASE_URI' && env[key]?.connectionString) {
-        return env[key].connectionString
-      }
-      
-      if (env[key] && typeof env[key] === 'string') {
-        return env[key]
-      }
-    }
-  } catch (e) {
-    // Context not available (Local dev / Build time)
+    const env = getCloudflareContext()?.env as Record<string, unknown> | undefined
+    const value = env?.[key]
+    if (typeof value === 'string') return value
+  } catch {
+    // No request context (build / local dev) — fall through.
   }
-
-  // 2. Fallback to process.env (Node.js / Local Dev / Build)
-  value = process.env[key] || ''
-
-  return value
+  return process.env[key] ?? ''
 }

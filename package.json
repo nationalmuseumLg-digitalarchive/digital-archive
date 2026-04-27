@@ -56,6 +56,7 @@
   },
   "dependencies": {
     "@algolia/autocomplete-js": "^1.17.4",
+    "@neondatabase/serverless": "^1.1.0",
     "@payloadcms/db-postgres": "3.72.0",
     "@payloadcms/next": "3.72.0",
     "@payloadcms/plugin-nested-docs": "3.72.0",

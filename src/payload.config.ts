@@ -8,9 +8,77 @@ import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
 import { nestedDocsPlugin } from '@payloadcms/plugin-nested-docs'
 import { searchPlugin } from '@payloadcms/plugin-search'
-import { extractPlainText } from './utils/extractPlainText'
 import { getCloudflareContext } from '@opennextjs/cloudflare'
 import { getEnv } from './utils/getEnv'
+import { Pool as NeonPool, neonConfig } from '@neondatabase/serverless'
+
+// @neondatabase/serverless uses WebSocket to connect to Neon, which is natively
+// tracked I/O in Cloudflare Workers. The nodejs_compat net.Socket polyfill that
+// pg uses for TCP connections is NOT properly registered with the Workers I/O
+// scheduler, causing every cold-start pool.connect() to look like a hung Promise
+// and get the Worker killed. WebSocket has no such issue.
+const isWorker = typeof caches !== 'undefined'
+if (isWorker) {
+  // Workers has a global WebSocket; Neon needs it injected explicitly.
+  neonConfig.webSocketConstructor = WebSocket
+}
+
+// Cloudflare Workers limitation: I/O objects (WebSockets, sockets, streams)
+// cannot be reused across requests. Payload caches the postgres pool globally
+// via `getPayload()`, so without intervention request 2 inherits request 1's
+// WebSockets and throws "Cannot perform I/O on behalf of a different request".
+//
+// WorkerPool wraps @neondatabase/serverless Pool and reads
+// getCloudflareContext().ctx to detect a new request. When the ctx changes, we
+// abandon the prior inner pool (Workers reaps its sockets at end-of-request)
+// and create a fresh NeonPool bound to the current request. We do NOT call
+// .end() on the abandoned pool because doing so can fire ECONNRESET on the
+// keepalive client that connectWithReconnect (in @payloadcms/db-postgres)
+// holds, which would loop forever trying to reconnect on a dead pool.
+class WorkerPool {
+  constructor(options) {
+    this.options = options
+    this._inner = null
+    this._innerCtx = null
+  }
+  _getInner() {
+    let ctx = null
+    try {
+      ctx = getCloudflareContext()?.ctx ?? null
+    } catch {
+      // Outside a request context (boot / build); fall through to keep current pool.
+    }
+    if (!this._inner || (ctx && this._innerCtx !== ctx)) {
+      this._inner = new NeonPool(this.options)
+      this._innerCtx = ctx
+    }
+    return this._inner
+  }
+  query(text, values) {
+    return this._getInner().query(text, values)
+  }
+  connect() {
+    return this._getInner().connect()
+  }
+  async end() {
+    /* no-op: per-request lifecycle handled by Workers I/O cleanup */
+  }
+  on() {
+    return this
+  }
+  off() {
+    return this
+  }
+  prependListener() {
+    return this
+  }
+  removeListener() {
+    return this
+  }
+  removeAllListeners() {
+    return this
+  }
+}
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
@@ -31,7 +99,18 @@ import { AlternativeArchivalHeritage } from './collections/AlternativeArchivalHe
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
-// console.log(nestedDocs)
+// Resolve the public origin once. Used for cookie scoping, serverURL, and CSRF.
+const SERVER_URL =
+  getEnv('NEXT_PUBLIC_SERVER_URL') ||
+  getEnv('PAYLOAD_PUBLIC_SERVER_URL') ||
+  'https://lagosmuseumarchives.ng'
+const SERVER_HOSTNAME = (() => {
+  try {
+    return new URL(SERVER_URL).hostname
+  } catch {
+    return 'lagosmuseumarchives.ng'
+  }
+})()
 
 export default buildConfig({
   admin: {
@@ -61,15 +140,12 @@ export default buildConfig({
   // Explicit cookie config to prevent Cloudflare/browser from dropping the payload-token
   cookiePrefix: 'payload',
   cookie: {
-    domain: 'lagosmuseumarchives.ng',
+    domain: SERVER_HOSTNAME,
     secure: true,
     sameSite: 'Lax',
   },
-  csrf: [
-    'https://lagosmuseumarchives.ng',
-    getEnv('NEXT_PUBLIC_SERVER_URL'),
-  ].filter(Boolean) as string[],
-  serverURL: getEnv('NEXT_PUBLIC_SERVER_URL') || getEnv('PAYLOAD_PUBLIC_SERVER_URL') || 'https://lagosmuseumarchives.ng',
+  csrf: [SERVER_URL].filter(Boolean) as string[],
+  serverURL: SERVER_URL,
   upload: {
     limits: {
       fileSize: 100000000, // 100MB, written in bytes
@@ -81,54 +157,44 @@ export default buildConfig({
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
   db: postgresAdapter({
+    // Never push schema in production. NODE_ENV=production in wrangler.jsonc also prevents
+    // this, but explicit push:false is a hard guard regardless of NODE_ENV.
+    push: false,
+    // In Workers: use WorkerPool (per-request NeonPool wrapper). NeonPool alone
+    // breaks across requests because Workers forbids reusing I/O objects.
+    // In local dev: fall back to standard pg (no pg option = use default).
+    pg: isWorker ? ({ Pool: WorkerPool } as any) : undefined,
     pool: (() => {
-      // Use a getter so connectionString is resolved at request time, not at module
-      // evaluation time. This is critical for Cloudflare Workers where Hyperdrive
-      // bindings are only accessible inside the request context (AsyncLocalStorage).
-      const isWorker = typeof caches !== 'undefined'
-
       const poolConfig: Record<string, unknown> = {
-        // With Hyperdrive, 5 connections per isolate is sufficient.
-        // Hyperdrive manages the actual pool to Neon externally.
-        max: isWorker ? 5 : 20,
-        connectionTimeoutMillis: 10000,
-        // Keep connections alive within the isolate so they can be reused
-        // across requests. Hyperdrive handles the upstream pooling to Neon.
-        idleTimeoutMillis: isWorker ? 0 : 10000,
+        // Workers: 5 WebSocket connections (no TCP; @neondatabase/serverless handles pooling).
+        // Build/local-dev: 3 max to avoid exhausting Neon's per-endpoint connection limit.
+        max: isWorker ? 5 : 3,
+        // 30s covers Neon free-tier cold start (~10s) plus query overhead.
+        connectionTimeoutMillis: 30000,
+        // Workers: 0 = no idle eviction (WebSocket connections are cheap, reuse them).
+        // Build/local-dev: release idle connections quickly so the build doesn't exhaust Neon.
+        idleTimeoutMillis: isWorker ? 0 : 3000,
         allowExitOnIdle: true,
         statement_timeout: 30000,
       }
 
-      // Define connectionString as a getter so it is evaluated lazily —
-      // specifically when pg.Pool is constructed inside postgresAdapter.connect(),
-      // which is called by getPayload() on the first incoming request when the
-      // Cloudflare request context (and therefore the Hyperdrive binding) is live.
       Object.defineProperty(poolConfig, 'connectionString', {
         get() {
-          const uri = getEnv('DATABASE_URI')
-          const isHyperdrive =
-            uri.includes('hyperdrive') ||
-            (isWorker && process.env.DATABASE_URI_SOURCE === 'Hyperdrive')
-
-          if (uri && isWorker) {
-            if (isHyperdrive) {
-              // Hyperdrive terminates TLS at Cloudflare's network layer — the
-              // local proxy speaks plain TCP. If pg sends an SSL negotiation
-              // request the proxy never responds to it and the Worker hangs.
-              // sslmode=disable tells pg to skip the SSL handshake entirely.
-              if (uri.includes('sslmode=')) {
-                return uri.replace(/sslmode=[^&]+/, 'sslmode=disable')
-              }
-              return uri + (uri.includes('?') ? '&' : '?') + 'sslmode=disable'
-            } else {
-              // Direct Worker → Neon connection: require TLS but don't verify CA.
-              if (uri.includes('sslmode=')) {
-                return uri.replace(/sslmode=[^&]+/, 'sslmode=require')
-              }
-              return uri + (uri.includes('?') ? '&' : '?') + 'sslmode=require'
+          if (isWorker) {
+            // Use the direct Neon URL — set by populateProcessEnv via next-env.mjs.
+            // (DATABASE_URI is a Hyperdrive object binding, not a string, so it isn't
+            // copied to process.env; the fallback in next-env.mjs provides the Neon URL.)
+            // Strip sslmode: @neondatabase/serverless WebSocket handles TLS automatically.
+            const url = process.env.DATABASE_URI || ''
+            try {
+              const u = new URL(url)
+              u.searchParams.delete('sslmode')
+              return u.toString()
+            } catch {
+              return url
             }
           }
-          return uri
+          return getEnv('DATABASE_URI')
         },
         enumerable: true,
         configurable: true,

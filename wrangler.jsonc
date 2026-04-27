@@ -1,6 +1,6 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"main": ".open-next/worker.js",
+	"main": "worker.js",
 	"name": "digital-archive",
 	"compatibility_date": "2026-04-02",
 	"compatibility_flags": [
@@ -38,11 +38,22 @@
 		// see https://opennext.js.org/cloudflare/howtos/image
 		"binding": "IMAGES"
 	},
+	// Cron Trigger: ping /api/keepalive every 4 minutes so Neon's free-tier
+	// compute never auto-suspends (auto-suspend kicks in after ~5 min idle).
+	// Handler is in worker.js -> scheduled().
+	"triggers": {
+		"crons": ["*/4 * * * *"]
+	},
 	// ─── Plain environment variables (non-secret) ──────────────────────────────
 	// The following MUST be deployed as Cloudflare Secrets (NOT listed here):
 	//   wrangler secret put PAYLOAD_SECRET
 	//   wrangler secret put S3_SECRET_ACCESS_KEY
 	// Without these secrets the admin login will fail and R2 uploads will be rejected.
+	//
+	// DATABASE_URI is baked into .open-next/cloudflare/next-env.mjs at build
+	// time and read via process.env in the Worker. We previously routed it
+	// through a Cloudflare Hyperdrive binding; that binding has been removed
+	// because @neondatabase/serverless connects directly via WebSocket.
 	"vars": {
 		"NEXT_PUBLIC_SERVER_URL": "https://lagosmuseumarchives.ng",
 		"NEXT_PUBLIC_R2_URL": "https://media.lagosmuseumarchives.ng",
@@ -51,13 +62,9 @@
 		// produce double-slash URLs when combined with bucket/key paths.
 		"S3_ENDPOINT": "https://011cb5250722ffa0a16ab5cb96ed3a90.r2.cloudflarestorage.com",
 		"S3_ACCESS_KEY_ID": "45eb014bfb05c6f96e0f89896c9cff07",
-		"DATABASE_URI_SOURCE": "Hyperdrive"
-	},
-	"hyperdrive": [
-		{
-			"binding": "DATABASE_URI",
-			"id": "ef8118cc6e9e44ec9888d46b527dd428",
-			"localConnectionString": "postgres://default:PaCRJeQrZ40I@ep-raspy-math-a43ynrbc.us-east-1.aws.neon.tech:5432/verceldb?sslmode=verify-full"
-		}
-	]
+		// Must be "production" so Payload's db adapter never runs pushDevSchema on cold starts.
+		// Without this, process.env.NODE_ENV is undefined in Workers and Payload runs a full
+		// Drizzle schema introspection + push on every cold start, causing the Worker to hang.
+		"NODE_ENV": "production"
+	}
 }

@@ -36,7 +36,7 @@ const FooterServer = async () => {
         <div className="flex justify-between flex-col gap-4 w-fit h-fit">
           <div className="h-fit w-fit text-background flex flex-col gap-4 z-10 text-[0.75rem] uppercase">
             <h2 className="text-[1rem] text-background font-bold">Quick Links</h2>
-            {header.nav.map((link, i) => {
+            {header?.nav?.map((link, i) => {
               return (
                 <Link key={i} className="hover:border-b-2 border-background" href={`/${link.link}`}>
                   {' '}
