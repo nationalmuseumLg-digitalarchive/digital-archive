@@ -1,0 +1,14 @@
+[
+  {
+    "AllowedOrigins": [
+      "https://lagosmuseumarchives.ng",
+      "https://www.lagosmuseumarchives.ng",
+      "https://media.lagosmuseumarchives.ng",
+      "http://localhost:3000"
+    ],
+    "AllowedMethods": ["GET", "HEAD", "PUT", "POST", "DELETE"],
+    "AllowedHeaders": ["*"],
+    "ExposeHeaders": ["ETag", "Content-Length", "Content-Type"],
+    "MaxAgeSeconds": 3600
+  }
+]

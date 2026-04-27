@@ -180,21 +180,33 @@ export default buildConfig({
 
       Object.defineProperty(poolConfig, 'connectionString', {
         get() {
-          if (isWorker) {
-            // Use the direct Neon URL — set by populateProcessEnv via next-env.mjs.
-            // (DATABASE_URI is a Hyperdrive object binding, not a string, so it isn't
-            // copied to process.env; the fallback in next-env.mjs provides the Neon URL.)
-            // Strip sslmode: @neondatabase/serverless WebSocket handles TLS automatically.
-            const url = process.env.DATABASE_URI || ''
-            try {
-              const u = new URL(url)
-              u.searchParams.delete('sslmode')
-              return u.toString()
-            } catch {
-              return url
-            }
+          // Read once via getEnv so Cloudflare bindings (secrets) take priority
+          // over anything baked into next-env.mjs at build time. Falls back to
+          // process.env in non-Worker contexts (build / local dev).
+          const raw = getEnv('DATABASE_URI') || process.env.DATABASE_URI || ''
+          if (!raw) {
+            // Fail loud and named instead of letting @neondatabase/serverless
+            // open a WSS to nothing and surface "[object ErrorEvent]".
+            throw new Error(
+              'DATABASE_URI is not set. In Cloudflare Workers it must be a secret: ' +
+                '`npx wrangler secret put DATABASE_URI`. Locally, set it in .env.',
+            )
           }
-          return getEnv('DATABASE_URI')
+          try {
+            const u = new URL(raw)
+            // Workers: @neondatabase/serverless's WebSocket transport always uses
+            // TLS, and pg refuses URLs with sslmode=verify-full there. Strip it.
+            // Non-Workers (local build, dev, scripts): keep sslmode — node-postgres
+            // needs it to negotiate TLS against Neon, otherwise Neon rejects with
+            // "connection is insecure (try using sslmode=require)".
+            if (isWorker) u.searchParams.delete('sslmode')
+            return u.toString()
+          } catch {
+            throw new Error(
+              `DATABASE_URI is set but is not a valid URL (length=${raw.length}). ` +
+                'Expected postgres://user:pass@host[:port]/db.',
+            )
+          }
         },
         enumerable: true,
         configurable: true,

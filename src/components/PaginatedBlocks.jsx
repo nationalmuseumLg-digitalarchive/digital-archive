@@ -29,8 +29,8 @@ const PaginatedBlocks = ({ blocks, itemsPerPage = 20, isCollection = false }) =>
   }
 
   return (
-    <div className="flex flex-col gap-6 w-screen">
-      <div className="w-[100%] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-8 gap-2 h-[100%] p-8">
+    <div className="flex flex-col gap-6 justify-center items-center w-screen overflow-hidden p-8">
+      <div className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-8 gap-2 h-[100%]">
         {isCollection ? (
           // Render collection items directly
           currentBlocks.map((item, index) => (

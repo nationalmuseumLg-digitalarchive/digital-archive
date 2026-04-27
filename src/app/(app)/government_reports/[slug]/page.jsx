@@ -44,7 +44,7 @@ const Page =  async({params}) => {
     <div className='w-[100%]  min-h-[100vh]  overflow-hidden h-[100%] font-montserrat flex flex-col gap-4 p-8'>
          <h1 className='sm:text-[3rem] text-[2rem] font-bold pb-8 uppercase' >{page.internalName}</h1>
        
-       <div className='w-[100%] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-8 gap-2 h-[100%]'>
+       <div className='w-[100%] flex justify-center gap-2 h-[100%]'>
         {/* <RenderBlocks blocks={page.pageSection.layout}/> */}
         <PaginatedBlocks blocks={page.pageSection.layout} itemsPerPage={20} />
        </div>

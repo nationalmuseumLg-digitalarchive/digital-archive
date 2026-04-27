@@ -50,14 +50,21 @@ const open = openCard && cardID === id
             <div id={id} className="flex sm:flex-row flex-col justify-between border-black border-[1px]  font-montserrat transition-all font-light  p-2 gap-4 cursor-pointer bg-background"
    
                     onClick={()=> handleOpen(id)}
-                     style={{ 
-                      width: open ? '100vw' : '180px',
-                      height:  open ? 'fit-content' : 'fit-content',
-                      position:  open ? 'absolute' : 'relative',
+                     style={{
+                      // Closed: fill the grid cell so cards never overflow at
+                      // xl:grid-cols-8 where each cell is narrower than 180px.
+                      // Open: cover the viewport via position:fixed so opening
+                      // a card from the bottom of a long list doesn't jump
+                      // off-screen to page-top.
+                      width: open ? '100vw' : '100%',
+                      maxWidth: open ? '100vw' : '180px',
+                      height: open ? '100vh' : 'fit-content',
+                      position: open ? 'fixed' : 'relative',
                       zIndex: open ? 100 : 0,
                       left: 0,
                       top: 0,
                       padding: open ? '4rem' : '',
+                      overflowY: open ? 'auto' : 'visible',
                       cursor: 'pointer'
                      }}
             >
