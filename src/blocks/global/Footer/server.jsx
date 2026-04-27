@@ -32,8 +32,8 @@ const FooterServer = async () => {
 
   return (
     <>
-      <div className="w-[100vw] font-montserrat h-fit grid grid-cols-1 sm:grid-cols-3 bg-primary border-black border-t-[1px] pt-8 gap-4 p-8">
-        <div className="flex justify-between flex-col gap-4 w-fit h-fit">
+      <div className="w-[100vw] font-montserrat h-fit grid grid-cols-1 sm:grid-cols-3 bg-primary border-black border-t-[1px] pt-8 gap-6 p-8">
+        <div className="flex justify-between flex-col gap-4 w-fit h-fit p-8">
           <div className="h-fit w-fit text-background flex flex-col gap-4 z-10 text-[0.75rem] uppercase">
             <h2 className="text-[1rem] text-background font-bold">Quick Links</h2>
             {header?.nav?.map((link, i) => {
@@ -49,7 +49,7 @@ const FooterServer = async () => {
 
         <div className="flex h-[100%] w-[100%]  gap-4 flex-col text-background">
           <p className="text-background break-words font-light mt-4 text-[0.75rem]">
-            Copyright 2024 @ National Museum Lagos, <br />
+            Copyright {new Date().getFullYear()} @ National Museum Lagos, <br />
             All the works published in this archive are licensed under <br />
             Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License
             {/* {footer["copyrightNot ice"]} */}
@@ -127,14 +127,14 @@ const FooterServer = async () => {
           </p>
 
           <Link href="https://www.facebook.com/NationalMuseumOnikanLagos" target="_blank">
-            <div className="text-[0.75rem] gap-2 flex items-center sm:p-4">
+            <div className="text-[0.75rem] underline gap-2 flex items-center sm:p-4">
               <Image src={'/assets/Facebook icons.png'} alt="facebook logo" width={30} height={30} />
               National Museum Onikan Lagos
             </div>
           </Link>
 
           <Link href="https://www.instagram.com/nationalmuseum_lagos" target="_blank">
-            <p className="text-[0.75rem] gap-2 items-center flex sm:p-4">
+            <p className="text-[0.75rem] underline gap-2 items-center flex sm:p-4">
               <Image src={'/assets/Instagram icon.png'} alt="instagram logo" width={30} height={30} />
               nationalmuseum_lagos
             </p>

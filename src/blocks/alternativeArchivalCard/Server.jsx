@@ -142,29 +142,29 @@ const AlternativeArchivalCardBlock = ({
                 transition={{ duration: 0.3, ease: 'easeOut' }}
                 className="columns-2 font-bold flex w-[30vw] text-[1rem] flex-col gap-4 bg-background"
               >
-                <p className="flex flex-col">
+                <p className="flex flex-col font-bold">
                   Year of Creation/Publication <br />
-                  <span className="font-light font-old">{author}</span>
+                  <span className="font-light ">{author}</span>
                 </p>
 
-                <p className="flex flex-col">
+                <p className="flex flex-col font-bold">
                   Keyword: <br />
-                  <span className="font-light font-old">{objectType}</span>
+                  <span className="font-light ">{objectType}</span>
                 </p>
 
-                <p className="flex flex-col">
+                <p className="flex flex-col font-bold">
                   Year of Accession: <br />
-                  <span className="font-light font-old">{ethnicGroup}</span>
+                  <span className="font-light ">{ethnicGroup}</span>
                 </p>
 
                 <p className="flex flex-col">
                   Condition: <br />
-                  <span className="font-light font-old">{artist}</span>
+                  <span className="font-light ">{artist}</span>
                 </p>
 
                 <p className="flex flex-col">
                   Location: <br />
-                  <span className="font-light font-old">{geographicOrigin}</span>
+                  <span className="font-light ">{geographicOrigin}</span>
                 </p>
 
                 <p className="flex flex-col">
@@ -178,17 +178,17 @@ const AlternativeArchivalCardBlock = ({
 
                 <p className="flex flex-col">
                   Provenance: <br />
-                  <span className="font-light font-old">{provenance}</span>
+                  <span className="font-light ">{provenance}</span>
                 </p>
 
                 <p className="flex flex-col">
                   Date: <br />
-                  <span className="font-light font-old">{date}</span>
+                  <span className="font-light ">{date}</span>
                 </p>
 
                 {/* <p className='flex flex-col'>
                  Identifiers: <br />
-                  <span className='font-light font-old'>{identifiers}</span>
+                  <span className='font-light '>{identifiers}</span>
                  </p> */}
 
                 <Link

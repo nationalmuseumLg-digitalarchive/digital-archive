@@ -22,14 +22,14 @@ const LandingPage = () => {
   return (
     <div className="px-16 ">
       <section className="w-[100%] h-[80vh] justify-center items-center relative border-[1px] border-t-0 border-black flex flex-col lg:flex-row  bg-background">
-        <div className="lg:w-1/2 w-[100%] h-[100%] relative font-montserrat p-[2rem] flex flex-col  truncate text-[9vw] md:text-[7vw] bg-no-repeat bg-landing bg-opacity-50 bg-center  z-0">
+        <div className="lg:w-1/2 w-[100%] text-primary h-[100%] relative font-montserrat p-[2rem] flex flex-col  truncate text-[9vw] md:text-[7vw] bg-no-repeat bg-landing bg-opacity-50 bg-center  z-0">
           <motion.div
             // initial={{opacity: 0}}
             // animate={{opacity:1}}
             // transition={{duration:0.3}}
             className="w-[100%]"
           >
-            <h1 className="font-bold relative sm:overflow-hidden z-2">
+            <h1 className=" relative sm:overflow-hidden z-2">
               <motion.div
                 // variants={anim}
                 initial={{ y: 200 }}
@@ -43,7 +43,7 @@ const LandingPage = () => {
               </motion.div>{' '}
             </h1>
 
-            <h1 className="font-bold relative sm:overflow-hidden z-2">
+            <h1 className="relative sm:overflow-hidden z-2">
               <motion.div
                 initial={{ y: 200 }}
                 animate={{ y: 0 }}
@@ -55,7 +55,7 @@ const LandingPage = () => {
               </motion.div>{' '}
             </h1>
 
-            <h1 className="font-bold relative sm:overflow-hidden z-2">
+            <h1 className=" relative sm:overflow-hidden z-2">
               <motion.div
                 initial={{ y: 200 }}
                 animate={{ y: 0 }}
@@ -67,7 +67,7 @@ const LandingPage = () => {
               </motion.div>{' '}
             </h1>
 
-            <h2 className="font-bold relative sm:overflow-hidden z-2">
+            <h2 className=" relative sm:overflow-hidden z-2">
               <motion.div
                 initial={{ y: 200 }}
                 animate={{ y: 0 }}
@@ -110,7 +110,7 @@ const LandingPage = () => {
                   MANUSCRIPTS
                 </h2>
 
-                <p className=" font-light invisible md:visible  font-old lg:text-[1vw] text-[1.5vw] ">
+                <p className=" font-light invisible md:visible  lg:text-[1vw] text-[1.5vw] ">
                   These are unpublished manuscripts, comprising both handwritten and typed
                   documents, available in various forms and formats.
                 </p>
@@ -162,7 +162,7 @@ const LandingPage = () => {
                   REPORTS
                 </h2>
 
-                <p className=" font-light invisible md:visible font-old lg:text-[1vw] text-[1.5vw]">
+                <p className=" font-light invisible md:visible lg:text-[1vw] text-[1.5vw]">
                   Intelligence reports are documents or briefings that provide insights, analyses,
                   and assessments on a range of issues.
                 </p>
@@ -208,7 +208,7 @@ const LandingPage = () => {
               <div className="md:h-[50%] h-[20%] flex flex-col gap-4 ">
                 <h2 className="font-bold">MAPS</h2>
 
-                <p className=" font-light invisible md:visible  font-old lg:text-[1vw] text-[1.5vw]">
+                <p className=" font-light invisible md:visible  lg:text-[1vw] text-[1.5vw]">
                   Maps of Nigeria providing detailed visual representations of regions, vegetation
                   zones, geographic locations, waterways, and other essential information.
                 </p>
@@ -245,7 +245,7 @@ const LandingPage = () => {
         <div className="h-[100%]  px-10 p-[1.5rem]  lg:w-1/2 flex flex-col gap-6 font-light w-full border-r-[1px]  pt-10 pb-10  border-black">
           <h2 className="font-montserrat font-bold text-[4vw]"> THE MUSEUM </h2>
 
-          <p className="w-fit font-old text-[0.75rem] sm:text-[16px]">
+          <p className="w-fit text-[0.75rem] sm:text-[16px]">
             NATIONAL MUSEUM ONIKAN, LAGOS NIGERIA <br />
             <br />
             National Museum Lagos is a specialized sub-sect operating under the National Commission
@@ -257,7 +257,7 @@ const LandingPage = () => {
             heritage. The museum also conducts skills acquisition empowerment programs to create job
             opportunities and offers developmental courses for staff members.
           </p>
-          <p className="w-fit text-[0.75rem]  font-old sm:text-[16px]">
+          <p className="w-fit text-[0.75rem]   sm:text-[16px]">
             Its goal is to bring the museum's offerings to the public, especially those unable to
             visit, thereby highlighting the importance, value, and pride embedded in Nigerian
             culture and heritage.

@@ -7,18 +7,13 @@ import FooterServer from '../../blocks/global/Footer/server'
 
 
 const montserrat = Montserrat({
-  weight: '400',
+  // weight: '400',
   variable: '--font-montserrat',
   subsets: ['latin'],
   display: 'swap',
 })
 
-const monoMajor = Major_Mono_Display({
-  weight: '400',
-  variable: '--font-monoMajor',
-  subsets: ['latin'],
-  display: 'swap',
-})
+
 
 const playfair = Playfair_Display({
   variable: '--font-playfair',
@@ -42,7 +37,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${monoMajor.variable} ${playfair.variable} ${old.variable} ${montserrat.variable}`}
+        className={` ${playfair.variable} ${old.variable} ${montserrat.variable}`}
       >
         <HeaderServer />
         <PageTransition>{children}</PageTransition>

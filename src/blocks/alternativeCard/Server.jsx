@@ -164,52 +164,52 @@ const AlternativeCardBlock = ({
               >
                 <p className="flex flex-col">
                   Accession Date: <br />
-                  <span className="font-light font-old">{accession}</span>
+                  <span className="font-light">{accession}</span>
                 </p>
 
                 <p className="flex flex-col">
                   accession Number: <br />
-                  <span className="font-light font-old">{accessionNumber}</span>
+                  <span className="font-light ">{accessionNumber}</span>
                 </p>
 
                 <p className="flex flex-col">
                   Year of Accession: <br />
-                  <span className="font-light font-old">{accession}</span>
+                  <span className="font-light">{accession}</span>
                 </p>
 
                 <p className="flex flex-col">
                   Staff: <br />
-                  <span className="font-light font-old">{staff}</span>
+                  <span className="font-light">{staff}</span>
                 </p>
 
                 <p className="flex flex-col">
                   Entry Date: <br />
-                  <span className="font-light font-old">{entry}</span>
+                  <span className="font-light">{entry}</span>
                 </p>
 
                 <p className="flex flex-col">
                   Location: <br />
-                  <span className="font-light font-old">{location}</span>
+                  <span className="font-light">{location}</span>
                 </p>
 
                 <p className="flex flex-col">
                   Period/Age: <br />
-                  <span className="font-light font-old">{period}</span>
+                  <span className="font-light">{period}</span>
                 </p>
 
                 <p className="flex flex-col">
                   Production Technique: <br />
-                  <span className="font-light font-old">{production}</span>
+                  <span className="font-light">{production}</span>
                 </p>
 
                 <p className="flex flex-col">
                   Photographer: <br />
-                  <span className="font-light font-old">{photographer}</span>
+                  <span className="font-light">{photographer}</span>
                 </p>
 
                 <p className="flex flex-col">
                   Aquisition Method: <br />
-                  <span className="font-light font-old">{aquisition}</span>
+                  <span className="font-light">{aquisition}</span>
                 </p>
 
                 <p className="flex flex-col">
@@ -223,7 +223,7 @@ const AlternativeCardBlock = ({
 
                 <p className="flex flex-col">
                   Provenance: <br />
-                  <span className="font-light font-old">{provenance}</span>
+                  <span className="font-light ">{provenance}</span>
                 </p>
 
                 {/* <p className='flex flex-col'>

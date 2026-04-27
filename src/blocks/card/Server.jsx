@@ -108,27 +108,27 @@ const open = openCard && cardID === id
                   
                   <p className='flex flex-col'>
                   Year of Creation/Publication <br />
-                  <span className='font-light font-old'>{creation}</span>
+                  <span className='font-light '>{creation}</span>
                  </p>
 
                  <p className='flex flex-col'>
                   Keyword: <br />
-                  <span className='font-light font-old'>{keyword}</span>
+                  <span className='font-light '>{keyword}</span>
                  </p>
 
                  <p className='flex flex-col'>
                   Year of Accession: <br />
-                  <span className='font-light font-old'>{accession}</span>
+                  <span className='font-light '>{accession}</span>
                  </p>
 
                  <p className='flex flex-col'>
                   Condition: <br />
-                  <span className='font-light font-old'>{condition}</span>
+                  <span className='font-light '>{condition}</span>
                  </p>
 
                  <p className='flex flex-col'>
                   Location: <br />
-                  <span className='font-light font-old'>{location}</span>
+                  <span className='font-light '>{location}</span>
                  </p>
                 
 
@@ -143,7 +143,7 @@ const open = openCard && cardID === id
 
                  <p className='flex flex-col'>
                   Provenance: <br />
-                  <span className='font-light font-old'>{provenance}</span>
+                  <span className='font-light'>{provenance}</span>
                  </p>
 
                  {/* <p className='flex flex-col'>
