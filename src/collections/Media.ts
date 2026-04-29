@@ -22,7 +22,7 @@ export const Media: CollectionConfig = {
         crop: 'center',
       },
     ],
-    mimeTypes: ['image/*'],
+    mimeTypes: ['image/*', 'application/pdf'],
   },
   fields: [
     {
