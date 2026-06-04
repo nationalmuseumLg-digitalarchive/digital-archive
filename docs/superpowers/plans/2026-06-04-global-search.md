@@ -51,8 +51,8 @@ Open `src/collections/AlternativePages.js`. Add this field to the `fields` array
 {
   name: 'section',
   type: 'select',
-  required: true,
   admin: { position: 'sidebar' },
+  defaultValue: 'alternative_heritages_objects',
   options: [
     { label: 'Alternative Heritage Objects', value: 'alternative_heritages_objects' },
     { label: 'Alternative Heritage Archival', value: 'alternative_heritage_archival' },
