@@ -28,15 +28,22 @@ Extend the existing Payload `searchPlugin` (already installed, currently indexin
 | Collection slug | Type label | Routing |
 |---|---|---|
 | `pages` | PAGES | `/<slug>` (via nestedDocsPlugin) |
-| `alternativePages` | ALT PAGES | `/<categoryPath>/<slug>` |
-| `ethnographicItems` | ETHNOGRAPHIC | `/ethnography_and_archaeology` |
-| `maps` | MAPS | `/maps` |
-| `manuscripts` | MANUSCRIPTS | `/manuscripts/<nav-link>` |
-| `intelligenceReports` | INTELLIGENCE | `/intelligence_reports/<nav-link>` |
-| `governmentReports` | GOVT REPORTS | `/government_reports/<nav-link>` |
-| `photos` | PHOTOS | `/photos` |
-| `alternativeHeritage` | ALT HERITAGE | `/alternative_heritages_objects/<nav-link>` |
-| `alternativeArchivalHeritage` | ARCHIVAL HERITAGE | `/alternative_heritage_archival/<nav-link>` |
+| `alternativePages` | ALT PAGES | `/<doc.section>/<doc.slug>` — requires `section` select field (see note below) |
+| `ethnographicItems` | ETHNOGRAPHIC | `/ethnography_and_archaeology` (no individual record pages) |
+| `maps` | MAPS | `/maps` (no individual record pages) |
+| `manuscripts` | MANUSCRIPTS | `/<nav[0].link>` |
+| `intelligenceReports` | INTELLIGENCE | `/<nav[0].link>` |
+| `governmentReports` | GOVT REPORTS | `/<nav[0].link>` |
+| `photos` | PHOTOS | `/photos` (no individual record pages) |
+| `alternative_heritages` | ALT HERITAGE | `/<nav[0].link>` |
+| `alternative_archival_heritages` | ARCHIVAL HERITAGE | `/<nav[0].link>` |
+
+> **Note on `alternativePages` routing:** The app has two parent routes for `alternativePages` documents — `/alternative_heritages_objects/[slug]` and `/alternative_heritage_archival/[slug]`. The collection has no field that identifies which section a document belongs to. A `section` select field must be added to `alternativePages`:
+> ```js
+> { name: 'section', type: 'select', required: true,
+>   options: ['alternative_heritages_objects', 'alternative_heritage_archival'] }
+> ```
+> The `beforeSync` hook then sets `collectionRoute = doc.section + '/' + doc.slug`. Existing docs need this field populated via the CMS admin.
 
 ---
 
@@ -70,13 +77,15 @@ One file per collection in `src/search/beforeSync/`. Each hook maps source doc f
 }
 ```
 
-**`alternativePages` (fix existing bug):** Current code overwrites `title` on each card block iteration. Fix: concatenate all block `objectName` / `title` values into a single space-separated string so the full page content is searchable. Set `excerpt` to the first block's description.
+**`alternativePages` (fix existing bug):** Current code overwrites `title` on each card block iteration. Fix: concatenate all block `objectName` / `title` values into a single space-separated string so the full page content is searchable. Set `excerpt` to the first block's description. Set `collectionRoute = doc.section + '/' + doc.slug`.
 
-**Collections with `nav` arrays** (`manuscripts`, `intelligenceReports`, `governmentReports`, `alternativeHeritage`, `alternativeArchivalHeritage`): `title` = `internalName`, `collectionRoute` = `nav[0].link`.
+**Collections with `nav` arrays** (`manuscripts`, `intelligenceReports`, `governmentReports`, `alternative_heritages`, `alternative_archival_heritages`): `title` = `internalName`, `collectionRoute` = `nav[0].link` (the link already includes the full path, e.g. `manuscripts/benin_expeditions`).
 
-**`photos`**: `title` = `"Photo"` + doc ID, `excerpt` = `description`.
+**`photos`**: No title field — `title` = `"Photo " + doc.id`, `excerpt` = `description`, `collectionRoute` = `photos`.
 
-**`ethnographicItems`**: `title` = primary name field, `excerpt` = description.
+**`maps`**: No title field — `title` = `"Map " + doc.id`, `excerpt` = `description`, `collectionRoute` = `maps`.
+
+**`ethnographicItems`**: `title` = `objectName`, `excerpt` = `description`, `collectionRoute` = `ethnography_and_archaeology`. No individual record pages exist — clicking navigates to the collection listing.
 
 ### defaultPriorities
 
@@ -226,8 +235,9 @@ cursor-pointer hover: bg-primary text-background (transition 200ms)
 | `src/search/beforeSync/intelligenceReports.ts` | Map intelligence report fields |
 | `src/search/beforeSync/governmentReports.ts` | Map government report fields |
 | `src/search/beforeSync/photos.ts` | Map photos fields |
-| `src/search/beforeSync/alternativeHeritage.ts` | Map alt heritage fields |
-| `src/search/beforeSync/alternativeArchivalHeritage.ts` | Map archival heritage fields |
+| `src/search/beforeSync/alternativeHeritage.ts` | Map alt_heritages fields (internalName + nav) |
+| `src/search/beforeSync/alternativeArchivalHeritage.ts` | Map alternative_archival_heritages fields (internalName + nav) |
+| `src/collections/AlternativePages.js` | Add `section` select field for routing disambiguation |
 | `src/utils/useStore.jsx` | Add `searchOpen`, `searchQuery`, `openSearch`, `closeSearch`, `setSearchQuery` |
 | `src/components/Nav.jsx` | Add search icon + `openSearch` trigger |
 | `src/components/SearchOverlay.jsx` | Full-screen search overlay (new) |
