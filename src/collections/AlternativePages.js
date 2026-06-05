@@ -26,6 +26,16 @@ export const AlternativePages = {
       index: true,
     },
     {
+      name: 'section',
+      type: 'select',
+      admin: { position: 'sidebar' },
+      defaultValue: 'alternative_heritages_objects',
+      options: [
+        { label: 'Alternative Heritage Objects', value: 'alternative_heritages_objects' },
+        { label: 'Alternative Heritage Archival', value: 'alternative_heritage_archival' },
+      ],
+    },
+    {
       name: 'pageSection',
       type: 'group',
       interfaceName: 'Section',

@@ -285,6 +285,7 @@ export interface AlternativePage {
   id: number;
   internalName: string;
   slug: string;
+  section?: ('alternative_heritages_objects' | 'alternative_heritage_archival') | null;
   pageSection?: Section;
   ethnographicItems?: (number | EthnographicItem)[] | null;
   updatedAt: string;
@@ -461,7 +462,43 @@ export interface Search {
     | {
         relationTo: 'alternativePages';
         value: number | AlternativePage;
+      }
+    | {
+        relationTo: 'ethnographicItems';
+        value: number | EthnographicItem;
+      }
+    | {
+        relationTo: 'maps';
+        value: number | Map;
+      }
+    | {
+        relationTo: 'manuscripts';
+        value: number | Manuscript;
+      }
+    | {
+        relationTo: 'intelligence_reports';
+        value: number | IntelligenceReport;
+      }
+    | {
+        relationTo: 'government_reports';
+        value: number | GovernmentReport;
+      }
+    | {
+        relationTo: 'photos';
+        value: number | Photo;
+      }
+    | {
+        relationTo: 'alternative_heritages';
+        value: number | AlternativeHeritage;
+      }
+    | {
+        relationTo: 'alternative_archival_heritages';
+        value: number | AlternativeArchivalHeritage;
       };
+  type?: string | null;
+  excerpt?: string | null;
+  collectionRoute?: string | null;
+  imageUrl?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -728,6 +765,7 @@ export interface SectionSelect<T extends boolean = true> {
 export interface AlternativePagesSelect<T extends boolean = true> {
   internalName?: T;
   slug?: T;
+  section?: T;
   pageSection?: T | SectionSelect<T>;
   ethnographicItems?: T;
   updatedAt?: T;
@@ -885,6 +923,10 @@ export interface SearchSelect<T extends boolean = true> {
   title?: T;
   priority?: T;
   doc?: T;
+  type?: T;
+  excerpt?: T;
+  collectionRoute?: T;
+  imageUrl?: T;
   updatedAt?: T;
   createdAt?: T;
 }

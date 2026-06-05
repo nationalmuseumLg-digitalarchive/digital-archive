@@ -8,6 +8,7 @@ import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
 import { nestedDocsPlugin } from '@payloadcms/plugin-nested-docs'
 import { searchPlugin } from '@payloadcms/plugin-search'
+import { globalBeforeSync } from './search/beforeSync'
 import { getCloudflareContext } from '@opennextjs/cloudflare'
 import { getEnv } from './utils/getEnv'
 import { Pool as NeonPool, neonConfig } from '@neondatabase/serverless'
@@ -217,51 +218,58 @@ export default buildConfig({
   }),
   plugins: [
     searchPlugin({
-      collections: ['pages', 'alternativePages'],
-      defaultPriorities: {
-        pages: 20,
-        alternativePages: 20,
-      },
-      fields: ({ defaultFields }) => [
-        ...defaultFields,
-
-        {
-          name: 'cardKeywords',
-          type: 'text',
-          search: true,
-        },
-        {
-          name: 'cardDescriptions',
-          type: 'text',
-          search: true,
-        },
-        {
-          name: 'cardTitles',
-          type: 'text',
-          search: true,
-        },
+      collections: [
+        'pages',
+        'alternativePages',
+        'ethnographicItems',
+        'maps',
+        'manuscripts',
+        'intelligence_reports',
+        'government_reports',
+        'photos',
+        'alternative_heritages',
+        'alternative_archival_heritages',
       ],
-      beforeSync: ({ originalDoc, searchDoc }) => {
-        // ...searchDoc,
-        searchDoc.title = originalDoc.internalName || 'Untitled'
-
-        if (originalDoc.pageSection?.layout) {
-          const cardBlocks = originalDoc.pageSection.layout.filter(
-            (block) => block.blockType === 'file', // Only focus on card blocks
-          )
-
-          // Process each card block and ensure its fields are included in searchDoc
-          cardBlocks.forEach((card, idx) => {
-            const cardIndex = `card_${idx}` // Assign an index to avoid conflicts
-
-            // Index the card's title, description, and keyword for search
-            searchDoc.title = card.title || '' // Searchable card title
-            searchDoc.description = card.description || '' // Searchable card description
-            searchDoc.keyword = card.keyword || '' // Searchable card keyword
-          })
-        }
-
-        return searchDoc
+      defaultPriorities: {
+        pages: 10,
+        alternativePages: 10,
+        ethnographicItems: 10,
+        maps: 10,
+        manuscripts: 10,
+        intelligence_reports: 10,
+        government_reports: 10,
+        photos: 10,
+        alternative_heritages: 10,
+        alternative_archival_heritages: 10,
+      },
+      beforeSync: globalBeforeSync,
+      // NOTE: custom fields must live under `searchOverrides.fields` for this
+      // plugin version — a top-level `fields` is silently ignored (which is why
+      // the original cardKeywords/cardDescriptions/cardTitles never took effect).
+      searchOverrides: {
+        // The admin "Reindex" action requires `update` + `delete` access on the
+        // search collection; the plugin only sets create/read by default, so we
+        // grant update/delete to authenticated users. (Don't define create/read
+        // here — the reindex handler would then also require them, and create is
+        // false, which would block reindexing.)
+        access: {
+          update: ({ req }) => Boolean(req.user),
+          delete: ({ req }) => Boolean(req.user),
+        },
+        fields: ({ defaultFields }) => [
+          ...defaultFields,
+          // `type` is filtered with [equals] — a btree index genuinely helps.
+          { name: 'type', type: 'text', index: true },
+          // `excerpt`/`title` are only queried with [like] (ILIKE '%term%').
+          // A btree index cannot serve a leading-wildcard match, so none here.
+          // At this archive's scale a sequential scan is fast; if it grows
+          // large, add a pg_trgm GIN index instead.
+          { name: 'excerpt', type: 'text' },
+          { name: 'collectionRoute', type: 'text' },
+          // Denormalised thumbnail URL so result cards can show the record image
+          // without resolving the polymorphic `doc` relationship (keeps depth:0).
+          { name: 'imageUrl', type: 'text' },
+        ],
       },
     }),
     s3Storage({
