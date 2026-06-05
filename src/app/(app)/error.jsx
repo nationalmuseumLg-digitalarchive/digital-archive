@@ -1,33 +1,46 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+
+// Neon free-tier cold starts take 5–15s. We retry up to 3 times with
+// increasing delays before showing a manual retry button.
+const RETRY_DELAYS_MS = [8000, 12000]
 
 export default function Error({ error, reset }) {
-  const [retried, setRetried] = useState(false)
+  const [attempt, setAttempt] = useState(0)
+  const [message, setMessage] = useState('Waking the database. This usually takes a few seconds…')
+  const timerRef = useRef(null)
 
   useEffect(() => {
-    if (retried) return
-    // Most server errors here are Neon cold starts (~10s wake). Auto-retry once
-    // after 3s — by then the keepalive ping has usually warmed the DB.
-    const t = setTimeout(() => {
-      setRetried(true)
+    if (attempt >= RETRY_DELAYS_MS.length) return
+
+    const delay = RETRY_DELAYS_MS[attempt]
+    timerRef.current = setTimeout(() => {
+      setAttempt((a) => a + 1)
       reset()
-    }, 3000)
-    return () => clearTimeout(t)
-  }, [retried, reset])
+    }, delay)
+
+    return () => clearTimeout(timerRef.current)
+  }, [attempt, reset])
+
+  useEffect(() => {
+    if (attempt === 1) setMessage('Still waking up — one more try…')
+    if (attempt >= RETRY_DELAYS_MS.length) setMessage('The page could not be loaded.')
+  }, [attempt])
+
+  const giveUp = attempt >= RETRY_DELAYS_MS.length
 
   return (
     <div style={{ fontFamily: 'sans-serif', padding: '4rem 2rem', textAlign: 'center' }}>
-      <h1 style={{ fontSize: '1.5rem' }}>Loading…</h1>
+      <h1 style={{ fontSize: '1.5rem' }}>{giveUp ? 'Something went wrong' : 'Loading…'}</h1>
       <p style={{ color: '#666', marginTop: '1rem', maxWidth: 480, marginInline: 'auto' }}>
-        {retried
-          ? 'The page is still unavailable. Please retry.'
-          : 'Waking the database. This usually takes a few seconds.'}
+        {message}
       </p>
-      {retried && (
+      {giveUp && (
         <button
           onClick={() => {
-            setRetried(false)
+            setAttempt(0)
+            setMessage('Waking the database. This usually takes a few seconds…')
             reset()
           }}
           style={{

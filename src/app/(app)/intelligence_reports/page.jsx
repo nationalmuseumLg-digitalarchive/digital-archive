@@ -62,18 +62,18 @@ const IntelligenceReports = async ({ searchParams }) => {
               assessments on a range of issues.
             </p>
 
-            <div className="pb-8 flex flex-col gap-2">
-              <h2 className="font-normal text-[1rem]">SECTIONS</h2>
-              <div className="flex flex-col gap-2">
+            <div className="pb-8 flex flex-col gap-3">
+              <h2 className="font-bold text-[0.65rem] tracking-[0.2em] text-black/40 uppercase pb-1">SECTIONS</h2>
+              <div className="flex flex-col gap-3">
                 {pages.docs.map((page, i) => {
                   return (
                     <Link
                       key={i}
-                      className="border-background uppercase font-semibold text-sm hover:text-[#006600]"
+                      className="group flex items-center justify-between sm:min-w-[360px] px-5 py-4 bg-primary text-background uppercase font-bold text-xs sm:text-sm tracking-widest hover:bg-primary-light active:opacity-80 transition-all duration-200"
                       href={`/${page.nav[0].link}`}
                     >
-                      {' '}
-                      {page.nav[0].label}
+                      <span>{page.nav[0].label}</span>
+                      <span className="ml-6 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200">→</span>
                     </Link>
                   )
                 })}

@@ -13,8 +13,8 @@ export {
 export default {
   fetch: openNextWorker.fetch,
 
-  // Cron Trigger entrypoint. Pings /api/keepalive so Neon's free-tier compute
-  // stays warm and visitors don't pay the ~10s wake-up cost.
+  // Cron Trigger entrypoint — pings /api/keepalive every 4 min so Neon
+  // never auto-suspends and visitors never hit a cold-start delay.
   async scheduled(event, env, ctx) {
     const url = `${env.NEXT_PUBLIC_SERVER_URL || 'https://lagosmuseumarchives.ng'}/api/keepalive`
     const req = new Request(url, { method: 'GET', headers: { 'x-cron': '1' } })

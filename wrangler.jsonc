@@ -2,6 +2,7 @@
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"main": "worker.js",
 	"name": "digital-archive",
+	"account_id": "011cb5250722ffa0a16ab5cb96ed3a90",
 	"compatibility_date": "2026-04-02",
 	"compatibility_flags": [
 		"nodejs_compat",
@@ -38,9 +39,10 @@
 		// see https://opennext.js.org/cloudflare/howtos/image
 		"binding": "IMAGES"
 	},
-	// Cron Trigger: ping /api/keepalive every 4 minutes so Neon's free-tier
-	// compute never auto-suspends (auto-suspend kicks in after ~5 min idle).
-	// Handler is in worker.js -> scheduled().
+	// Cron Trigger: ping /api/keepalive every 4 minutes so Neon never
+	// auto-suspends (auto-suspend kicks in after ~5 min idle).
+	// Only viable on a paid Neon plan (Launch+) — on free tier the 24/7
+	// compute exhausts the ~191 CU-hr monthly quota in ~8 days.
 	"triggers": {
 		"crons": ["*/4 * * * *"]
 	},
