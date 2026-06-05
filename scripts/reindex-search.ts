@@ -13,7 +13,9 @@
 // Run (dev server can stay up):  npx tsx scripts/reindex-search.ts
 import 'dotenv/config'
 import { getPayload } from 'payload'
-import config from '../src/payload.config.ts'
+// Extensionless on purpose: a literal '.ts' import fails the Next build's
+// type-check (allowImportingTsExtensions is off). tsx still resolves this.
+import config from '../src/payload.config'
 
 process.on('uncaughtException', (e) => console.warn('  ~ uncaught (continuing):', e?.message))
 process.on('unhandledRejection', (e: any) => console.warn('  ~ rejection (continuing):', e?.message ?? e))
