@@ -1,11 +1,31 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { RenderBlocks } from '@/utils/RenderBlocks'
 import AlternativeCardBlock from '@/blocks/alternativeCard/Server'
+import useStore from '@/utils/useStore'
 
 const PaginatedBlocks = ({ blocks, itemsPerPage = 20, isCollection = false }) => {
   const [currentPage, setCurrentPage] = useState(1)
+  const updateOpenCard = useStore((state) => state.updateOpenCard)
+  const updateCardId = useStore((state) => state.updateCardId)
+
+  // Deep-link support: a search result links here with ?open=<recordId>. Jump to
+  // the page that holds that record and pop its card open. Reading the param from
+  // window (not useSearchParams) keeps this client-only with no Suspense boundary.
+  useEffect(() => {
+    if (typeof window === 'undefined' || !Array.isArray(blocks)) return
+    const openId = new URLSearchParams(window.location.search).get('open')
+    if (!openId) return
+
+    const idFor = (b) => b?.id ?? b?.blockName
+    const idx = blocks.findIndex((b) => String(idFor(b)) === String(openId))
+    if (idx < 0) return
+
+    setCurrentPage(Math.floor(idx / itemsPerPage) + 1)
+    updateCardId(idFor(blocks[idx]))
+    updateOpenCard(true)
+  }, [blocks, itemsPerPage, updateOpenCard, updateCardId])
 
   const totalPages = Math.ceil(blocks.length / itemsPerPage)
   const startIndex = (currentPage - 1) * itemsPerPage

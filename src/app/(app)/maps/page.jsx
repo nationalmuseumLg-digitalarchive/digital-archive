@@ -8,11 +8,28 @@ import React from 'react'
 import Image from "next/legacy/image"
 
 import Pagination from '@/components/Pagination'
+import ScrollToId from '@/components/ScrollToId'
 
 const Maps = async ({ searchParams }) => {
-  const { page: pageParam } = await searchParams
-  const currentPage = parseInt(pageParam) || 1
+  const { page: pageParam, open: openParam } = await searchParams
   const limit = 10 // Maps might be large, so smaller limit per page
+
+  const payloadForPage = await getPayload({ config })
+
+  // Deep-link from search (?open=<id>): find which pagination page holds the
+  // record so it renders, then ScrollToId brings it into view. Same default sort
+  // as the page query below, so indexes line up.
+  let currentPage = parseInt(pageParam) || 1
+  if (openParam && !pageParam) {
+    const all = await payloadForPage.find({
+      collection: 'maps',
+      depth: 0,
+      limit: 10000,
+      select: {},
+    })
+    const idx = all.docs.findIndex((d) => String(d.id) === String(openParam))
+    if (idx >= 0) currentPage = Math.floor(idx / limit) + 1
+  }
 
   const anim = {
     initial: {
@@ -26,9 +43,7 @@ const Maps = async ({ searchParams }) => {
     },
   }
 
-  const payload = await getPayload({ config })
-
-  const pages = await payload.find({
+  const pages = await payloadForPage.find({
     collection: 'maps',
     draft: false,
     limit,
@@ -42,6 +57,7 @@ const Maps = async ({ searchParams }) => {
 
   return (
     <>
+      <ScrollToId targetId={openParam} />
       <div className="w-[100%] min-h-[100vh] h-[100%] font-montserrat flex justify-between  border-black border-t-[1px] flex-row py-8 px-10  overflow-hidden">
         <div className="flex justify-between items-start flex-col">
           <div className="h-fit w-fit text-primary flex flex-col gap-4 text-[0.75rem] sm:text-[1rem]">

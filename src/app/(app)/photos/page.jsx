@@ -8,11 +8,26 @@ import React from 'react'
 import Image from "next/legacy/image"
 
 import Pagination from '@/components/Pagination'
+import ScrollToId from '@/components/ScrollToId'
 
 const Photos = async ({ searchParams }) => {
-  const { page: pageParam } = await searchParams
-  const currentPage = parseInt(pageParam) || 1
+  const { page: pageParam, open: openParam } = await searchParams
   const limit = 12
+
+  const payloadForPage = await getPayload({ config })
+
+  // Deep-link from search (?open=<id>): find the page holding the record.
+  let currentPage = parseInt(pageParam) || 1
+  if (openParam && !pageParam) {
+    const all = await payloadForPage.find({
+      collection: 'photos',
+      depth: 0,
+      limit: 10000,
+      select: {},
+    })
+    const idx = all.docs.findIndex((d) => String(d.id) === String(openParam))
+    if (idx >= 0) currentPage = Math.floor(idx / limit) + 1
+  }
 
   const anim = {
     initial: {
@@ -26,9 +41,7 @@ const Photos = async ({ searchParams }) => {
     },
   }
 
-  const payload = await getPayload({ config })
-
-  const pages = await payload.find({
+  const pages = await payloadForPage.find({
     collection: 'photos',
     draft: false,
     limit,
@@ -41,6 +54,7 @@ const Photos = async ({ searchParams }) => {
 
   return (
     <>
+      <ScrollToId targetId={openParam} />
       <div className="w-[100%] min-h-[100vh] h-[100%] font-montserrat flex justify-start bg-background border-black border-t-[1px] p-8 overflow-hidden">
         <div className="h-fit w-full text-primary flex flex-col gap-4 text-[0.75rem] sm:text-[1rem px-8">
           <h2 className="text-[2rem] sm:text-[3rem] uppercase font-bold pb-2">Photo gallery</h2>
