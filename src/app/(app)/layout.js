@@ -3,6 +3,7 @@ import './globals.css'
 import PageTransition from '@/components/PageTransition'
 import HeaderServer from '../../blocks/global/Header/server'
 import FooterServer from '../../blocks/global/Footer/server'
+import SearchOverlay from '@/components/SearchOverlay'
 
 
 
@@ -39,6 +40,7 @@ export default function RootLayout({ children }) {
       <body
         className={` ${playfair.variable} ${old.variable} ${montserrat.variable}`}
       >
+        <SearchOverlay />
         <HeaderServer />
         <PageTransition>{children}</PageTransition>
         <FooterServer />
