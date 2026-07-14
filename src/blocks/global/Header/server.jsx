@@ -104,7 +104,7 @@ const HeaderServer = async () => {
   const logoUrl = header?.logo?.url
 
   return (
-    <div className="flex relative items-center justify-center w-[100%]  h-fit py-4 border-b-[1px] border-primary px-8 z-20">
+    <div className="flex relative items-center justify-between sm:justify-center w-[100%]  h-fit py-4 border-b-[1px] border-primary px-8 z-20">
       <div className="w-fit h-fit ">
         <Link
           href={'/'}

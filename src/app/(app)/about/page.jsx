@@ -38,22 +38,22 @@ const About = () => {
 
 return (
  <>
- <div className='flex flex-col w-100% min-h-[100vh] h-fit px-10 overflow-hidden '>
+ <div className='flex flex-col w-100% min-h-[100vh] h-fit px-4 sm:px-10 overflow-hidden '>
 
    <div className='w-100% h-fit font-montserrat flex bg-background border-primary flex-col sm:flex-row columns-2 overflow-hidden'>
 
-        <div className="h-fit sm:w-1/2 flex flex-col gap-6 font-light w-full  p-8">
+        <div className="h-fit sm:w-1/2 flex flex-col gap-6 font-light w-full  p-5 sm:p-8">
        
 
-            <h1 className="font-montserrat font-bold sm:text-[5rem]"> THE MUSEUM </h1>
+            <h1 className="font-montserrat font-bold text-[1.875rem] sm:text-[5rem]"> THE MUSEUM </h1>
 
-              <p className="w-fit font-old text-[0.75rem] sm:text-[16px]">
+              <p className="w-fit font-old text-[0.875rem] sm:text-[16px]">
               NATIONAL MUSEUM LAGOS
               <br />
               <br />
               National Museum Lagos is a specialized sub-sect operating under the National Commission for Museums and Monuments&rsquo; umbrella body. This institution focuses on various specialized areas within the broader organizational framework, including public relations, research, education and development, marketing, and regional operations. Its goal is to bring the museum&rsquo;s offerings to the public, especially those unable to visit, thereby highlighting the importance, value, and pride embedded in Nigerian culture and heritage. 
               </p>
-              <p className="w-fit text-[0.75rem]  font-old sm:text-[16px]">
+              <p className="w-fit text-[0.875rem]  font-old sm:text-[16px]">
               The museum also conducts skills acquisition empowerment programs to create job opportunities and offers developmental courses for staff members.
               </p>
               <div  className='w-fit h-fit'>
@@ -87,13 +87,13 @@ return (
     </div>
 
     <div className='w-[100%] h-[100%] font-montserrat flex justify-between bg-background border-primary border-x-[1px] border-t-[1px]  flex-col sm:flex-row columns-2 overflow-hidden'>
-      <div className="h-[100%] sm:w-1/2 flex flex-col gap-6 font-light w-full p-8">
+      <div className="h-[100%] sm:w-1/2 flex flex-col gap-6 font-light w-full p-5 sm:p-8">
 
-            <h2 className="font-montserrat font-bold sm:text-[3rem] uppercase "> Activities </h2>
+            <h2 className="font-montserrat font-bold text-[1.5rem] sm:text-[3rem] uppercase "> Activities </h2>
 
             <h3 className="font-montserrat sm:w-[80%] font-bold sm:text-[1rem] uppercase text-primary"> National Museum Lagos features three galleries: </h3>
 
-              <p className="w-fit font-old text-[0.75rem] sm:text-[16px]">
+              <p className="w-fit font-old text-[0.875rem] sm:text-[16px]">
                   For social, cultural, and educational knowledge, National Museum Lagos features three galleries:
                   <br />
                   <span className='font-semibold font-montserrat'>
@@ -108,7 +108,7 @@ return (
               <h2 className="font-montserrat uppercase sm:first-line:w-[80%] font-bold sm:text-[1rem] text-primary">   Other services of the National Museum Lagos include: </h2>
 
 
-              <div className="w-fit flex flex-col gap-4 font-old text-[0.75rem] sm:text-[16px]">
+              <div className="w-fit flex flex-col gap-4 font-old text-[0.875rem] sm:text-[16px]">
 
                 <p>
                     <span className='font-bold text-primary font-montserrat'>
@@ -180,7 +180,7 @@ return (
                   
         </div>
 
-        <div className="h-[100%] font-old  text-[0.75rem] sm:text-[16px] sm:w-1/2 flex flex-col gap-6 font-light w-full  border-black p-8">
+        <div className="h-[100%] font-old  text-[0.875rem] sm:text-[16px] sm:w-1/2 flex flex-col gap-6 font-light w-full  border-black p-5 sm:p-8">
 
             <p>
                 <span className='font-bold text-primary font-montserrat'>
@@ -253,7 +253,7 @@ return (
 <div className='w-[100%] h-[100%] font-montserrat flex justify-between bg-background border-primary border-x-[1px] flex-col sm:flex-row columns-2 overflow-hidden'>
   
 
-    <div className="h-[100%] font-old  text-[0.75rem] sm:text-[16px] sm:w-1/2 flex flex-col gap-6 font-light w-full  border-black p-8">
+    <div className="h-[100%] font-old  text-[0.875rem] sm:text-[16px] sm:w-1/2 flex flex-col gap-6 font-light w-full  border-black p-5 sm:p-8">
 
         
 
@@ -296,7 +296,7 @@ return (
     </div>
 
 
-<div className="h-[100%] font-old  text-[0.75rem] sm:text-[16px] sm:w-1/2 flex flex-col gap-6 font-light w-full border-black p-8">
+<div className="h-[100%] font-old  text-[0.875rem] sm:text-[16px] sm:w-1/2 flex flex-col gap-6 font-light w-full border-black p-5 sm:p-8">
 
    
 
@@ -343,8 +343,8 @@ return (
 
     </div>
 
-    <div className='border-primary border-t-[1px] w-[100%] h-fit p-8'>
-      <h2 className='font-bold text-[1rem] sm:text-[3rem] pb-4'>MEET THE CURATOR</h2>
+    <div className='border-primary border-t-[1px] w-[100%] h-fit p-5 sm:p-8'>
+      <h2 className='font-bold text-[1.5rem] sm:text-[3rem] pb-4'>MEET THE CURATOR</h2>
        <div className='font-old pb-8 flex w-fit h-fit flex-col gap-2 object-contain object-center'>
          <Image  alt='the curator' quality={100} src={'/assets/curator.webp'} className='object-contain' width={200} height={300}/>
          <p> 

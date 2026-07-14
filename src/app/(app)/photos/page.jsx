@@ -56,12 +56,12 @@ const Photos = async ({ searchParams }) => {
     <>
       <ScrollToId targetId={openParam} />
       <div className="w-[100%] min-h-[100vh] h-[100%] font-montserrat flex justify-start bg-background border-black border-t-[1px] p-8 overflow-hidden">
-        <div className="h-fit w-full text-primary flex flex-col gap-4 text-[0.75rem] sm:text-[1rem px-8">
+        <div className="h-fit w-full text-primary flex flex-col gap-4 text-[0.75rem] sm:text-[1rem] px-2 sm:px-8">
           <h2 className="text-[2rem] sm:text-[3rem] uppercase font-bold pb-2">Photo gallery</h2>
 
           <div
             style={{
-              gridTemplateColumns: 'repeat(auto-fit, minmax(400px, auto)',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))',
             }}
             className="p-4 grid  w-[100%] h-fit justify-center gap-8  items-center"
           >
@@ -70,9 +70,9 @@ const Photos = async ({ searchParams }) => {
                 <div
                   key={page.id}
                   id={page.id}
-                  className="flex flex-col justify-start items-start p-4 gap-2 w-fit h-auto border-primary px-10 aspect-square rounded-md"
+                  className="flex flex-col justify-start items-start gap-3 w-full h-auto"
                 >
-                  <div className="relative aspect-video flex justify-start w-[100%] h-[100%]">
+                  <div className="relative aspect-[4/3] w-full bg-backgroundDark rounded-md overflow-hidden">
                     <Image
                       layout="fill"
                       alt={page.image.alt}
@@ -84,7 +84,7 @@ const Photos = async ({ searchParams }) => {
                     />
                   </div>
 
-                  <p className="font-old  text-slate-800">{page.description}</p>
+                  <p className="font-old text-[0.85rem] leading-relaxed text-slate-700">{page.description}</p>
                 </div>
               )
             })}

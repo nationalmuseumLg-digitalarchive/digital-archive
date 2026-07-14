@@ -237,8 +237,8 @@ const Nav = ({
   }
 
   return (
-    <div className=" h-[5vh] w-[100%] py-10  font-montserrat font-normal flex justify-center items-center text-primary   sm:text-[0.75rem] text-0.5 border-primary uppercase ">
-      <nav className="px-8 py-3 invisible sm:visible bg-primary text-background rounded-full shadow-md">
+    <div className=" h-[5vh] w-[100%] py-10  font-montserrat font-normal flex justify-end sm:justify-center items-center text-primary   sm:text-[0.75rem] text-0.5 border-primary uppercase ">
+      <nav className="px-8 py-3 hidden sm:block bg-primary text-background rounded-full shadow-md">
         <ul className="flex gap-8 items-center">
           <li>
             {' '}
@@ -286,7 +286,7 @@ const Nav = ({
         {/* <li> </li> */}
       </nav>
 
-      <nav className="visible sm:invisible relative pr-2 z-20">
+      <nav className="block sm:hidden relative pr-2 z-20">
         {navOpen ? (
           <>
             <svg

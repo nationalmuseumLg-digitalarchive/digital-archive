@@ -70,11 +70,8 @@ const open = openCard && cardID === id
             >
 
 
-             <div 
-              style={{
-                width: open ? '30%' : '100%'
-              }}
-              className='flex flex-col gap-8 w-[100%] min-w-0 h-[100%] justify-between relative '>
+             <div
+              className={`flex flex-col gap-8 min-w-0 h-[100%] justify-between relative ${open ? 'w-full sm:w-[30%]' : 'w-full'}`}>
              <Image  width={100} height={100} className="object-contain" src={image ? image.url : '/assets/imageSkel.svg'} alt="cover page" />
             
 
@@ -104,7 +101,7 @@ const open = openCard && cardID === id
               animate={{opaity: 1, y: 0 }}
               exit={{opaity: 0, y: 15 }}
               transition={{duration: 0.3, ease: 'easeOut'}}
-              className='columns-2 font-bold flex w-[30vw] text-[1rem] flex-col gap-4 bg-background'>
+              className='columns-2 font-bold flex w-full sm:w-[30vw] text-[1rem] flex-col gap-4 bg-background'>
                   
                   <p className='flex flex-col'>
                   Year of Creation/Publication <br />
@@ -164,7 +161,7 @@ const open = openCard && cardID === id
                       
              </div>
             {open ? 
-                <div className=' sm:visible invisible sm:w-[80%]  h-[100vh] relative bg-background'>
+                <div className=' hidden sm:block sm:w-[80%]  h-[100vh] relative bg-background'>
                   
                   <iframe className='' onLoad={()=>setLoad(true)} id='pdfEmbed' src={file.url} type="application/pdf" width='90%' height='100%' />
                 

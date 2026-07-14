@@ -33,7 +33,7 @@ const FooterServer = async () => {
   return (
     <>
       <div className="w-[100vw] font-montserrat h-fit grid grid-cols-1 sm:grid-cols-3 bg-primary border-black border-t-[1px] pt-8 gap-6 p-8">
-        <div className="flex justify-between flex-col gap-4 w-fit h-fit p-8">
+        <div className="flex justify-between flex-col gap-4 w-fit h-fit">
           <div className="h-fit w-fit text-background flex flex-col gap-4 z-10 text-[0.75rem] uppercase">
             <h2 className="text-[1rem] text-background font-bold">Quick Links</h2>
             {header?.nav?.map((link, i) => {
@@ -56,37 +56,43 @@ const FooterServer = async () => {
           </p>
 
           <div>
-            <p className="text-[0.75rem] sm:p-4">
+            <p className="text-[0.75rem]">
               {' '}
               This project is funded by the French Embassy in Nigeria through IFRA-NIGERIA FSPI
               PROJECT
             </p>
           </div>
 
-          <div className="flex gap-4">
-            <Image
-              src="/assets/ifra.png"
-              alt="logo"
-              width={100}
-              height={100}
-              className=" sm:p-4 object-contain h-fit"
-            />
+          <div className="flex flex-wrap items-center gap-3">
+            <div className="bg-background rounded-md p-3 flex items-center justify-center">
+              <Image
+                src="/assets/ifra.png"
+                alt="IFRA-Nigeria logo"
+                width={72}
+                height={72}
+                className="object-contain h-16 w-auto"
+              />
+            </div>
 
-            <Image
-              src="/assets/ifra2.png"
-              alt="logo"
-              width={100}
-              height={100}
-              className=" sm:p-4 object-contain h-fit"
-            />
+            <div className="bg-background rounded-md p-3 flex items-center justify-center">
+              <Image
+                src="/assets/ifra2.png"
+                alt="French Embassy in Nigeria logo"
+                width={72}
+                height={72}
+                className="object-contain h-16 w-auto"
+              />
+            </div>
 
-            <Image
-              src="/assets/CNRS.png"
-              alt="logo"
-              width={100}
-              height={100}
-              className=" sm:p-4 pt-4 object-contain h-fit"
-            />
+            <div className="bg-background rounded-md p-3 flex items-center justify-center">
+              <Image
+                src="/assets/CNRS.png"
+                alt="CNRS logo"
+                width={140}
+                height={72}
+                className="object-contain h-16 w-auto"
+              />
+            </div>
           </div>
 
           <Link href="https://uzoma.studio/" target="_blank">
@@ -104,7 +110,7 @@ const FooterServer = async () => {
                 alt="logo"
                 width={50}
                 height={50}
-                className=" sm:p-4 object-contain h-fit"
+                className="object-contain h-fit"
               />
             )}
 
@@ -113,7 +119,7 @@ const FooterServer = async () => {
             </Link>
           </div>
 
-          <p className="text-[0.75rem] gap-2 flex items-center sm:p-4">
+          <p className="text-[0.75rem] gap-2 flex items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24px"
@@ -127,14 +133,14 @@ const FooterServer = async () => {
           </p>
 
           <Link href="https://www.facebook.com/NationalMuseumOnikanLagos" target="_blank">
-            <div className="text-[0.75rem] underline gap-2 flex items-center sm:p-4">
+            <div className="text-[0.75rem] underline gap-2 flex items-center">
               <Image src={'/assets/Facebook icons.png'} alt="facebook logo" width={30} height={30} />
               National Museum Onikan Lagos
             </div>
           </Link>
 
           <Link href="https://www.instagram.com/nationalmuseum_lagos" target="_blank">
-            <p className="text-[0.75rem] underline gap-2 items-center flex sm:p-4">
+            <p className="text-[0.75rem] underline gap-2 items-center flex">
               <Image src={'/assets/Instagram icon.png'} alt="instagram logo" width={30} height={30} />
               nationalmuseum_lagos
             </p>
