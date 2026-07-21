@@ -2,25 +2,11 @@ import React from 'react'
 import { getPayload } from 'payload'
 import config from '@payload-config'
 import Link from 'next/link'
-import * as motion from "framer-motion/client"
 import Image from "next/legacy/image"
 
 
 const Manuscripts = () => {
 
-  const anim ={
-    initial: {
-      width:'100vw',
-      // x: '100vw'
-    },
-    open: {
-      width:'0',
-      // x: 0
-    },
-    closed :{
-      width:'100vw',
-    }
-  }
 
 
 
@@ -101,20 +87,6 @@ const Manuscripts = () => {
 
 
 
-         <motion.div
-          variants={anim}
-          initial='initial'
-          animate='open'
-          exit='closed'
-          transition={{
-            duration: 0.5,
-            ease: 'easeOut'
-          }}
-
-          className='w-[100vw] bg-black h-[100vh] left-0 top-0 absolute'>
-
-
-      </motion.div>
 
 
 

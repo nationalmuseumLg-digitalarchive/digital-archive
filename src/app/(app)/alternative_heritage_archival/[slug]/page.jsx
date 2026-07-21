@@ -4,7 +4,6 @@ import { getPayload } from 'payload'
 import React, {cache} from 'react'
 import { RenderBlocks } from '@/utils/RenderBlocks'
 import PaginatedBlocks from '@/components/PaginatedBlocks'
-import * as motion from "framer-motion/client"
 
 // Set revalidation period to 60 seconds to balance speed and freshness
 export const revalidate = 60
@@ -20,17 +19,6 @@ const Page = async({params}) => {
     return notFound()
   }
 
-  const anim = {
-    initial: {
-      width:'100vw',
-    },
-    open: {
-      width:'0',
-    },
-    closed: {
-      width:'100vw',
-    }
-  }
 
   return (
     <article>
@@ -42,17 +30,6 @@ const Page = async({params}) => {
         </div>
       </div>
 
-      <motion.div 
-        variants={anim}
-        initial='initial'
-        animate='open'
-        exit='closed'
-        transition={{
-          duration: 0.4,
-          ease: 'easeOut'
-        }}
-        className='w-[100vw] bg-black h-[100vh] top-0 absolute'>
-      </motion.div>
     </article>
   )
 }

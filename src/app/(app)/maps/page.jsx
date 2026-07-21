@@ -3,7 +3,6 @@
 import { getPayload } from 'payload'
 import config from '@payload-config'
 import Link from 'next/link'
-import * as motion from "framer-motion/client"
 import React from 'react'
 import Image from "next/legacy/image"
 
@@ -31,17 +30,6 @@ const Maps = async ({ searchParams }) => {
     if (idx >= 0) currentPage = Math.floor(idx / limit) + 1
   }
 
-  const anim = {
-    initial: {
-      width: '100vw',
-    },
-    open: {
-      width: '0',
-    },
-    closed: {
-      width: '100vw',
-    },
-  }
 
   const pages = await payloadForPage.find({
     collection: 'maps',
@@ -63,7 +51,7 @@ const Maps = async ({ searchParams }) => {
           <div className="h-fit w-fit text-primary flex flex-col gap-4 text-[0.75rem] sm:text-[1rem]">
             <h1 className="text-[2rem] sm:text-[3rem] uppercase font-bold pb-2">MAPS</h1>
 
-            <p className="font-old">
+            <p>
               {' '}
               Maps of Nigeria providing detailed visual representations of regions, vegetation
               zones, geographic locations, waterways, and other essential information.
@@ -119,17 +107,6 @@ const Maps = async ({ searchParams }) => {
           </div>
         </div>
 
-        <motion.div
-          variants={anim}
-          initial="initial"
-          animate="open"
-          exit="closed"
-          transition={{
-            duration: 0.4,
-            ease: 'easeOut',
-          }}
-          className="w-[100vw] bg-black h-[100vh] left-0 top-0 absolute"
-        ></motion.div>
       </div>
     </>
   )

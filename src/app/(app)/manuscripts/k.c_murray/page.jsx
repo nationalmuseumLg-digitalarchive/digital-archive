@@ -2,24 +2,10 @@ import React from 'react'
 import { getPayload } from 'payload'
 import config from '@payload-config'
 import Link from 'next/link'
-import * as motion from "framer-motion/client"
 import Image from "next/legacy/image"
 
 const Manuscripts = () => {
 
-  const anim ={
-    initial: {
-      width:'100vw',
-      // x: '100vw'
-    },
-    open: {
-      width:'0',
-      // x: 0
-    },
-    closed :{
-      width:'100vw',
-    }
-  }
 
 
 
@@ -64,7 +50,7 @@ const Manuscripts = () => {
                 className="objact-contain"
                 width={100} height={200}  src="/assets/K.C-Murray.webp" alt="k.c. murray photo" />
           </div>
-                <p className='font-playfair text-[18px] w-[70%]'>
+                <p className='text-[18px] w-[70%]'>
                  K.C. Murray manuscripts are not published. Some are hand written and some are typed. There are varieties of manuscript, such as Education, Field work, Correspondence, Notes and Expeditions.
                   </p>                
                     
@@ -111,20 +97,6 @@ const Manuscripts = () => {
 
 
         
-         <motion.div 
-          variants={anim}
-          initial='initial'
-          animate='open'
-          exit='closed'
-          transition={{
-            duration: 0.5,
-            ease: 'easeOut'
-          }}
-
-          className='w-[100vw] bg-black h-[100vh] left-0 top-0 absolute'>
-
-
-      </motion.div>
 
    
 
