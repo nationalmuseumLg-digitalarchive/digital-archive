@@ -2,7 +2,6 @@ import React from 'react'
 import { getPayload } from 'payload'
 import config from '@payload-config'
 import Link from 'next/link'
-import * as motion from "framer-motion/client"
 
 import Image from "next/legacy/image"
 import Pagination from '@/components/Pagination'
@@ -25,17 +24,6 @@ const Government = async ({ searchParams }) => {
     },
   })
 
-  const anim = {
-    initial: {
-      width: '100vw',
-    },
-    open: {
-      width: '0',
-    },
-    closed: {
-      width: '100vw',
-    },
-  }
 
   return (
     <>
@@ -76,17 +64,6 @@ const Government = async ({ searchParams }) => {
           </div>
         </div>
 
-        <motion.div
-          variants={anim}
-          initial="initial"
-          animate="open"
-          exit="closed"
-          transition={{
-            duration: 0.4,
-            ease: 'easeOut',
-          }}
-          className="w-[100vw] bg-black h-[100vh] left-0 top-0 absolute"
-        ></motion.div>
       </div>
     </>
   )

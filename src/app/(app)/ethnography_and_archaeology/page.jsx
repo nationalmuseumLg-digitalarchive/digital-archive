@@ -3,7 +3,6 @@ import config from '@payload-config'
 import { getPayload } from 'payload'
 import React, {cache} from 'react'
 import { RenderBlocks } from '@/utils/RenderBlocks'
-import * as motion from "framer-motion/client"
 
 import Link from 'next/link'
 
@@ -28,19 +27,6 @@ const Page =  async() => {
         return notFound()
     }
 
-    const anim ={
-        initial: {
-          width:'100vw',
-          // x: '100vw'
-        },
-        open: {
-          width:'0',
-          // x: 0
-        },
-        closed :{
-          width:'100vw',
-        }
-      }
 
       
   return (
@@ -58,20 +44,6 @@ const Page =  async() => {
           
         </div>
 
-      <motion.div 
-          variants={anim}
-          initial='initial'
-          animate='open'
-          exit='closed'
-          transition={{
-            duration: 0.4,
-            ease: 'easeOut'
-          }}
-
-          className='w-[100vw] bg-black h-[100vh] top-0 absolute'>
-
-
-      </motion.div>
 
 
 

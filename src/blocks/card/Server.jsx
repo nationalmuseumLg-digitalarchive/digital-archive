@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from "next/legacy/image"
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -36,6 +36,15 @@ const CardBlock = ({image, description, accession,creation,file,keyword, conditi
 
   
 const open = openCard && cardID === id
+
+  // `file` is marked required in the block config but is empty on a lot of
+  // migrated records. Without a file there is no iframe to fire onLoad, so the
+  // loader would spin forever over the fallback — clear it up front.
+  useEffect(() => {
+    if (open && !file?.url) {
+      setLoad(true)
+    }
+  }, [open, file])
 
 
 
@@ -148,7 +157,9 @@ const open = openCard && cardID === id
                   <span className='font-light font-old'>{identifiers}</span>
                  </p> */}
 
-                 <Link className='visible sm:invisible font-bold text-underline' target="_blank" href={file.url} download>Download the pdf</Link>
+                 {file?.url && (
+                   <Link className='visible sm:invisible font-bold text-underline' target="_blank" href={file.url} download>Download the pdf</Link>
+                 )}
 
               
              
@@ -163,7 +174,15 @@ const open = openCard && cardID === id
             {open ? 
                 <div className=' hidden sm:block sm:w-[80%]  h-[100vh] relative bg-background'>
                   
-                  <iframe className='' onLoad={()=>setLoad(true)} id='pdfEmbed' src={file.url} type="application/pdf" width='90%' height='100%' />
+                  {file?.url ? (
+                    <iframe className='' onLoad={()=>setLoad(true)} id='pdfEmbed' src={file.url} type="application/pdf" width='90%' height='100%' />
+                  ) : image?.url ? (
+                    <Image width={800} height={600} src={image.url} alt={title} className="object-contain max-h-full max-w-full mx-auto" />
+                  ) : (
+                    <div className='w-full h-full flex items-center justify-center'>
+                      <p className='text-sm'>No previewable content</p>
+                    </div>
+                  )}
                 
                   {
                   

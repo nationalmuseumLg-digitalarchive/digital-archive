@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/legacy/image'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -54,6 +54,14 @@ const AlternativeArchivalCardBlock = ({
   }
 
   const open = openCard && cardID === id
+
+  // Nothing fires onLoad when there is neither a file nor an image, so the
+  // loader would sit spinning over the empty-state message forever.
+  useEffect(() => {
+    if (open && !file?.url && !image?.url) {
+      setLoad(true)
+    }
+  }, [open, file, image])
 
   return (
     <>
@@ -191,14 +199,16 @@ const AlternativeArchivalCardBlock = ({
                   <span className='font-light '>{identifiers}</span>
                  </p> */}
 
-                <Link
-                  className="visible sm:invisible font-bold text-underline"
-                  target="_blank"
-                  href={file.url}
-                  download
-                >
-                  Download the pdf
-                </Link>
+                {file?.url && (
+                  <Link
+                    className="visible sm:invisible font-bold text-underline"
+                    target="_blank"
+                    href={file.url}
+                    download
+                  >
+                    Download the pdf
+                  </Link>
+                )}
               </motion.div>
             ) : (
               <></>
@@ -229,6 +239,27 @@ const AlternativeArchivalCardBlock = ({
                       alt="Embedded file"
                       className="object-contain max-h-full max-w-full mx-auto"
                     />
+                  )
+                }
+
+                // No file at all: fall back to the record image rather than
+                // dereferencing `file.url`, which is empty on migrated records.
+                if (!file?.url) {
+                  if (image?.url) {
+                    return (
+                      <img
+                        onLoad={() => setLoad(true)}
+                        src={image.url}
+                        alt="Record image"
+                        className="object-contain max-h-full max-w-full mx-auto"
+                      />
+                    )
+                  }
+
+                  return (
+                    <div className="text-center w-full h-full flex items-center justify-center">
+                      <p className="text-sm">No previewable content</p>
+                    </div>
                   )
                 }
 
