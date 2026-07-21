@@ -6,6 +6,17 @@ import React, {cache} from 'react'
 import LandingPage from "@/components/LandingPage";
 // export const runtime = 'edge'
 
+// Declared on the homepage only — a canonical in the root layout would be
+// inherited by every route and tell search engines they are all this page.
+export const metadata = {
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    url: '/',
+  },
+}
+
 const Home = async () => {
   // Unused expensive query removed to optimize performance and prevent timeouts on Cloudflare.
 

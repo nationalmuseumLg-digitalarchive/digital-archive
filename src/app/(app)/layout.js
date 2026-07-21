@@ -1,6 +1,5 @@
 import { Major_Mono_Display, Old_Standard_TT, Playfair_Display, Montserrat } from 'next/font/google'
 import './globals.css'
-import PageTransition from '@/components/PageTransition'
 import HeaderServer from '../../blocks/global/Header/server'
 import FooterServer from '../../blocks/global/Footer/server'
 import SearchOverlay from '@/components/SearchOverlay'
@@ -30,8 +29,21 @@ const old = Old_Standard_TT({
 })
 
 export const metadata = {
-  title: 'National Museum Digital Archive',
+  // Required so `alternates.canonical` and openGraph URLs resolve to absolute
+  // URLs. Without it Next emits relative canonicals, which search engines ignore.
+  metadataBase: new URL('https://lagosmuseumarchives.ng'),
+  title: {
+    default: 'National Museum Digital Archive',
+    template: '%s | National Museum Digital Archive',
+  },
   description: 'Digitised archives of the National Museum Library and Archives (NMLA) collection.',
+  openGraph: {
+    type: 'website',
+    siteName: 'National Museum Digital Archive',
+    title: 'National Museum Digital Archive',
+    description:
+      'Digitised archives of the National Museum Library and Archives (NMLA) collection.',
+  },
 }
 
 export default function RootLayout({ children }) {
@@ -42,7 +54,7 @@ export default function RootLayout({ children }) {
       >
         <SearchOverlay />
         <HeaderServer />
-        <PageTransition>{children}</PageTransition>
+        {children}
         <FooterServer />
       </body>
     </html>
