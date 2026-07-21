@@ -3,6 +3,11 @@ export const content = [
   './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
   './src/components/**/*.{js,ts,jsx,tsx,mdx}',
   './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+  // Block components render the record cards and their preview panels. Without
+  // these globs Tailwind never sees classes used only here — notably `sm:visible`,
+  // which is what un-hides the PDF/image preview panel on desktop.
+  './src/blocks/**/*.{js,ts,jsx,tsx,mdx}',
+  './src/utils/**/*.{js,ts,jsx,tsx,mdx}',
 ]
 export const theme = {
   extend: {
