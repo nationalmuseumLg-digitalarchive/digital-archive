@@ -22,6 +22,11 @@ const isWorker = typeof caches !== 'undefined'
 if (isWorker) {
   // Workers has a global WebSocket; Neon needs it injected explicitly.
   neonConfig.webSocketConstructor = WebSocket
+  // Payload caches its adapter across requests. Route ordinary Pool.query calls
+  // over Neon's stateless HTTP transport so a cached adapter never carries a
+  // Cloudflare request-scoped WebSocket into the next request. Pool.connect()
+  // still uses WebSockets when Payload needs an interactive transaction.
+  neonConfig.poolQueryViaFetch = true
 }
 
 // Cloudflare Workers limitation: I/O objects (WebSockets, sockets, streams)

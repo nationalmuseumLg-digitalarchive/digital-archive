@@ -21,8 +21,8 @@ const LandingPage = () => {
 
   return (
     <div className="px-4 sm:px-8 lg:px-16 ">
-      <section className="w-[100%] h-[80vh] justify-center items-center relative sm:border-[1px] sm:border-t-0 border-black flex flex-col lg:flex-row  bg-background">
-        <div className="lg:w-1/2 w-[100%] text-primary h-[100%] relative font-montserrat p-[2rem] flex flex-col justify-center lg:justify-start  truncate text-[13vw] md:text-[7vw] bg-no-repeat bg-landing bg-opacity-50 bg-center  z-0">
+      <section className="w-full min-h-[80svh] justify-center items-stretch relative sm:border-[1px] sm:border-t-0 border-black flex flex-col lg:flex-row bg-background">
+        <div className="lg:w-1/2 w-full text-primary min-h-[40svh] lg:min-h-[80svh] relative font-montserrat p-6 sm:p-8 flex flex-col justify-center lg:justify-start text-[clamp(3rem,13vw,6.5rem)] md:text-[clamp(4rem,7vw,8.5rem)] leading-[0.95] bg-no-repeat bg-landing bg-opacity-50 bg-center z-0">
           <div className="absolute inset-0 z-[1] bg-background/72 lg:bg-transparent" />
           <motion.div
             // initial={{opacity: 0}}
@@ -82,7 +82,7 @@ const LandingPage = () => {
           </motion.div>
         </div>
 
-        <div className="relative flex justify-center sm:justify-end border-black text-[0.7rem] md:text-[1rem] w-full h-[50%] sm:h-[100%] md:w-[80vw] lg:w-[50%] ">
+        <div className="relative flex items-stretch justify-center sm:justify-end border-black text-[0.7rem] md:text-[1rem] w-full min-h-[40svh] md:w-[80vw] lg:w-1/2">
           <Link href="/manuscripts" className=" w-[30%] h-[100%]">
             <motion.div
               whileHover={{
