@@ -2,13 +2,14 @@
 
 import { useEffect, useRef, useState } from 'react'
 
-// Neon free-tier cold starts take 5–15s. We retry up to 3 times with
-// increasing delays before showing a manual retry button.
+// Retry transient rendering or data failures twice before offering a manual
+// retry. This boundary catches more than database errors, so its copy must not
+// claim a specific cause that we cannot verify in the browser.
 const RETRY_DELAYS_MS = [8000, 12000]
 
 export default function Error({ error, reset }) {
   const [attempt, setAttempt] = useState(0)
-  const [message, setMessage] = useState('Waking the database. This usually takes a few seconds…')
+  const [message, setMessage] = useState('The archive could not be reached. Trying again…')
   const timerRef = useRef(null)
 
   useEffect(() => {
@@ -24,7 +25,7 @@ export default function Error({ error, reset }) {
   }, [attempt, reset])
 
   useEffect(() => {
-    if (attempt === 1) setMessage('Still waking up — one more try…')
+    if (attempt === 1) setMessage('The archive is still unavailable. Trying once more…')
     if (attempt >= RETRY_DELAYS_MS.length) setMessage('The page could not be loaded.')
   }, [attempt])
 
@@ -32,7 +33,9 @@ export default function Error({ error, reset }) {
 
   return (
     <div style={{ fontFamily: 'sans-serif', padding: '4rem 2rem', textAlign: 'center' }}>
-      <h1 style={{ fontSize: '1.5rem' }}>{giveUp ? 'Something went wrong' : 'Loading…'}</h1>
+      <h1 style={{ fontSize: '1.5rem' }}>
+        {giveUp ? 'Something went wrong' : 'Loading archive data…'}
+      </h1>
       <p style={{ color: '#666', marginTop: '1rem', maxWidth: 480, marginInline: 'auto' }}>
         {message}
       </p>
@@ -40,7 +43,7 @@ export default function Error({ error, reset }) {
         <button
           onClick={() => {
             setAttempt(0)
-            setMessage('Waking the database. This usually takes a few seconds…')
+            setMessage('The archive could not be reached. Trying again…')
             reset()
           }}
           style={{
